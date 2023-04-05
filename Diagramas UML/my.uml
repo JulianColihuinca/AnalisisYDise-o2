@@ -42,4 +42,62 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="_eM2KYNAKEe25upg2EKoYqg" name="ModoConversando"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_gn_XINAKEe25upg2EKoYqg" client="_Sl8gENAHEe25upg2EKoYqg" supplier="_eM2KYNAKEe25upg2EKoYqg"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_O2--MNALEe25upg2EKoYqg" client="_qZgb4NAHEe25upg2EKoYqg" supplier="_oOu7gNAJEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_jVBhENNrEe2e5vCgIcYW1g" name="Usuario">
+    <packagedElement xmi:type="uml:Usage" xmi:id="_f6jZwNN1Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_bavmkNN1Ee2e5vCgIcYW1g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_mUJkoNNrEe2e5vCgIcYW1g" name="Chat">
+    <interfaceRealization xmi:id="_uAVwENNyEe2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_X0yT4NNyEe2e5vCgIcYW1g" contract="_X0yT4NNyEe2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_ohZJMNN0Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_j0xCANN0Ee2e5vCgIcYW1g" contract="_j0xCANN0Ee2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_DpYqMNN1Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_7Ff9kNN0Ee2e5vCgIcYW1g" contract="_7Ff9kNN0Ee2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_47uYMNN1Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_bavmkNN1Ee2e5vCgIcYW1g" contract="_bavmkNN1Ee2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_NLL7INN2Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_EOtIUNN2Ee2e5vCgIcYW1g" contract="_EOtIUNN2Ee2e5vCgIcYW1g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_BI7OsNNsEe2e5vCgIcYW1g" name="Acceso">
+    <interfaceRealization xmi:id="_ax4l4NNsEe2e5vCgIcYW1g" client="_BI7OsNNsEe2e5vCgIcYW1g" supplier="_IJd5QNNsEe2e5vCgIcYW1g" contract="_IJd5QNNsEe2e5vCgIcYW1g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_IJd5QNNsEe2e5vCgIcYW1g" name="IniciarSesion"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_WMM0MNNsEe2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_IJd5QNNsEe2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_nMzOcNNsEe2e5vCgIcYW1g" name="EnviarMensaje">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_OhFQsNNuEe2e5vCgIcYW1g" name="puertoSalida" aggregation="composite" isConjugated="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_rqJRkNNuEe2e5vCgIcYW1g" name="Mensaje"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_OLeXoNNvEe2e5vCgIcYW1g" name="Mensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_7wo-kNNvEe2e5vCgIcYW1g" client="_OhFQsNNuEe2e5vCgIcYW1g" supplier="_OLeXoNNvEe2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_OkQ1oNNwEe2e5vCgIcYW1g" name="RecibirMensaje">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_OkQ1odNwEe2e5vCgIcYW1g" name="puertoEntrada" aggregation="composite" isConjugated="true"/>
+    <interfaceRealization xmi:id="_tn8JENNwEe2e5vCgIcYW1g" client="_OkQ1oNNwEe2e5vCgIcYW1g" supplier="_d2H2INNwEe2e5vCgIcYW1g" contract="_d2H2INNwEe2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_UNnjcNNzEe2e5vCgIcYW1g" client="_OkQ1oNNwEe2e5vCgIcYW1g" supplier="_GT2XQNNzEe2e5vCgIcYW1g" contract="_GT2XQNNzEe2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_4PUQENNzEe2e5vCgIcYW1g" client="_OkQ1oNNwEe2e5vCgIcYW1g" supplier="_gx8msNNzEe2e5vCgIcYW1g" contract="_gx8msNNzEe2e5vCgIcYW1g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_d2H2INNwEe2e5vCgIcYW1g" name="Mensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_g89EMNNwEe2e5vCgIcYW1g" client="_OhFQsNNuEe2e5vCgIcYW1g" supplier="_d2H2INNwEe2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_G0Tq4NNxEe2e5vCgIcYW1g" name="Conexion"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_X0yT4NNyEe2e5vCgIcYW1g" name="Mensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sPgEkNNyEe2e5vCgIcYW1g" client="_nMzOcNNsEe2e5vCgIcYW1g" supplier="_X0yT4NNyEe2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_GT2XQNNzEe2e5vCgIcYW1g" name="Mensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_VEx08NNzEe2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_GT2XQNNzEe2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_gx8msNNzEe2e5vCgIcYW1g" name="Mensaje">
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_tL-ecNNzEe2e5vCgIcYW1g" name="EnviarMensaje">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_tL-ecdNzEe2e5vCgIcYW1g" name="puertoSalida" aggregation="composite" isConjugated="true"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_tL_skNNzEe2e5vCgIcYW1g" name="EnviarMensaje">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_tL_skdNzEe2e5vCgIcYW1g" name="puertoSalida" aggregation="composite" isConjugated="true"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_vBRzMNNzEe2e5vCgIcYW1g" name="Mensaje">
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_vBRzMdNzEe2e5vCgIcYW1g" name="EnviarMensaje">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_vBRzMtNzEe2e5vCgIcYW1g" name="puertoSalida" aggregation="composite" isConjugated="true"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_vBRzM9NzEe2e5vCgIcYW1g" name="EnviarMensaje">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_vBRzNNNzEe2e5vCgIcYW1g" name="puertoSalida" aggregation="composite" isConjugated="true"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_53iLENNzEe2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_gx8msNNzEe2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_j0xCANN0Ee2e5vCgIcYW1g" name="Comenzar Chat"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_nz7mQNN0Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_j0xCANN0Ee2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_7Ff9kNN0Ee2e5vCgIcYW1g" name="EnvIarMensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Bs4hQNN1Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_7Ff9kNN0Ee2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_bavmkNN1Ee2e5vCgIcYW1g" name="RecibirMensaje"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_EOtIUNN2Ee2e5vCgIcYW1g" name="Modo"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HlFOQNN2Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_EOtIUNN2Ee2e5vCgIcYW1g"/>
 </uml:Model>

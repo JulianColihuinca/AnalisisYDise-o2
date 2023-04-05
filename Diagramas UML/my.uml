@@ -100,5 +100,4 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="_bavmkNN1Ee2e5vCgIcYW1g" name="RecibirMensaje"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_EOtIUNN2Ee2e5vCgIcYW1g" name="Modo"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_HlFOQNN2Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_EOtIUNN2Ee2e5vCgIcYW1g"/>
-  <packagedElement xmi:type="uml:Component" xmi:id="_BCsRINPrEe2zNIJhmIl0mw" name="Probando"/>
 </uml:Model>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_2H-5YNAAEe25upg2EKoYqg" name="NewModel">
+  <packagedElement xmi:type="uml:Component" xmi:id="_JDcd0NABEe25upg2EKoYqg" name="Logueo">
+    <interfaceRealization xmi:id="_VdcgYNABEe25upg2EKoYqg" client="_JDcd0NABEe25upg2EKoYqg" supplier="_QOw1ANABEe25upg2EKoYqg" contract="_QOw1ANABEe25upg2EKoYqg"/>
+    <interfaceRealization xmi:id="_skR5ENABEe25upg2EKoYqg" client="_JDcd0NABEe25upg2EKoYqg"/>
+    <interfaceRealization xmi:id="_BCj7INACEe25upg2EKoYqg" client="_JDcd0NABEe25upg2EKoYqg" supplier="_pJDvYNABEe25upg2EKoYqg" contract="_pJDvYNABEe25upg2EKoYqg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_QOw1ANABEe25upg2EKoYqg" name="InicioDeSesion"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_bVZLMNABEe25upg2EKoYqg" name="Usuario"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dH9VANABEe25upg2EKoYqg" client="_bVZLMNABEe25upg2EKoYqg" supplier="_QOw1ANABEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_pJDvYNABEe25upg2EKoYqg" name="CierreDeSesion"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rg0Q8NABEe25upg2EKoYqg" client="_bVZLMNABEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_CCTg4NACEe25upg2EKoYqg" client="_bVZLMNABEe25upg2EKoYqg" supplier="_pJDvYNABEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_qmrugNACEe25upg2EKoYqg" name="ModoEscucha"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_vfQnANACEe25upg2EKoYqg" client="_bVZLMNABEe25upg2EKoYqg" supplier="_qmrugNACEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_FrlfQNADEe25upg2EKoYqg" name="IniciarDialogo"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_KB7NYNADEe25upg2EKoYqg" client="_bVZLMNABEe25upg2EKoYqg" supplier="_FrlfQNADEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_UW95INAEEe25upg2EKoYqg" name="RecibeMensaje"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_XoLLMNAEEe25upg2EKoYqg" name="Exterior">
+    <interfaceRealization xmi:id="_Zh2CkNAEEe25upg2EKoYqg" client="_XoLLMNAEEe25upg2EKoYqg" supplier="_UW95INAEEe25upg2EKoYqg" contract="_UW95INAEEe25upg2EKoYqg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_qqOf0NAEEe25upg2EKoYqg" name="EnvíaMensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_t7CwUNAEEe25upg2EKoYqg" client="_XoLLMNAEEe25upg2EKoYqg" supplier="_qqOf0NAEEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_Sl8gENAHEe25upg2EKoYqg" name="chat">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_70CRsNAKEe25upg2EKoYqg" name="PuertoSalida" aggregation="composite" isConjugated="true"/>
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_-ea0UNAKEe25upg2EKoYqg" name="PuertoEntrada" aggregation="composite" isConjugated="true"/>
+    <interfaceRealization xmi:id="_JVQUoNADEe25upg2EKoYqg" client="_Sl8gENAHEe25upg2EKoYqg" supplier="_FrlfQNADEe25upg2EKoYqg" contract="_FrlfQNADEe25upg2EKoYqg"/>
+    <interfaceRealization xmi:id="_s7RVYNAEEe25upg2EKoYqg" client="_Sl8gENAHEe25upg2EKoYqg" supplier="_qqOf0NAEEe25upg2EKoYqg" contract="_qqOf0NAEEe25upg2EKoYqg"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_qZgb4NAHEe25upg2EKoYqg" name="EnviarMensaje"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_LZlKkNAIEe25upg2EKoYqg" name="RecibirMensaje">
+      <interfaceRealization xmi:id="_xqBKMNAJEe25upg2EKoYqg" client="_LZlKkNAIEe25upg2EKoYqg" supplier="_oOu7gNAJEe25upg2EKoYqg" contract="_oOu7gNAJEe25upg2EKoYqg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_bZXk4NAEEe25upg2EKoYqg" client="_Sl8gENAHEe25upg2EKoYqg" supplier="_UW95INAEEe25upg2EKoYqg"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_oOu7gNAJEe25upg2EKoYqg" name="EnviarRespuesta"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_J_C0UNAKEe25upg2EKoYqg" name="Emisor">
+    <interfaceRealization xmi:id="_fvxVsNAKEe25upg2EKoYqg" client="_J_C0UNAKEe25upg2EKoYqg" supplier="_eM2KYNAKEe25upg2EKoYqg" contract="_eM2KYNAKEe25upg2EKoYqg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Component" xmi:id="_LMwkoNAKEe25upg2EKoYqg" name="Receptor">
+    <interfaceRealization xmi:id="_uy7sgNACEe25upg2EKoYqg" client="_LMwkoNAKEe25upg2EKoYqg" supplier="_qmrugNACEe25upg2EKoYqg" contract="_qmrugNACEe25upg2EKoYqg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_eM2KYNAKEe25upg2EKoYqg" name="ModoConversando"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gn_XINAKEe25upg2EKoYqg" client="_Sl8gENAHEe25upg2EKoYqg" supplier="_eM2KYNAKEe25upg2EKoYqg"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_O2--MNALEe25upg2EKoYqg" client="_qZgb4NAHEe25upg2EKoYqg" supplier="_oOu7gNAJEe25upg2EKoYqg"/>
+</uml:Model>

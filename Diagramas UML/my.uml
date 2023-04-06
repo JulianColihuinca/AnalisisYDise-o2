@@ -100,4 +100,33 @@
   <packagedElement xmi:type="uml:Interface" xmi:id="_bavmkNN1Ee2e5vCgIcYW1g" name="RecibirMensaje"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_EOtIUNN2Ee2e5vCgIcYW1g" name="Modo"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_HlFOQNN2Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_EOtIUNN2Ee2e5vCgIcYW1g"/>
+  <packagedElement xmi:type="uml:Device" xmi:id="_2os5gNQhEe2PHL4giklbZA" name="PC Escritorio">
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_MuBx4NQiEe2PHL4giklbZA" name="SO Windows 10">
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_iW27gNQiEe2PHL4giklbZA" name="JRE 18">
+        <deployment xmi:id="_RcIDQNQjEe2PHL4giklbZA" client="_iW27gNQiEe2PHL4giklbZA" supplier="_GDIKsNQjEe2PHL4giklbZA" deployedArtifact="_GDIKsNQjEe2PHL4giklbZA"/>
+      </nestedNode>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Device" xmi:id="_seRQYNQiEe2PHL4giklbZA" name="PC Escritorio">
+    <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y_UikNQiEe2PHL4giklbZA" name="SO Windows 10">
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_7t4OINQiEe2PHL4giklbZA" name="JRE 18">
+        <deployment xmi:id="_TJ5MoNQjEe2PHL4giklbZA" client="_7t4OINQiEe2PHL4giklbZA" supplier="_GDIKsNQjEe2PHL4giklbZA" deployedArtifact="_GDIKsNQjEe2PHL4giklbZA"/>
+      </nestedClassifier>
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_y_UikdQiEe2PHL4giklbZA" name="JRE 18"/>
+    </nestedClassifier>
+    <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_seRQYdQiEe2PHL4giklbZA" name="SO Windows 10">
+      <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_seRQYtQiEe2PHL4giklbZA" name="JRE 18"/>
+    </nestedNode>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Artifact" xmi:id="_GDIKsNQjEe2PHL4giklbZA" name="ChatIP.jar"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_kG5gUNQjEe2PHL4giklbZA" name="LAN" memberEnd="_kG7VgNQjEe2PHL4giklbZA _kG-_4NQjEe2PHL4giklbZA" navigableOwnedEnd="_kG7VgNQjEe2PHL4giklbZA _kG-_4NQjEe2PHL4giklbZA">
+    <ownedEnd xmi:id="_kG7VgNQjEe2PHL4giklbZA" name="pC Escritorios" type="_2os5gNQhEe2PHL4giklbZA" association="_kG5gUNQjEe2PHL4giklbZA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kG9xwNQjEe2PHL4giklbZA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kG-Y0NQjEe2PHL4giklbZA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_kG-_4NQjEe2PHL4giklbZA" name="pC Escritorios" type="_seRQYNQiEe2PHL4giklbZA" association="_kG5gUNQjEe2PHL4giklbZA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kG-_4dQjEe2PHL4giklbZA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kG_m8NQjEe2PHL4giklbZA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>

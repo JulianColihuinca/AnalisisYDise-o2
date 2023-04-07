@@ -51,6 +51,7 @@
     <interfaceRealization xmi:id="_DpYqMNN1Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_7Ff9kNN0Ee2e5vCgIcYW1g" contract="_7Ff9kNN0Ee2e5vCgIcYW1g"/>
     <interfaceRealization xmi:id="_47uYMNN1Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_bavmkNN1Ee2e5vCgIcYW1g" contract="_bavmkNN1Ee2e5vCgIcYW1g"/>
     <interfaceRealization xmi:id="_NLL7INN2Ee2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_EOtIUNN2Ee2e5vCgIcYW1g" contract="_EOtIUNN2Ee2e5vCgIcYW1g"/>
+    <interfaceRealization xmi:id="_y-SogNV6Ee2aH489NeECiw" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_lNGJgNV6Ee2aH489NeECiw" contract="_lNGJgNV6Ee2aH489NeECiw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_BI7OsNNsEe2e5vCgIcYW1g" name="Acceso">
     <interfaceRealization xmi:id="_ax4l4NNsEe2e5vCgIcYW1g" client="_BI7OsNNsEe2e5vCgIcYW1g" supplier="_IJd5QNNsEe2e5vCgIcYW1g" contract="_IJd5QNNsEe2e5vCgIcYW1g"/>
@@ -93,7 +94,7 @@
     </nestedClassifier>
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_53iLENNzEe2e5vCgIcYW1g" client="_mUJkoNNrEe2e5vCgIcYW1g" supplier="_gx8msNNzEe2e5vCgIcYW1g"/>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_j0xCANN0Ee2e5vCgIcYW1g" name="Comenzar Chat"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_j0xCANN0Ee2e5vCgIcYW1g" name="Comenzar Sesion Chat"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_nz7mQNN0Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_j0xCANN0Ee2e5vCgIcYW1g"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_7Ff9kNN0Ee2e5vCgIcYW1g" name="EnvIarMensaje"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_Bs4hQNN1Ee2e5vCgIcYW1g" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_7Ff9kNN0Ee2e5vCgIcYW1g"/>
@@ -108,7 +109,7 @@
     </nestedNode>
   </packagedElement>
   <packagedElement xmi:type="uml:Device" xmi:id="_seRQYNQiEe2PHL4giklbZA" name="PC Escritorio">
-    <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y_UikNQiEe2PHL4giklbZA" name="SO Windows 10">
+    <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y_UikNQiEe2PHL4giklbZA" name="SO Linux">
       <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_7t4OINQiEe2PHL4giklbZA" name="JRE 18">
         <deployment xmi:id="_TJ5MoNQjEe2PHL4giklbZA" client="_7t4OINQiEe2PHL4giklbZA" supplier="_GDIKsNQjEe2PHL4giklbZA" deployedArtifact="_GDIKsNQjEe2PHL4giklbZA"/>
       </nestedClassifier>
@@ -129,4 +130,6 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kG_m8NQjEe2PHL4giklbZA" value="*"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_lNGJgNV6Ee2aH489NeECiw" name="Finalizar Sesion Chat"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_xTq5wNV6Ee2aH489NeECiw" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_lNGJgNV6Ee2aH489NeECiw"/>
 </uml:Model>

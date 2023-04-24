@@ -1,4 +1,4 @@
-package Vista;
+package Vistas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -16,9 +16,10 @@ import javax.swing.JTextField;
 public class VentanaUsuario extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-
+	private JTextField ipTexto;
+	private JTextField puertoIP;
+    private JButton comenzarChatBoton,atenderBoton,rechazarBoton;
+    private JLabel notificacionLlamada;
 	/**
 	 * Launch the application.
 	 */
@@ -56,10 +57,10 @@ public class VentanaUsuario extends JFrame {
 		ipLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel.add(ipLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Puerto: 2366");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel.add(lblNewLabel_1);
+		JLabel puertoLabel = new JLabel("Puerto: 2366");
+		puertoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		puertoLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel.add(puertoLabel);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -69,41 +70,45 @@ public class VentanaUsuario extends JFrame {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_2);
 		
-		textField = new JTextField();
-		panel_1.add(textField);
-		textField.setColumns(10);
+		ipTexto = new JTextField();
+		panel_1.add(ipTexto);
+		ipTexto.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Ingrese Puerto:");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_3);
 		
-		textField_1 = new JTextField();
-		panel_1.add(textField_1);
-		textField_1.setColumns(10);
+		puertoIP = new JTextField();
+		panel_1.add(puertoIP);
+		puertoIP.setColumns(10);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		
-		JButton btnNewButton = new JButton("Comenzar Chat");
-		panel_2.add(btnNewButton);
+		comenzarChatBoton = new JButton("Comenzar Chat");
+		panel_2.add(comenzarChatBoton);
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);
 		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
 		
-		JLabel lblNewLabel_4 = new JLabel("Tienes una llamada de IP:1.121.212.5, Puerto:1233");
-		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_3.add(lblNewLabel_4);
+		notificacionLlamada = new JLabel("Tienes una llamada de IP:1.121.212.5, Puerto:1233");
+		notificacionLlamada.setHorizontalAlignment(SwingConstants.CENTER);
+		notificacionLlamada.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_3.add(notificacionLlamada);
 		
 		JPanel panel_4 = new JPanel();
 		panel_3.add(panel_4);
 		
-		JButton btnNewButton_1 = new JButton("Atender Llamada");
-		panel_4.add(btnNewButton_1);
+		atenderBoton = new JButton("Atender Llamada");
+		panel_4.add(atenderBoton);
 		
-		JButton btnNewButton_2 = new JButton("Rechazar Llamada");
-		panel_4.add(btnNewButton_2);
+		rechazarBoton = new JButton("Rechazar Llamada");
+		panel_4.add(rechazarBoton);
+		
+		this.atenderBoton.setActionCommand("Atender Llamada");
+		this.comenzarChatBoton.setActionCommand("Comenzar Chat");
+		this.rechazarBoton.setActionCommand("Rechazar Llamada");
 	}
 
 }

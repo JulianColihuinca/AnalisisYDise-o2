@@ -1,4 +1,4 @@
-package Vista;
+package Vistas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -16,7 +16,9 @@ import javax.swing.JButton;
 public class VentanaInicioSesion extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField puertoText;
+	private JButton iniciarSesionBoton;
+	private JLabel ipLabel ;
 
 	/**
 	 * Launch the application.
@@ -49,10 +51,10 @@ public class VentanaInicioSesion extends JFrame {
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		
-		JLabel lblNewLabel = new JLabel("IP: 1.222.333.1");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewLabel);
+		ipLabel = new JLabel("IP: 1.222.333.1");
+		ipLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(ipLabel);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -61,15 +63,16 @@ public class VentanaInicioSesion extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel_1.add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		panel_1.add(textField);
-		textField.setColumns(15);
+		puertoText = new JTextField();
+		panel_1.add(puertoText);
+		puertoText.setColumns(15);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		
-		JButton btnNewButton = new JButton("Iniciar Sesion");
-		panel_2.add(btnNewButton);
+		iniciarSesionBoton = new JButton("Iniciar Sesion");
+		panel_2.add(iniciarSesionBoton);
+		this.iniciarSesionBoton.setActionCommand("Iniciar Sesion");
 	}
 
 }

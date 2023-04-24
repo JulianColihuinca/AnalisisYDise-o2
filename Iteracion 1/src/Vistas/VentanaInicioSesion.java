@@ -6,14 +6,21 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Interfaces.UIInicioSesion;
+
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class VentanaInicioSesion extends JFrame {
+public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyListener{
 
 	private JPanel contentPane;
 	private JTextField puertoText;
@@ -51,7 +58,7 @@ public class VentanaInicioSesion extends JFrame {
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		
-		ipLabel = new JLabel("IP: 1.222.333.1");
+		ipLabel = new JLabel("");
 		ipLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(ipLabel);
@@ -73,6 +80,46 @@ public class VentanaInicioSesion extends JFrame {
 		iniciarSesionBoton = new JButton("Iniciar Sesion");
 		panel_2.add(iniciarSesionBoton);
 		this.iniciarSesionBoton.setActionCommand("Iniciar Sesion");
+		this.iniciarSesionBoton.setEnabled(false);
+		this.puertoText.addKeyListener(this);
+		this.setVisible(true);
+	}
+
+	@Override
+	public String getPuerto() {
+		return this.puertoText.getText();
+	}
+
+	@Override
+	public void modificarIP(String ip) {
+		this.ipLabel.setText("IP: " + ip  );
+	}
+
+	@Override
+	public void addActionListener(ActionListener a) {
+		this.iniciarSesionBoton.addActionListener(a);
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	    if (this.puertoText.getText().length()>0) {
+	    	this.iniciarSesionBoton.setEnabled(true);
+	    }
+	    else {
+	    	this.iniciarSesionBoton.setEnabled(false);
+	    }
+	    
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+	
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
 	}
 
 }

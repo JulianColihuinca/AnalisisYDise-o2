@@ -51,10 +51,10 @@ public class VentanaUsuario extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel lblNewLabel = new JLabel("IP: 1.333.666.1");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel.add(lblNewLabel);
+		JLabel ipLabel = new JLabel("IP: 1.333.666.1");
+		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		ipLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel.add(ipLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Puerto: 2366");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);

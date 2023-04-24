@@ -1,19 +1,21 @@
 package Vistas;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.JTextField;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
-public class VentanaUsuario extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import Interfaces.IVentanaUsuario;
+
+public class VentanaUsuario extends JFrame implements IVentanaUsuario{
 
 	private JPanel contentPane;
 	private JTextField ipTexto;
@@ -109,6 +111,28 @@ public class VentanaUsuario extends JFrame {
 		this.atenderBoton.setActionCommand("Atender Llamada");
 		this.comenzarChatBoton.setActionCommand("Comenzar Chat");
 		this.rechazarBoton.setActionCommand("Rechazar Llamada");
+		
+		this.setVisible(true);
+	}
+
+	@Override
+	public void addActionListener(ActionListener a) {
+		this.atenderBoton.addActionListener(a);
+		this.comenzarChatBoton.addActionListener(a);
+		this.rechazarBoton.addActionListener(a);
+		
+	}
+
+	@Override
+	public String getIP() {
+		String ip=this.ipTexto.getText();
+		return ip;
+	}
+
+	@Override
+	public String getPuerto() {
+		String puerto=this.puertoIP.getText();
+		return puerto;
 	}
 
 }

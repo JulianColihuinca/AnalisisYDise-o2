@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import Interfaces.IVentanaUsuario;
 import Main.Llamada;
+import Main.RespuestaLlamada;
 
 public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 
@@ -151,21 +152,42 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 	}
 
 	
-	//-----------------------------ESTE UPDATE ES PARA RECIBIR LA LLAMADA
+	//-----------------------------ESTE UPDATE ES PARA RECIBIR LA LLAMADA Y LA CONTESTACION NEGATIVA
 	@Override
 	public void update(Observable o, Object arg) {
-		Llamada llamada=(Llamada)arg;
+		System.out.println("ESTOY EN METODO UPDATE VENTANA USUARIO");
+		if(arg instanceof RespuestaLlamada) {
+			System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
+			RespuestaLlamada respuesta=(RespuestaLlamada)arg;
+			if(!respuesta.isRespuesta()) { //SI NO ME ATENDIERON
+				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
+				
+				//REVISAR PORQUE NO FUNCIONAN LAS SIGUIENTES CUATRO LINEAS DE CODIGO
+				
+				this.notificacionLlamada.setText("");
+				this.atenderBoton.setEnabled(false);
+				this.rechazarBoton.setEnabled(false);
+				this.comenzarChatBoton.setEnabled(true);
+				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
+			}// SI ME ATIENDEN PASO A VENTANA DEL CHAT DESDE EL CONSTRUCTOR
+				
+		}else if(arg instanceof Llamada) { //VERIFICO QUE RECIBA UNA LLAMADA
+			System.out.println("RECIBI UNA LLAMADA");
+			Llamada llamada=(Llamada)arg;
 		
-		String ip=llamada.getIPOrigen();
-		int puerto=llamada.getPuertoOrigen();
+			String ip=llamada.getIPOrigen();
+			int puerto=llamada.getPuertoOrigen();
 		
-		String etiqueta="Tienes una llamada de IP: "+ip+", Puerto: "+puerto;
-		this.notificacionLlamada.setText(etiqueta);
+			String etiqueta="Tienes una llamada de IP: "+ip+", Puerto: "+puerto;
+			this.notificacionLlamada.setText(etiqueta);
 		
-		this.atenderBoton.setEnabled(true);
-		this.rechazarBoton.setEnabled(true);
+			this.atenderBoton.setEnabled(true);
+			this.rechazarBoton.setEnabled(true);
+			this.comenzarChatBoton.setEnabled(false);
+		} //TENGO QUE ENVIAR/RECIBIR UNA RESPUESTA -> EL ENVIO DESDE EL CONSTRUCTOR
 	}
 
+	
 	
 	
 	@Override

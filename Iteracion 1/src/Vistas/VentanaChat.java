@@ -1,4 +1,4 @@
-package Vista;
+package Vistas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -19,6 +19,9 @@ public class VentanaChat extends JFrame {
 
 	private JPanel contentPane;
 
+	private JButton finalizarChatBoton,enviarBoton;
+	private JTextArea mensajeTA,conversacionTA;
+	private JLabel modoLabel,ip1Label ,puerto1Label,ip2Label ,puerto2Label;
 	/**
 	 * Launch the application.
 	 */
@@ -54,33 +57,33 @@ public class VentanaChat extends JFrame {
 		JPanel panel_4 = new JPanel();
 		panel.add(panel_4);
 		
-		JLabel lblNewLabel_4 = new JLabel("Modo: ");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_4.add(lblNewLabel_4);
+		modoLabel = new JLabel("Modo: ");
+		modoLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_4.add(modoLabel);
 		
 		JPanel panel_5 = new JPanel();
 		panel.add(panel_5);
 		panel_5.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel lblNewLabel = new JLabel("IP1: 1.411.333.6");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_5.add(lblNewLabel);
+		ip1Label = new JLabel("IP1: 1.411.333.6");
+		ip1Label.setHorizontalAlignment(SwingConstants.CENTER);
+		ip1Label.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_5.add(ip1Label);
 		
-		JLabel lblNewLabel_1 = new JLabel("Puerto1: 1222");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_5.add(lblNewLabel_1);
+		puerto1Label = new JLabel("Puerto1: 1222");
+		puerto1Label.setHorizontalAlignment(SwingConstants.CENTER);
+		puerto1Label.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_5.add(puerto1Label);
 		
-		JLabel lblNewLabel_2 = new JLabel("IP2: 1.411.333.6");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_5.add(lblNewLabel_2);
+		ip2Label = new JLabel("IP2: 1.411.333.6");
+		ip2Label.setHorizontalAlignment(SwingConstants.CENTER);
+		ip2Label.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_5.add(ip2Label);
 		
-		JLabel lblNewLabel_3 = new JLabel("Puerto2:1223");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_5.add(lblNewLabel_3);
+		puerto2Label = new JLabel("Puerto2:1223");
+		puerto2Label.setHorizontalAlignment(SwingConstants.CENTER);
+		puerto2Label.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_5.add(puerto2Label);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
@@ -88,10 +91,10 @@ public class VentanaChat extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		panel_1.add(scrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
-		textArea.setColumns(45);
-		textArea.setRows(10);
+		 conversacionTA = new JTextArea();
+		scrollPane.setViewportView(conversacionTA);
+		conversacionTA.setColumns(45);
+		conversacionTA.setRows(10);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
@@ -100,22 +103,25 @@ public class VentanaChat extends JFrame {
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel_2.add(scrollPane_1);
 		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setToolTipText("");
-		scrollPane_1.setViewportView(textArea_1);
-		textArea_1.setRows(3);
-		textArea_1.setColumns(45);
+		mensajeTA = new JTextArea();
+		mensajeTA.setToolTipText("");
+		scrollPane_1.setViewportView(mensajeTA);
+		mensajeTA.setRows(3);
+		mensajeTA.setColumns(45);
 		
 		JPanel panel_3 = new JPanel();
 		panel_2.add(panel_3);
 		
-		JButton btnNewButton = new JButton("Enviar Mensaje");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_3.add(btnNewButton);
+		enviarBoton = new JButton("Enviar Mensaje");
+		enviarBoton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_3.add(enviarBoton);
 		
-		JButton btnNewButton_1 = new JButton("Finalizar Chat");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		panel_3.add(btnNewButton_1);
+		finalizarChatBoton = new JButton("Finalizar Chat");
+		finalizarChatBoton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_3.add(finalizarChatBoton);
+		
+		this.enviarBoton.setActionCommand("Enviar Mensaje");
+		this.finalizarChatBoton.setActionCommand("Finalizar Chat");
 	}
 
 }

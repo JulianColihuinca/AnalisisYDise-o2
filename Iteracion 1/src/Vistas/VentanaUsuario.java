@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,14 +16,17 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Interfaces.IVentanaUsuario;
+import Main.Llamada;
 
-public class VentanaUsuario extends JFrame implements IVentanaUsuario{
+public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 
 	private JPanel contentPane;
 	private JTextField ipTexto;
 	private JTextField puertoIP;
     private JButton comenzarChatBoton,atenderBoton,rechazarBoton;
     private JLabel notificacionLlamada;
+    private JLabel ipLabel;
+    private JLabel puertoLabel;
 	/**
 	 * Launch the application.
 	 */
@@ -54,12 +59,12 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario{
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel ipLabel = new JLabel("IP: 1.333.666.1");
+		ipLabel = new JLabel("IP: ");
 		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		ipLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel.add(ipLabel);
 		
-		JLabel puertoLabel = new JLabel("Puerto: 2366");
+		puertoLabel = new JLabel("Puerto: ");
 		puertoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		puertoLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel.add(puertoLabel);
@@ -94,7 +99,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario{
 		contentPane.add(panel_3);
 		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
 		
-		notificacionLlamada = new JLabel("Tienes una llamada de IP:1.121.212.5, Puerto:1233");
+		notificacionLlamada = new JLabel("");
 		notificacionLlamada.setHorizontalAlignment(SwingConstants.CENTER);
 		notificacionLlamada.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_3.add(notificacionLlamada);
@@ -111,6 +116,10 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario{
 		this.atenderBoton.setActionCommand("Atender Llamada");
 		this.comenzarChatBoton.setActionCommand("Comenzar Chat");
 		this.rechazarBoton.setActionCommand("Rechazar Llamada");
+		
+		this.atenderBoton.setEnabled(false);
+		this.rechazarBoton.setEnabled(false);
+		
 		
 		this.setVisible(true);
 	}
@@ -133,6 +142,36 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario{
 	public String getPuerto() {
 		String puerto=this.puertoIP.getText();
 		return puerto;
+	}
+
+	@Override
+	public void actualizarDatos(String ip,int puerto) {
+		this.ipLabel.setText("IP: "+ip);	
+		this.puertoLabel.setText("PUERTO: "+puerto);
+	}
+
+	
+	//-----------------------------ESTE UPDATE ES PARA RECIBIR LA LLAMADA
+	@Override
+	public void update(Observable o, Object arg) {
+		Llamada llamada=(Llamada)arg;
+		
+		String ip=llamada.getIPOrigen();
+		int puerto=llamada.getPuertoOrigen();
+		
+		String etiqueta="Tienes una llamada de IP: "+ip+", Puerto: "+puerto;
+		this.notificacionLlamada.setText(etiqueta);
+		
+		this.atenderBoton.setEnabled(true);
+		this.rechazarBoton.setEnabled(true);
+	}
+
+	
+	
+	@Override
+	public JFrame addObserver() {
+		// TODO Auto-generated method stub
+		return this;
 	}
 
 }

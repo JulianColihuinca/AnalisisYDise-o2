@@ -36,7 +36,7 @@ public class ControladorInicioSesion implements ActionListener {
 					
 					UsuarioServidor usuario=new UsuarioServidor(puerto);
 					
-					ControladorUsuario controladorUsuario=new ControladorUsuario();
+					ControladorUsuario controladorUsuario=new ControladorUsuario(usuario);
 					
 					
 				}else 

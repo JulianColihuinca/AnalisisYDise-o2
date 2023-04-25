@@ -1,13 +1,12 @@
 package Main;
 
-import java.io.DataInputStream;
 import java.io.IOException;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
+import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Observable;
 
-public class UsuarioServidor implements Runnable{
+public class UsuarioServidor extends Observable implements Runnable{
 	private int puerto;
 	private ServerSocket servidor;
 	
@@ -17,12 +16,18 @@ public class UsuarioServidor implements Runnable{
 		this.servidor=new ServerSocket(puerto);
 	}
 
-	
+	public int getPuerto() {
+		return this.puerto;
+		
+	}
+	public ServerSocket getServidor() {
+		return this.servidor;
+	}
 	
 	@Override
 	public void run() {
 		Socket sc = null;
-        DataInputStream in;
+        ObjectInputStream in;
 
         try {
             
@@ -36,16 +41,24 @@ public class UsuarioServidor implements Runnable{
                 sc = servidor.accept();
 
                 System.out.println("Cliente conectado");
-                in = new DataInputStream(sc.getInputStream());
-               
-                //Leo el mensaje que me envia
-                String mensaje = in.readUTF();
-
-                System.out.println(mensaje);
-                /*
+                in = new ObjectInputStream(sc.getInputStream());
+                
+                Object o;
+				
+				o =in.readObject();
+				
+                //------------------Leo el mensaje que me envia o llamada
+				
+                if(o instanceof Llamada) {//ES LLAMADA
+                	System.out.println("SERVIDOR RECIBE LLAMADA");
+                }else if(o instanceof String){//ES MENSAJE
+                	String mensaje = in.readUTF();
+                	System.out.println(mensaje);
+                }
+                
                 this.setChanged();
-                this.notifyObservers(mensaje);
-                this.clearChanged();*/
+                this.notifyObservers(o);
+                this.clearChanged();
                 
                 //Cierro el socket
                 sc.close();
@@ -55,7 +68,10 @@ public class UsuarioServidor implements Runnable{
 
         } catch (IOException ex) {
             //Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

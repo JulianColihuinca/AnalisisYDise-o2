@@ -3,12 +3,12 @@ package Controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Interfaces.IVentanaUsuario;
+import Interfaces.UIUsuario;
 import Vistas.VentanaUsuario;
 
 public class ControladorUsuario implements ActionListener {
 	
-	private IVentanaUsuario vista;
+	private UIUsuario vista;
 	
 	public ControladorUsuario() {
 		this.vista=new VentanaUsuario();

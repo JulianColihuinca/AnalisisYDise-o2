@@ -2,7 +2,7 @@ package Interfaces;
 
 import java.awt.event.ActionListener;
 
-public interface IVentanaUsuario {
+public interface UIUsuario {
 	
 	void addActionListener(ActionListener a);
 	String getIP();

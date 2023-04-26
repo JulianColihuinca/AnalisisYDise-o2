@@ -13,9 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Interfaces.IVentanaUsuario;
+import Interfaces.UIUsuario;
 
-public class VentanaUsuario extends JFrame implements IVentanaUsuario{
+public class VentanaUsuario extends JFrame implements UIUsuario{
 
 	private JPanel contentPane;
 	private JTextField ipTexto;

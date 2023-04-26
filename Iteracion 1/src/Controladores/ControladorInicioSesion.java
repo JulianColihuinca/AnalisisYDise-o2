@@ -3,8 +3,9 @@ package Controladores;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Conexion.Conexion;
+
 import Interfaces.UIInicioSesion;
+import Modelos.Conexion;
 import Vistas.VentanaInicioSesion;
 
 public class ControladorInicioSesion implements ActionListener {

@@ -1,10 +1,12 @@
-package Conexion;
+package Modelos;
 
+import java.io.IOException;
 import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.UnknownHostException;
 
 public class Conexion {
-	
+
 	public static String getIP() {
 		String ip="";
 		InetAddress adress;
@@ -18,6 +20,16 @@ public class Conexion {
 		return ip;
 	}
 	
-	
+	public static boolean puertoDisponible(int puerto) {
 
+		try {
+			ServerSocket s=new ServerSocket(puerto);
+			s.close();
+			return true;
+		} catch (IOException e) {
+			
+			return false;
+		}
+	}
+	
 }

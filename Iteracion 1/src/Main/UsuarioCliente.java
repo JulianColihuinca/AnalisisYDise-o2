@@ -30,7 +30,7 @@ public class UsuarioCliente implements Runnable {
 		this.puerto = puerto;
 		this.mensaje = mensaje;
 	}
-  //CONSTRUCTOR USADO PARA MANDAR RESPUESTA A LLAMADA ENTRANTE
+    //CONSTRUCTOR USADO PARA MANDAR RESPUESTA A LLAMADA ENTRANTE
     public UsuarioCliente(int puerto, RespuestaLlamada res) {
 		this.puerto = puerto;
 		this.respuesta = res;

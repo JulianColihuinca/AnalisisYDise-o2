@@ -12,5 +12,7 @@ public interface IVentanaUsuario {
 	void actualizarDatos(String ip,int puerto);
 	
 	JFrame addObserver();
+	
+	void rechazarLlamada();
 
 }

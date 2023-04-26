@@ -43,6 +43,8 @@ public class ControladorUsuario implements ActionListener {
 			
 		}//--------------------------------------RECHAZO LA LLAMADA ENTRANTE------------------------------------
 		else if (command.equalsIgnoreCase("Rechazar Llamada")) {
+			//OCULTO LA PARTE DONDE RECIBI LA LLAMADA
+			this.vista.rechazarLlamada();
 			
 			//CREO UNA RESPUESTA A LA LLAMADA CON LA LLAMADA RECIBIDA Y CON UN BOOLEAN FALSE 
 			RespuestaLlamada respuesta=new RespuestaLlamada(this.usuario.getLlamada(),false);
@@ -51,6 +53,8 @@ public class ControladorUsuario implements ActionListener {
 			UsuarioCliente c = new UsuarioCliente(respuesta.getPuertoOrigen(),respuesta);//para un futuro agregar ip
 			Thread t = new Thread(c);
 	        t.start();
+	        
+	        
 			
 		}//---------------------------------------SOLICITO COMENZAR UN CHAT------------------------------------------
 		else if (command.equalsIgnoreCase("Comenzar Chat")) {

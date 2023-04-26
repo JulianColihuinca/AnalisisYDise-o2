@@ -162,14 +162,17 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 			if(!respuesta.isRespuesta()) { //SI NO ME ATENDIERON
 				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
 				
-				//REVISAR PORQUE NO FUNCIONAN LAS SIGUIENTES CUATRO LINEAS DE CODIGO
+				//DEBERIA ASIGNAR AL USUARIO LLAMADA=NULL
 				
-				this.notificacionLlamada.setText("");
-				this.atenderBoton.setEnabled(false);
-				this.rechazarBoton.setEnabled(false);
-				this.comenzarChatBoton.setEnabled(true);
-				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
-			}// SI ME ATIENDEN PASO A VENTANA DEL CHAT DESDE EL CONTROLADOR
+				
+				
+			}else {
+				this.setVisible(false);
+				//DEBERIA CREAR UN CONTROLADOR CHAT PERO NO DEBERIA HACERLO DESDE LA VENTAN
+				//POSIBLE SOLUCION---> HACER QUE EL OBSERVER SEA EL CONSTRUCTOR Y QUE AHI ANALIZE QUE ES LO QUE LLEGA
+				//DEPENDIENDO LO QUE SEA QUE LLAME A METODOS DE LA VENTANA PARA QUE REALICE LO YA IMPLEMENTADO EN ESTE
+				//UPDATE
+			}
 		
 		//-----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------	
 		}else if(arg instanceof Llamada) { 
@@ -193,8 +196,13 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 		//SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
 	}
 
-	
-	
+	@Override
+	public void rechazarLlamada() {
+		this.notificacionLlamada.setText("");
+		this.atenderBoton.setEnabled(false);
+		this.rechazarBoton.setEnabled(false);
+		this.comenzarChatBoton.setEnabled(true);
+	}
 	
 	@Override
 	public JFrame addObserver() {

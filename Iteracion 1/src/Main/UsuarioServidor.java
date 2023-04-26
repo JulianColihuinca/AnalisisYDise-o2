@@ -11,9 +11,18 @@ public class UsuarioServidor extends Observable implements Runnable{
 	private ServerSocket servidor;
 	private Llamada llamada=null;
 	private RespuestaLlamada respuesta=null;
+	private String modo;
+	/*
+	 	TRES MODOS POSIBLES:
+	 	1) ESCUCHA -> MODO POR DEFECTO, PUEDE RECIBIR LLAMDAS E INICIARLAS
+	 	2) LLAMANDO -> MODO CUANDO INICIA LLAMADA, NO PUEDE RECIBIR LLAMAS HASTA QUE LE CONTESTEN
+	 	3) CHAT -> MODO CUANDO SE ENCUENTRA EN UN CHAT
+	 */
+	
 	
 	public UsuarioServidor(int puerto) throws IOException{
 		this.puerto=puerto;
+		this.modo="ESCUCHA";
 		this.servidor=new ServerSocket(puerto); //SE CREA EL SOCKET DEL SERVIDOR
 	}
 
@@ -38,14 +47,15 @@ public class UsuarioServidor extends Observable implements Runnable{
 	public void run() {
 		Socket sc = null;
         ObjectInputStream in;
-
+        boolean cond;
         try {
             
             //System.out.println("Servidor iniciado");
 
             //SIEMPRE QUEDA ESCUCHANDO PETICIONES
             while (true) {
-
+            	cond=true;
+            	
                 //ESPERA A QUE UN CLIENTE SE CONECTE
                 sc = servidor.accept();
 
@@ -58,31 +68,40 @@ public class UsuarioServidor extends Observable implements Runnable{
 				
                 //SE LEYO EL OBJETO PASADO POR EL CLIENTE
 				//ESTE SABEMOS QUE ES DE TIPO LLAMADA O RESPPUESTALLAMADA ESTANDO EN LA VENTANA USUARIO
-				//O DE TIPO STRING MENSAJE ESTANDO EN LA VENTANA CHAT
+				//O DE TIPO STRING = MENSAJE ESTANDO EN LA VENTANA CHAT
 				
 				
-				//ESTOS IF CREO QUE SON INNECESARIOS 
+				
 				if(o instanceof RespuestaLlamada) {//ES RESPUESTA A UNA LLAMADA
-					System.out.println("SERVIDOR RECIBE RESPUESTA A LLAMADA");
-                	System.out.println("-----------------------------------------\nYO PUERTO: "+
-					this.puerto+" RECIBO CANCELACION DE MI LLAMADA\n-----------------------");
                 	this.respuesta=(RespuestaLlamada) o;
 				}else if(o instanceof Llamada) {//ES LLAMADA
                 	System.out.println("SERVIDOR RECIBE LLAMADA");
-                	
-                	this.llamada=(Llamada) o;
+                	//SI NO TIENE NINGUNA LLAMADA ESPERANDO RESPUESTA Y ESTA EN MODO ESCUCHA
+                	if(this.llamada==null && this.modo.equals("ESCUCHA"))
+                		this.llamada=(Llamada) o;
+                	else
+                		cond=false;
                 	
                 }else if(o instanceof String){//ES MENSAJE
                 	String mensaje = in.readUTF();
                 	System.out.println(mensaje);
                 }
 				
+                if(cond) {  //SI LA CONDICION ES FALSA EL USUARIO NO PUEDE RECIBIR UNA LLAMADA, O PORQUE TIENE UNA
+                			//O PORQUE INICIO UNA
+                	//SE NOTIFICAN A LOS OBSERVERS QUE ALGO PASO
+                	this.setChanged();
+                	this.notifyObservers(o);
+                	this.clearChanged();
+                }else {
+                	
                 
-				//SE NOTIFICAN A LOS OBSERVERS QUE ALGO PASO
-                this.setChanged();
-                this.notifyObservers(o);
-                this.clearChanged();
-                
+                	//COMO EL USUARIO NO PUEDE RECIBIR LA LLAMADA, MANDA UNA RESPUESTA NEGATIVA AL EMISOR
+                	Llamada llamada=(Llamada)o;
+                	UsuarioCliente cliente=new UsuarioCliente(llamada.getPuertoOrigen(),new RespuestaLlamada(llamada,false));
+                	Thread t = new Thread(cliente);
+            		t.start();
+                }
                 //CIERRO EL SOCKET DONDE SE CONECTO EL CLIENTE
                 sc.close();
                 //System.out.println("Cliente desconectado");
@@ -99,5 +118,20 @@ public class UsuarioServidor extends Observable implements Runnable{
 	}
 	
 	
+	public void setModoEscucha() {
+		this.modo="ESCUCHA";
+	}
+	
+	public void setModoLlamando() {
+		this.modo="LLAMANDO";
+	}
+	
+	public void setModoChat() {
+		this.modo="CHAT";
+	}
+	
+	public String getModo() {
+		return this.modo;
+	}
 
 }

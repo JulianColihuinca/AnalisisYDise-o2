@@ -45,35 +45,44 @@ public class ControladorUsuario implements ActionListener, Observer {
 			ControladorChat controladorChat= new ControladorChat();//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
 																   //USUARIO QUE ATIENDE LA LLAMADA
 			
+			this.usuario.setModoChat();
+			this.usuario.setLlamada(null);// SE ATENDIO LA LLAMADA, YA ESTOY EN MODO CHAT
 		} // --------------------------------------RECHAZO LA LLAMADA ENTRANTE------------------------------------
 		else if (command.equalsIgnoreCase("Rechazar Llamada")) {
 			// OCULTO LA PARTE DONDE RECIBI LA LLAMADA
 			this.vista.llamadaRechazada();
 
 			this.enviarRespuesta(false);
+			this.usuario.setLlamada(null);
 
 		} // ---------------------------------------SOLICITO COMENZAR UN CHAT------------------------------------------
 		else if (command.equalsIgnoreCase("Comenzar Chat")) {
 
 			int puerto;
 			String ip;
+			
 			try {
-				// VERIFICO QUE ESTEN BIEN INGRESADO EL PUERTO, FALTA VERIFICAR IP
-				puerto = Integer.parseInt(this.vista.getPuerto());
-				ip = this.vista.getIP();
+				//SOLO INICIA UN LLAMADO SI NO TIENE UNO QUE RESPONDER Y SI NO ESPERA RESPUESTA DE OTRO LLAMADO
+				if(this.usuario.getLlamada()==null && this.usuario.getModo().equals("ESCUCHA")) {				
+					// VERIFICO QUE ESTEN BIEN INGRESADO EL PUERTO, FALTA VERIFICAR IP
+					puerto = Integer.parseInt(this.vista.getPuerto());
+					ip = this.vista.getIP();
 
-				// CREO UNA LLAMADA CON EL PUERTO DEL USUARIO ORIGEN, FALTA INCLUIR IP ESPECIFICA
-				Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP());
-
-				// System.out.println("---------------------------------------------------------\n
-				// Puerto Origen del Llamado:
-				// "+llamada.getPuertoOrigen()+"\n--------------------------------------------------------");
-
-				// CREO UN USUARIO CLIENTE QUE ENVIA LA LLAMADA AL PUERTO DESTINO Y EJECUTO EL HILO
-				UsuarioCliente c = new UsuarioCliente(puerto, llamada);
-				Thread t = new Thread(c);
-				t.start();
-
+					// CREO UNA LLAMADA CON EL PUERTO DEL USUARIO ORIGEN, FALTA INCLUIR IP ESPECIFICA
+					Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP());
+				
+					
+					//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
+					//MIENTRAS ESPERA QUE LE CONTESTEN
+					
+					this.usuario.setModoLlamando();
+				
+				
+					// CREO UN USUARIO CLIENTE QUE ENVIA LA LLAMADA AL PUERTO DESTINO Y EJECUTO EL HILO
+					UsuarioCliente c = new UsuarioCliente(puerto, llamada);
+					Thread t = new Thread(c);
+					t.start();
+				}
 			} catch (NumberFormatException ex) {
 				System.out.println("Formato puerto mal ingresado,ingrese numero entero");
 			}
@@ -93,7 +102,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 			if (!respuesta.isRespuesta()) { // SI NO ME ATENDIERON
 				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
 
-				this.usuario.setLlamada(null);
+				//this.usuario.setLlamada(null); EL USUARIO QUE LLAMA YA TIENE NULL EN LLAMADA
+				this.usuario.setModoEscucha();//VUELVE A MODO ESCUCHA
 				this.vista.llamadaRechazada();
 
 			} else {
@@ -104,7 +114,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 				//CREAR CONTROLADOR DE LA VENTANA CHAT
 				ControladorChat controladorChat= new ControladorChat();//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
 				   													   //USUARIO QUE SOLICITO INICIAR LA LLAMADA
-				
+				this.usuario.setModoChat(); //PASA A MODO CHAT
 			}
 
 			// -----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------
@@ -117,6 +127,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 
 			this.vista.recibirLlamada(ip, puerto);
 			
+			this.usuario.setLlamada(llamada);
 		}
 
 		// SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA

@@ -2,20 +2,21 @@ package Vistas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
-import javax.swing.JButton;
+import java.awt.GridLayout;
 
-public class VentanaChat extends JFrame {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import Interfaces.IVentanaChat;
+
+public class VentanaChat extends JFrame implements IVentanaChat{
 
 	private JPanel contentPane;
 
@@ -122,6 +123,14 @@ public class VentanaChat extends JFrame {
 		
 		this.enviarBoton.setActionCommand("Enviar Mensaje");
 		this.finalizarChatBoton.setActionCommand("Finalizar Chat");
+		
+		this.setVisible(true);
+	}
+
+	@Override
+	public String getMensaje() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

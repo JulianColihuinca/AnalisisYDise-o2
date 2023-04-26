@@ -19,15 +19,16 @@ import Interfaces.IVentanaUsuario;
 import Main.Llamada;
 import Main.RespuestaLlamada;
 
-public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
+public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
 	private JPanel contentPane;
 	private JTextField ipTexto;
 	private JTextField puertoIP;
-    private JButton comenzarChatBoton,atenderBoton,rechazarBoton;
-    private JLabel notificacionLlamada;
-    private JLabel ipLabel;
-    private JLabel puertoLabel;
+	private JButton comenzarChatBoton, atenderBoton, rechazarBoton;
+	private JLabel notificacionLlamada;
+	private JLabel ipLabel;
+	private JLabel puertoLabel;
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,73 +56,72 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
-		
+
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 2, 0, 0));
-		
+
 		ipLabel = new JLabel("IP: ");
 		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		ipLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel.add(ipLabel);
-		
+
 		puertoLabel = new JLabel("Puerto: ");
 		puertoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		puertoLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel.add(puertoLabel);
-		
+
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(2, 2, 0, 0));
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Ingrese IP:");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_2);
-		
+
 		ipTexto = new JTextField();
 		panel_1.add(ipTexto);
 		ipTexto.setColumns(10);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Ingrese Puerto:");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_3);
-		
+
 		puertoIP = new JTextField();
 		panel_1.add(puertoIP);
 		puertoIP.setColumns(10);
-		
+
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
-		
+
 		comenzarChatBoton = new JButton("Comenzar Chat");
 		panel_2.add(comenzarChatBoton);
-		
+
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);
 		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
-		
+
 		notificacionLlamada = new JLabel("");
 		notificacionLlamada.setHorizontalAlignment(SwingConstants.CENTER);
 		notificacionLlamada.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_3.add(notificacionLlamada);
-		
+
 		JPanel panel_4 = new JPanel();
 		panel_3.add(panel_4);
-		
+
 		atenderBoton = new JButton("Atender Llamada");
 		panel_4.add(atenderBoton);
-		
+
 		rechazarBoton = new JButton("Rechazar Llamada");
 		panel_4.add(rechazarBoton);
-		
+
 		this.atenderBoton.setActionCommand("Atender Llamada");
 		this.comenzarChatBoton.setActionCommand("Comenzar Chat");
 		this.rechazarBoton.setActionCommand("Rechazar Llamada");
-		
+
 		this.atenderBoton.setEnabled(false);
 		this.rechazarBoton.setEnabled(false);
-		
-		
+
 		this.setVisible(true);
 	}
 
@@ -130,84 +130,60 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 		this.atenderBoton.addActionListener(a);
 		this.comenzarChatBoton.addActionListener(a);
 		this.rechazarBoton.addActionListener(a);
-		
+
 	}
 
 	@Override
 	public String getIP() {
-		String ip=this.ipTexto.getText();
+		String ip = this.ipTexto.getText();
 		return ip;
 	}
 
 	@Override
 	public String getPuerto() {
-		String puerto=this.puertoIP.getText();
+		String puerto = this.puertoIP.getText();
 		return puerto;
 	}
 
 	@Override
-	public void actualizarDatos(String ip,int puerto) {
-		this.ipLabel.setText("IP: "+ip);	
-		this.puertoLabel.setText("PUERTO: "+puerto);
+	public void actualizarDatos(String ip, int puerto) {
+		this.ipLabel.setText("IP: " + ip);
+		this.puertoLabel.setText("PUERTO: " + puerto);
 	}
 
 	
-	//-----------------------------ESTE UPDATE ES PARA RECIBIR LA LLAMADA Y LA CONTESTACION NEGATIVA---------------------
+
 	@Override
-	public void update(Observable o, Object arg) {
-		//---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
-		if(arg instanceof RespuestaLlamada) {
-			System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
-			RespuestaLlamada respuesta=(RespuestaLlamada)arg;
-			if(!respuesta.isRespuesta()) { //SI NO ME ATENDIERON
-				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
-				
-				//DEBERIA ASIGNAR AL USUARIO LLAMADA=NULL
-				
-				
-				
-			}else {
-				this.setVisible(false);
-				//DEBERIA CREAR UN CONTROLADOR CHAT PERO NO DEBERIA HACERLO DESDE LA VENTAN
-				//POSIBLE SOLUCION---> HACER QUE EL OBSERVER SEA EL CONSTRUCTOR Y QUE AHI ANALIZE QUE ES LO QUE LLEGA
-				//DEPENDIENDO LO QUE SEA QUE LLAME A METODOS DE LA VENTANA PARA QUE REALICE LO YA IMPLEMENTADO EN ESTE
-				//UPDATE
-			}
-		
-		//-----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------	
-		}else if(arg instanceof Llamada) { 
-			
-			Llamada llamada=(Llamada)arg;
-		
-			String ip=llamada.getIPOrigen();
-			int puerto=llamada.getPuertoOrigen();
-		
-			//ACTUALIZO PARTE DE LA VENTANA PARA CONTESTAR O RECHAZAR LLAMADA
-			//AL RECIBIR LA LLAMADA SE BLOQUEA EL BOTON INICIAR CHAT HASTA QUE SE CONTESTE LA LLAMADA
-			String etiqueta="Tienes una llamada de IP: "+ip+", Puerto: "+puerto;
-			this.notificacionLlamada.setText(etiqueta);
-		
-			this.atenderBoton.setEnabled(true);
-			this.rechazarBoton.setEnabled(true);
-			this.comenzarChatBoton.setEnabled(false);
-			//EL ENVIO DE LA RESPUESTA SE HACE POR EL CONSTRUCTOR
-		}
-	
-		//SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
+	public JFrame addObserver() {
+		// TODO Auto-generated method stub
+		return this;
 	}
 
 	@Override
-	public void rechazarLlamada() {
+	public void llamadaRechazada() {
 		this.notificacionLlamada.setText("");
 		this.atenderBoton.setEnabled(false);
 		this.rechazarBoton.setEnabled(false);
 		this.comenzarChatBoton.setEnabled(true);
 	}
-	
+
 	@Override
-	public JFrame addObserver() {
-		// TODO Auto-generated method stub
-		return this;
+	public void recibirLlamada(String ip, int puerto) {
+		// ACTUALIZO PARTE DE LA VENTANA PARA CONTESTAR O RECHAZAR LLAMADA
+		// AL RECIBIR LA LLAMADA SE BLOQUEA EL BOTON INICIAR CHAT HASTA QUE SE CONTESTE
+		// LA LLAMADA
+		String etiqueta = "Tienes una llamada de IP: " + ip + ", Puerto: " + puerto;
+		this.notificacionLlamada.setText(etiqueta);
+
+		this.atenderBoton.setEnabled(true);
+		this.rechazarBoton.setEnabled(true);
+		this.comenzarChatBoton.setEnabled(false);
+	}
+
+	@Override
+	public void llamadaAceptada() {
+		this.setVisible(false);
+
 	}
 
 }

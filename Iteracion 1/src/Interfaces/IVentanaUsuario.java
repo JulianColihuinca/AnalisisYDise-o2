@@ -13,6 +13,8 @@ public interface IVentanaUsuario {
 	
 	JFrame addObserver();
 	
-	void rechazarLlamada();
+	void llamadaRechazada();
+	void recibirLlamada(String ip,int puerto);
+	void llamadaAceptada();
 
 }

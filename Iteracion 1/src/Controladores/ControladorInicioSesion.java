@@ -14,7 +14,7 @@ public class ControladorInicioSesion implements ActionListener {
 	private UIInicioSesion vista;
 	
 	
-	
+	//CUANDO SE INSTANCIA EL CONTROLADOR CREA LA VENTANA
 	public ControladorInicioSesion() {
 		this.vista= new VentanaInicioSesion();
 		this.vista.addActionListener(this);
@@ -26,14 +26,20 @@ public class ControladorInicioSesion implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command= e.getActionCommand();
+		
+		//SE PRESIONA BOTON INICIA SECION
 		if (command.equalsIgnoreCase("Iniciar Sesion")) {
 			int puerto;
 			try {
+				//SE VERIFICA QUE EL VALOR INGRESADO EN EL PUERTO SEA VALIDO
 				puerto=Integer.parseInt(this.vista.getPuerto());
+				
+				//SE VERIFICA QUE EL PUERTO INGRESADO ESTE DISPONIBLE
 				if(Conexion.puertoDisponible(puerto)) {
-					//PUERTO BIEN INGRESADO Y DISPONIBLE--------------------------------------------------------------
+					
 					System.out.println("InicioSesion en localhost y puerto: " + this.vista.getPuerto());
 					
+					//SE CREA UN USUARIO SERVIDOR CON ESTE PUERTO Y SE CREA UN CONTROLADOR DE LA VENTANA USUARIO
 					UsuarioServidor usuario=new UsuarioServidor(puerto);
 					
 					ControladorUsuario controladorUsuario=new ControladorUsuario(usuario);

@@ -82,7 +82,8 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 		this.iniciarSesionBoton.setActionCommand("Iniciar Sesion");
 		this.iniciarSesionBoton.setEnabled(false);
 		this.puertoText.addKeyListener(this);
-		this.setVisible(true);
+		
+		this.setVisible(true); //AL CREARSE LA VENTANA SE HACE VISIBLE
 	}
 
 	@Override

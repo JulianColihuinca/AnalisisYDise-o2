@@ -152,10 +152,10 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 	}
 
 	
-	//-----------------------------ESTE UPDATE ES PARA RECIBIR LA LLAMADA Y LA CONTESTACION NEGATIVA
+	//-----------------------------ESTE UPDATE ES PARA RECIBIR LA LLAMADA Y LA CONTESTACION NEGATIVA---------------------
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("ESTOY EN METODO UPDATE VENTANA USUARIO");
+		//---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
 		if(arg instanceof RespuestaLlamada) {
 			System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
 			RespuestaLlamada respuesta=(RespuestaLlamada)arg;
@@ -169,22 +169,28 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario, Observer{
 				this.rechazarBoton.setEnabled(false);
 				this.comenzarChatBoton.setEnabled(true);
 				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
-			}// SI ME ATIENDEN PASO A VENTANA DEL CHAT DESDE EL CONSTRUCTOR
-				
-		}else if(arg instanceof Llamada) { //VERIFICO QUE RECIBA UNA LLAMADA
-			System.out.println("RECIBI UNA LLAMADA");
+			}// SI ME ATIENDEN PASO A VENTANA DEL CHAT DESDE EL CONTROLADOR
+		
+		//-----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------	
+		}else if(arg instanceof Llamada) { 
+			
 			Llamada llamada=(Llamada)arg;
 		
 			String ip=llamada.getIPOrigen();
 			int puerto=llamada.getPuertoOrigen();
 		
+			//ACTUALIZO PARTE DE LA VENTANA PARA CONTESTAR O RECHAZAR LLAMADA
+			//AL RECIBIR LA LLAMADA SE BLOQUEA EL BOTON INICIAR CHAT HASTA QUE SE CONTESTE LA LLAMADA
 			String etiqueta="Tienes una llamada de IP: "+ip+", Puerto: "+puerto;
 			this.notificacionLlamada.setText(etiqueta);
 		
 			this.atenderBoton.setEnabled(true);
 			this.rechazarBoton.setEnabled(true);
 			this.comenzarChatBoton.setEnabled(false);
-		} //TENGO QUE ENVIAR/RECIBIR UNA RESPUESTA -> EL ENVIO DESDE EL CONSTRUCTOR
+			//EL ENVIO DE LA RESPUESTA SE HACE POR EL CONSTRUCTOR
+		}
+	
+		//SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
 	}
 
 	

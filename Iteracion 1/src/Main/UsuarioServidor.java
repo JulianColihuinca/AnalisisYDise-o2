@@ -14,8 +14,7 @@ public class UsuarioServidor extends Observable implements Runnable{
 	
 	public UsuarioServidor(int puerto) throws IOException{
 		this.puerto=puerto;
-		//Creamos el socket del servidor
-		this.servidor=new ServerSocket(puerto);
+		this.servidor=new ServerSocket(puerto); //SE CREA EL SOCKET DEL SERVIDOR
 	}
 
 	public int getPuerto() {
@@ -42,24 +41,27 @@ public class UsuarioServidor extends Observable implements Runnable{
 
         try {
             
-            System.out.println("Servidor iniciado");
+            //System.out.println("Servidor iniciado");
 
-            //Siempre estara escuchando peticiones
-            
+            //SIEMPRE QUEDA ESCUCHANDO PETICIONES
             while (true) {
 
-                //Espero a que un cliente se conecte
+                //ESPERA A QUE UN CLIENTE SE CONECTE
                 sc = servidor.accept();
 
-                System.out.println("Cliente conectado");
+                //System.out.println("Cliente conectado");
                 in = new ObjectInputStream(sc.getInputStream());
                 
                 Object o;
 				
 				o =in.readObject();
 				
-                //------------------Leo el mensaje que me envia o llamada
+                //SE LEYO EL OBJETO PASADO POR EL CLIENTE
+				//ESTE SABEMOS QUE ES DE TIPO LLAMADA O RESPPUESTALLAMADA ESTANDO EN LA VENTANA USUARIO
+				//O DE TIPO STRING MENSAJE ESTANDO EN LA VENTANA CHAT
 				
+				
+				//ESTOS IF CREO QUE SON INNECESARIOS 
 				if(o instanceof RespuestaLlamada) {//ES RESPUESTA A UNA LLAMADA
 					System.out.println("SERVIDOR RECIBE RESPUESTA A LLAMADA");
                 	System.out.println("-----------------------------------------\nYO PUERTO: "+
@@ -74,14 +76,16 @@ public class UsuarioServidor extends Observable implements Runnable{
                 	String mensaje = in.readUTF();
                 	System.out.println(mensaje);
                 }
+				
                 
+				//SE NOTIFICAN A LOS OBSERVERS QUE ALGO PASO
                 this.setChanged();
                 this.notifyObservers(o);
                 this.clearChanged();
                 
-                //Cierro el socket
+                //CIERRO EL SOCKET DONDE SE CONECTO EL CLIENTE
                 sc.close();
-                System.out.println("Cliente desconectado");
+                //System.out.println("Cliente desconectado");
 
             }
 

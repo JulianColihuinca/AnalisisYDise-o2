@@ -25,6 +25,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 
 		this.vista.actualizarDatos(Conexion.getIP(), this.usuario.getPuerto());
 
+		
 		// AL CREARSE ESTE CONTROLADOR CREA LA VENTANA USUARIO Y EJECUTA EL HILO DEL 	USUARIO PARA
 		// QUE QUEDE PENDIENTE A RECIBIR UNA LLAMADA
 		this.usuario.addObserver((Observer) this);
@@ -42,7 +43,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 			this.enviarRespuesta(true);
 			this.vista.llamadaAceptada(); //este metodo solo oculta la ventana usuario
 			
-			ControladorChat controladorChat= new ControladorChat();//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
+			ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),this.usuario.getLlamada().getPuertoOrigen(),
+					Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
 																   //USUARIO QUE ATIENDE LA LLAMADA
 			
 			this.usuario.setModoChat();
@@ -109,10 +111,11 @@ public class ControladorUsuario implements ActionListener, Observer {
 			} else {
 				System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
 				
-				this.vista.llamadaAceptada();
 				
+				this.vista.llamadaAceptada();
 				//CREAR CONTROLADOR DE LA VENTANA CHAT
-				ControladorChat controladorChat= new ControladorChat();//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
+				ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),
+						respuesta.getPuertoDestino(),Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
 				   													   //USUARIO QUE SOLICITO INICIAR LA LLAMADA
 				this.usuario.setModoChat(); //PASA A MODO CHAT
 			}
@@ -134,10 +137,16 @@ public class ControladorUsuario implements ActionListener, Observer {
 	}
 	
 	public void enviarRespuesta(boolean res) {
-		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res);
+		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res,this.usuario.getPuerto(),Conexion.getIP());
 		UsuarioCliente c = new UsuarioCliente(respuesta.getPuertoOrigen(), respuesta);// para un futuro agregar ip
 		Thread t = new Thread(c);
 		t.start();
 	}
 
+	public UsuarioServidor getUsuario() {
+		return this.usuario;
+	}
+	public IVentanaUsuario getVista() {
+		return this.vista;
+	}
 }

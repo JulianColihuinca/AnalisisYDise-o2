@@ -6,6 +6,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Observable;
 
+import Conexion.Conexion;
+
 public class UsuarioServidor extends Observable implements Runnable{
 	private int puerto;
 	private ServerSocket servidor;
@@ -84,9 +86,9 @@ public class UsuarioServidor extends Observable implements Runnable{
                 	else
                 		cond=false;
                 	
-                }else if(o instanceof String){//ES MENSAJE
-                	String mensaje = in.readUTF();
-                	System.out.println(mensaje);
+                }else if(o instanceof Mensaje){//ES MENSAJE
+                	Mensaje mensaje =(Mensaje) o;
+                	System.out.println("SERVIDOR USUARIO RECIBIO MENSAJE-> "+mensaje.getMensaje());
                 }
 				
                 if(cond) {  //SI LA CONDICION ES FALSA EL USUARIO NO PUEDE RECIBIR UNA LLAMADA, O PORQUE TIENE UNA
@@ -100,7 +102,7 @@ public class UsuarioServidor extends Observable implements Runnable{
                 
                 	//COMO EL USUARIO NO PUEDE RECIBIR LA LLAMADA, MANDA UNA RESPUESTA NEGATIVA AL EMISOR
                 	Llamada llamada=(Llamada)o;
-                	UsuarioCliente cliente=new UsuarioCliente(llamada.getPuertoOrigen(),new RespuestaLlamada(llamada,false));
+                	UsuarioCliente cliente=new UsuarioCliente(llamada.getPuertoOrigen(),new RespuestaLlamada(llamada,false,this.puerto,Conexion.getIP()));
                 	Thread t = new Thread(cliente);
             		t.start();
                 }

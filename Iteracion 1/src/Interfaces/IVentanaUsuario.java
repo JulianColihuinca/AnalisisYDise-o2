@@ -17,4 +17,5 @@ public interface IVentanaUsuario {
 	void recibirLlamada(String ip,int puerto);
 	void llamadaAceptada();
 
+	void setVisible(boolean res);
 }

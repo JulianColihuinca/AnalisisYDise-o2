@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -131,7 +132,27 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 	@Override
 	public String getMensaje() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.mensajeTA.getText();
+	}
+
+	@Override
+	public void addMensaje(String mensaje) {
+		
+		this.conversacionTA.append(mensaje);
+	}
+
+	@Override
+	public void addActionListener(ActionListener listener) {
+		this.enviarBoton.addActionListener(listener);
+		this.finalizarChatBoton.addActionListener(listener);
+		
+	}
+
+	@Override
+	public void tituloPuerto(String puerto) {
+	
+		this.modoLabel.setText(puerto);
+		
 	}
 
 }

@@ -13,7 +13,7 @@ public class UsuarioCliente implements Runnable {
 
     private int puerto;
     private Llamada llamada=null;
-    private String mensaje=null;
+    private Mensaje mensaje=null;
     private RespuestaLlamada respuesta=null;
     
 
@@ -26,15 +26,18 @@ public class UsuarioCliente implements Runnable {
     }
       
     //CONSTRUCTOR USADO PARA MANDAR MENSAJES
-    public UsuarioCliente(int puerto, String mensaje) {
+    public UsuarioCliente(int puerto, Mensaje mensaje) {
 		this.puerto = puerto;
 		this.mensaje = mensaje;
+		
 	}
     //CONSTRUCTOR USADO PARA MANDAR RESPUESTA A LLAMADA ENTRANTE
     public UsuarioCliente(int puerto, RespuestaLlamada res) {
 		this.puerto = puerto;
 		this.respuesta = res;
 	}
+    
+    
 
 
 
@@ -53,17 +56,19 @@ public class UsuarioCliente implements Runnable {
             out = new ObjectOutputStream(sc.getOutputStream());
             
             //---------------------------------Envio -----------------------------------
-            
+            System.out.println("TODAVIA NO SE ROMPIO");
             if(this.llamada==null) { 
-            	
+            	System.out.println("no recibi llamada");
             	if(this.mensaje==null) {//----> ENVIO RESPUESTA A PETICION DE LLAMADA
-            		
+            		System.out.println("no es mensaje");
             		out.writeObject(this.respuesta);
-            	}else
-            		out.writeUTF(this.mensaje);//----> ENVIO MENSAJE
+            	}else {
+            		System.out.println("intento enviar mensaje");
+            		out.writeObject(this.mensaje);//----> ENVIO MENSAJE
             	
+            	}
             }else {//----> ENVIO SOLICITUD DE LLAMADA
-            	
+            	System.out.println("es llamada");
             	out.writeObject(this.llamada);
             	
             }

@@ -79,8 +79,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 				
 				
 					// CREO UN USUARIO CLIENTE QUE ENVIA LA LLAMADA AL PUERTO DESTINO Y EJECUTO EL HILO
-					UsuarioCliente c = new UsuarioCliente(puerto, llamada);
-					Thread t = new Thread(c);
+					UsuarioCliente c = new UsuarioCliente(puerto, llamada);//***********************************************
+					Thread t = new Thread(c);//*************************************************************************
 					t.start();
 				}
 			} catch (NumberFormatException ex) {

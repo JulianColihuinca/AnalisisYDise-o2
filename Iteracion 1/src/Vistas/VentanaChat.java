@@ -92,10 +92,11 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 		JScrollPane scrollPane = new JScrollPane();
 		panel_1.add(scrollPane);
 		
-		 conversacionTA = new JTextArea();
+		conversacionTA = new JTextArea();
 		scrollPane.setViewportView(conversacionTA);
 		conversacionTA.setColumns(45);
 		conversacionTA.setRows(10);
+		conversacionTA.setEditable(false);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);

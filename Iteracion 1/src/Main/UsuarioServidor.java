@@ -57,9 +57,11 @@ public class UsuarioServidor extends Observable implements Runnable{
             	cond=true;
             	
                 //ESPERA A QUE UN CLIENTE SE CONECTE
+            	System.out.println("----------------CREO UN USUARIO SERVIDOR, ESPERA A QUE SE CONECTE ALGUIEN-----------------------------------");
                 sc = servidor.accept();
 
-                //System.out.println("Cliente conectado");
+                System.out.println("----------------ALGUIEN SE CONECTO-----------------------------------");
+                
                 in = new ObjectInputStream(sc.getInputStream());
                 
                 Object o;

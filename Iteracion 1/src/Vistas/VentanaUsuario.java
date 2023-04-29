@@ -16,8 +16,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Interfaces.IVentanaUsuario;
-import Main.Llamada;
-import Main.RespuestaLlamada;
+import Modelo.Llamada;
+import Modelo.RespuestaLlamada;
 
 public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 

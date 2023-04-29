@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import Conexion.Conexion;
 import Interfaces.UIInicioSesion;
-import Main.UsuarioServidor;
+import Modelo.UsuarioServidor;
 import Vistas.VentanaInicioSesion;
 
 public class ControladorInicioSesion implements ActionListener {

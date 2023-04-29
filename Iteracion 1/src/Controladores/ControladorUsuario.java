@@ -7,10 +7,10 @@ import java.util.Observer;
 
 import Conexion.Conexion;
 import Interfaces.IVentanaUsuario;
-import Main.Llamada;
-import Main.RespuestaLlamada;
-import Main.UsuarioCliente;
-import Main.UsuarioServidor;
+import Modelo.Llamada;
+import Modelo.RespuestaLlamada;
+import Modelo.UsuarioCliente;
+import Modelo.UsuarioServidor;
 import Vistas.VentanaUsuario;
 
 public class ControladorUsuario implements ActionListener, Observer {

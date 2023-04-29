@@ -1,4 +1,4 @@
-package Main;
+package Modelo;
 
 public class RespuestaLlamada extends Llamada{
 	

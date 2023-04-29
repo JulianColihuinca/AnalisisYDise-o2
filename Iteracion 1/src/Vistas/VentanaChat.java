@@ -155,4 +155,15 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 		
 	}
 
+	@Override
+	public void actualizarEtiquetas(String ip1, int puerto1, String ip2, int puerto2) {
+		this.ip1Label.setText("IP1: "+ip1);
+		this.ip2Label.setText("IP2: "+ip2);
+		this.puerto1Label.setText("Puerto1: "+puerto1);
+		this.puerto2Label.setText("Puerto2: "+puerto2);
+		
+	}
+
+	
+
 }

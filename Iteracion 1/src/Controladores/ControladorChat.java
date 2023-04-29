@@ -6,9 +6,9 @@ import java.util.Observable;
 import java.util.Observer;
 
 import Interfaces.IVentanaChat;
-import Main.FinalizarLlamada;
-import Main.Mensaje;
-import Main.UsuarioCliente;
+import Modelo.FinalizarLlamada;
+import Modelo.Mensaje;
+import Modelo.UsuarioCliente;
 import Vistas.VentanaChat;
 
 public class ControladorChat implements ActionListener, Observer {
@@ -39,6 +39,7 @@ public class ControladorChat implements ActionListener, Observer {
 		this.vistaChat.tituloPuerto(this.consUsuario.getUsuario().getPuerto()+"");
 		System.out.println("el controlador chat de puerto: "+this.puertoOrigen+" observa al puerto: "+this.consUsuario.getUsuario().getPuerto());
 		this.consUsuario.getUsuario().addObserver(this);
+		this.vistaChat.actualizarEtiquetas(ipOrigen, puertoOrigen, ipDestino, puertoDestino);
 	}
 
 

@@ -36,8 +36,7 @@ public class ControladorChat implements ActionListener, Observer {
 		this.ipDestino = ipDestino;
 		
 		
-		this.vistaChat.tituloPuerto(this.consUsuario.getUsuario().getPuerto()+"");
-		System.out.println("el controlador chat de puerto: "+this.puertoOrigen+" observa al puerto: "+this.consUsuario.getUsuario().getPuerto());
+		this.vistaChat.tituloPuerto("MODO: CHAT");
 		this.consUsuario.getUsuario().addObserver(this);
 		this.vistaChat.actualizarEtiquetas(ipOrigen, puertoOrigen, ipDestino, puertoDestino);
 	}
@@ -55,10 +54,6 @@ public class ControladorChat implements ActionListener, Observer {
 			String mensajeCompleto="TU: "+mensaje+"\n";
 			this.vistaChat.addMensaje(mensajeCompleto);
 			
-			
-			//REVISAR PORQUE NO RECIVE MENSAJE
-			
-			System.out.println("MANDO MENSAJE A "+this.puertoDestino);
 			
 			UsuarioCliente c = new UsuarioCliente(this.puertoDestino, new Mensaje(mensaje,this.puertoOrigen));// para un futuro agregar ip
 			Thread t = new Thread(c);
@@ -81,7 +76,6 @@ public class ControladorChat implements ActionListener, Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// EN ESTA INSTANCIA SOLO DEBERIA RECIBIR UN MENSAJE PARA AGREGAR AL CHAT O LA FINALIZACION DEL CHAT
-		System.out.println("\n\n METODO UPDATE EN CONTROLADOR CHAT\n\n");
 		
 		if( arg instanceof Mensaje) {
 			Mensaje mensaje= (Mensaje) arg;

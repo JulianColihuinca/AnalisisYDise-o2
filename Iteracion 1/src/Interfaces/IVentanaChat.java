@@ -11,4 +11,5 @@ public interface IVentanaChat {
 	
 	void tituloPuerto(String puerto);
 	void actualizarEtiquetas(String ip1,int puerto1,String ip2,int puerto2);
+	
 }

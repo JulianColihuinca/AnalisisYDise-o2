@@ -119,6 +119,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 				   													   //USUARIO QUE SOLICITO INICIAR LA LLAMADA
 				this.usuario.setModoChat(); //PASA A MODO CHAT
 			}
+			
+			
 
 			// -----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------
 		} else if (arg instanceof Llamada) {

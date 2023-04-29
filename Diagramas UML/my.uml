@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_2H-5YNAAEe25upg2EKoYqg" name="NewModel">
+  <packageImport xmi:id="_yIh4QOZcEe2rsuTxebE4yA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_z85_8OZcEe2rsuTxebE4yA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
   <packagedElement xmi:type="uml:Component" xmi:id="_JDcd0NABEe25upg2EKoYqg" name="Logueo">
     <interfaceRealization xmi:id="_VdcgYNABEe25upg2EKoYqg" client="_JDcd0NABEe25upg2EKoYqg" supplier="_QOw1ANABEe25upg2EKoYqg" contract="_QOw1ANABEe25upg2EKoYqg"/>
     <interfaceRealization xmi:id="_skR5ENABEe25upg2EKoYqg" client="_JDcd0NABEe25upg2EKoYqg"/>
@@ -132,4 +138,171 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_lNGJgNV6Ee2aH489NeECiw" name="Finalizar Sesion Chat"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_xTq5wNV6Ee2aH489NeECiw" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_lNGJgNV6Ee2aH489NeECiw"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_mfmjwOZQEe2rsuTxebE4yA" name="NewModel"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_6X-cYOZQEe2rsuTxebE4yA" name="Package1"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-5KIkOZQEe2rsuTxebE4yA" name="Package2"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xAEKcOZTEe2rsuTxebE4yA" name="ControladorInicioSesion" visibility="public">
+    <ownedAttribute xmi:id="_9WJ9YOZTEe2rsuTxebE4yA" name="vistaInicioSesion" visibility="private" type="_OpftcOZUEe2rsuTxebE4yA"/>
+    <interfaceRealization xmi:id="_OHloUOZWEe2rsuTxebE4yA" client="_xAEKcOZTEe2rsuTxebE4yA" supplier="_1lpZAOZUEe2rsuTxebE4yA" contract="_1lpZAOZUEe2rsuTxebE4yA"/>
+    <ownedOperation xmi:id="_QkNJ0OZYEe2rsuTxebE4yA" name="ControladorInicioSesion"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_OpftcOZUEe2rsuTxebE4yA" name="UIInicioSesion"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_1lpZAOZUEe2rsuTxebE4yA" name="ActionListener" visibility="public">
+    <ownedOperation xmi:id="_6JO48OZUEe2rsuTxebE4yA" name="actionPerformed">
+      <ownedParameter xmi:id="_-CN8sOZUEe2rsuTxebE4yA" name="e" type="_KQ-_oOZVEe2rsuTxebE4yA"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_KQ-_oOZVEe2rsuTxebE4yA" name="ActionEvent"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RZUe0OZWEe2rsuTxebE4yA" name="ControladorChat" visibility="public">
+    <interfaceRealization xmi:id="_hz-6cOZWEe2rsuTxebE4yA" client="_RZUe0OZWEe2rsuTxebE4yA" supplier="_1lpZAOZUEe2rsuTxebE4yA" contract="_1lpZAOZUEe2rsuTxebE4yA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZNlsYOZWEe2rsuTxebE4yA" name="ControladorUsuario" visibility="public">
+    <interfaceRealization xmi:id="_hOGmMOZWEe2rsuTxebE4yA" client="_ZNlsYOZWEe2rsuTxebE4yA" supplier="_1lpZAOZUEe2rsuTxebE4yA" contract="_1lpZAOZUEe2rsuTxebE4yA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_ppdo8OZWEe2rsuTxebE4yA" name="UIInicioSesion" visibility="public">
+    <ownedOperation xmi:id="_G2NIkOZaEe2rsuTxebE4yA" name="getPuerto" visibility="public">
+      <ownedParameter xmi:id="_bEhUoOZdEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HOUtoOZaEe2rsuTxebE4yA" name="modificarIP">
+      <ownedParameter xmi:id="_OG350OZaEe2rsuTxebE4yA" name="ip" type="_QQ_A8OZaEe2rsuTxebE4yA"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_9qJosOZZEe2rsuTxebE4yA" client="_xAEKcOZTEe2rsuTxebE4yA" supplier="_ppdo8OZWEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_QQ_A8OZaEe2rsuTxebE4yA" name="String"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cPO7oOZaEe2rsuTxebE4yA" name="String" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jSwBsOZaEe2rsuTxebE4yA" name="void" isAbstract="true"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_vXp-AOZaEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:FunctionBehavior" xmi:id="__TzRoOZaEe2rsuTxebE4yA" name="String"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_OpCWQOZbEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_U8l_AOZbEe2rsuTxebE4yA" name="VentanaInicioSesion" visibility="public">
+    <interfaceRealization xmi:id="_oYNDIOZbEe2rsuTxebE4yA" client="_U8l_AOZbEe2rsuTxebE4yA" supplier="_ppdo8OZWEe2rsuTxebE4yA" contract="_ppdo8OZWEe2rsuTxebE4yA"/>
+    <ownedOperation xmi:id="_Z4bm4OZbEe2rsuTxebE4yA" name="getPuerto">
+      <ownedParameter xmi:id="_c2P7gOZeEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_aJYM8OZbEe2rsuTxebE4yA" name="modificarIP">
+      <ownedParameter xmi:id="_e_wtEOZbEe2rsuTxebE4yA" name="ip" type="_hupVMOZbEe2rsuTxebE4yA"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hupVMOZbEe2rsuTxebE4yA" name="String"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Ia4qkOZeEe2rsuTxebE4yA" name="void" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_or7wEOZeEe2rsuTxebE4yA" name="IVentanaUsuario" visibility="public">
+    <ownedOperation xmi:id="_xAoxMOZeEe2rsuTxebE4yA" name="getIP">
+      <ownedParameter xmi:id="_aJgL8OZfEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xSG7sOZeEe2rsuTxebE4yA" name="getPuerto">
+      <ownedParameter xmi:id="_ftYEMOZfEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xhxIUOZeEe2rsuTxebE4yA" name="actualizarDatos">
+      <ownedParameter xmi:id="_OBeqMOZfEe2rsuTxebE4yA" name="ip">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_SaR2cOZfEe2rsuTxebE4yA" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_x1hx0OZeEe2rsuTxebE4yA" name="llamadaRechazada"/>
+    <ownedOperation xmi:id="_0ixbMOZeEe2rsuTxebE4yA" name="llamadaAceptada"/>
+    <ownedOperation xmi:id="_00UeMOZeEe2rsuTxebE4yA" name="recibirLlamada">
+      <ownedParameter xmi:id="_pRT4kOZfEe2rsuTxebE4yA" name="ip">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_pqzWoOZfEe2rsuTxebE4yA" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5P1x0OZfEe2rsuTxebE4yA" client="_ZNlsYOZWEe2rsuTxebE4yA" supplier="_or7wEOZeEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_68L-4OZfEe2rsuTxebE4yA" name="VentanaUsuario" visibility="public">
+    <ownedOperation xmi:id="_-64pEOZfEe2rsuTxebE4yA" name="getIP">
+      <ownedParameter xmi:id="_-64pEeZfEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="__ebbAOZfEe2rsuTxebE4yA" name="getPuerto">
+      <ownedParameter xmi:id="__ebbAeZfEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_AArzgOZgEe2rsuTxebE4yA" name="actualizarDatos">
+      <ownedParameter xmi:id="_AArzgeZgEe2rsuTxebE4yA" name="ip">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_AArzguZgEe2rsuTxebE4yA" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_CbwHwOZgEe2rsuTxebE4yA" name="llamadaRechazada"/>
+    <ownedOperation xmi:id="_DEW_4OZgEe2rsuTxebE4yA" name="llamadaAceptada"/>
+    <ownedOperation xmi:id="_DtifwOZgEe2rsuTxebE4yA" name="recibirLlamada">
+      <ownedParameter xmi:id="_DtifweZgEe2rsuTxebE4yA" name="ip">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_DtifwuZgEe2rsuTxebE4yA" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_G7jT4OZgEe2rsuTxebE4yA" client="_68L-4OZfEe2rsuTxebE4yA" supplier="_or7wEOZeEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_RjrJIOZgEe2rsuTxebE4yA" name="IVentanaChat" visibility="public">
+    <ownedOperation xmi:id="_VLoHQOZgEe2rsuTxebE4yA" name="getMensaje">
+      <ownedParameter xmi:id="_s75egOZgEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_VnsYMOZgEe2rsuTxebE4yA" name="addMensaje">
+      <ownedParameter xmi:id="_Zn0lwOZgEe2rsuTxebE4yA" name="mensaje">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Wp5cEOZgEe2rsuTxebE4yA" name="actualizarEtiquetas">
+      <ownedParameter xmi:id="_h0uVwOZgEe2rsuTxebE4yA" name="ip1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_iKXOkOZgEe2rsuTxebE4yA" name="puerto1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_ibW38OZgEe2rsuTxebE4yA" name="ip2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_ipO74OZgEe2rsuTxebE4yA" name="puerto2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Bw4JUOZhEe2rsuTxebE4yA" name="VentanaChat" visibility="public">
+    <ownedOperation xmi:id="_E1OEEOZhEe2rsuTxebE4yA" name="getMensaje">
+      <ownedParameter xmi:id="_E1OEEeZhEe2rsuTxebE4yA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_FYxdEOZhEe2rsuTxebE4yA" name="addMensaje">
+      <ownedParameter xmi:id="_FYxdEeZhEe2rsuTxebE4yA" name="mensaje">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GANQgOZhEe2rsuTxebE4yA" name="actualizarEtiquetas">
+      <ownedParameter xmi:id="_GANQgeZhEe2rsuTxebE4yA" name="ip1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_GANQguZhEe2rsuTxebE4yA" name="puerto1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_GANQg-ZhEe2rsuTxebE4yA" name="ip2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_GANQhOZhEe2rsuTxebE4yA" name="puerto2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_JfO8IOZhEe2rsuTxebE4yA" client="_RZUe0OZWEe2rsuTxebE4yA" supplier="_RjrJIOZgEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_KrJ8sOZhEe2rsuTxebE4yA" client="_Bw4JUOZhEe2rsuTxebE4yA" supplier="_RjrJIOZgEe2rsuTxebE4yA"/>
 </uml:Model>

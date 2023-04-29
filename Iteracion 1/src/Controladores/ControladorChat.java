@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JOptionPane;
+
 import Interfaces.IVentanaChat;
 import Modelo.FinalizarLlamada;
 import Modelo.Mensaje;
@@ -94,7 +96,7 @@ public class ControladorChat implements ActionListener, Observer {
 			this.vistaChat.addMensaje(mensajeCompleto);
 		}else if(arg instanceof FinalizarLlamada) {
 			//CREAR JOPTION PANE
-			
+			JOptionPane.showMessageDialog(null, "El chat ha finalizado");
 			this.vistaChat.setVisible(false);
 			this.consUsuario.getVista().setVisible(true);
 			

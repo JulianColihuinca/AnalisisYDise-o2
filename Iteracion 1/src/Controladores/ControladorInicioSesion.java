@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import Conexion.Conexion;
 import Interfaces.UIInicioSesion;
 import Modelo.UsuarioServidor;
@@ -46,7 +48,7 @@ public class ControladorInicioSesion implements ActionListener {
 					
 					
 				}else 
-					System.out.println("Puerto ya en uso");
+					JOptionPane.showMessageDialog(null, "Puerto ya en uso");
 					
 			}catch(NumberFormatException ex) {
 				System.out.println("Formato de puerto mal ingresado, ingrese un numero entero");

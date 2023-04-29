@@ -42,6 +42,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 			
 			this.enviarRespuesta(true);
 			this.vista.llamadaAceptada(); //este metodo solo oculta la ventana usuario
+			this.vista.llamadaRechazada(); //este metodo es para que oculte la llamada recibida despues de ser contestada
 			
 			ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),this.usuario.getLlamada().getPuertoOrigen(),
 					Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
@@ -49,6 +50,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 			
 			this.usuario.setModoChat();
 			this.usuario.setLlamada(null);// SE ATENDIO LA LLAMADA, YA ESTOY EN MODO CHAT
+			
 		} // --------------------------------------RECHAZO LA LLAMADA ENTRANTE------------------------------------
 		else if (command.equalsIgnoreCase("Rechazar Llamada")) {
 			// OCULTO LA PARTE DONDE RECIBI LA LLAMADA
@@ -118,6 +120,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 						respuesta.getPuertoDestino(),Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
 				   													   //USUARIO QUE SOLICITO INICIAR LA LLAMADA
 				this.usuario.setModoChat(); //PASA A MODO CHAT
+				
+				
 			}
 			
 			

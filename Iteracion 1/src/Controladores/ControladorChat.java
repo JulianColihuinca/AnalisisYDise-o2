@@ -66,6 +66,17 @@ public class ControladorChat implements ActionListener, Observer {
 			//MODIFICA EL MODO DEL USUARIO A ESCUCHA
 			//Y NOTIFICA AL OTRO USUARIO QUE CERRO EL CHAT PARA QUE HAGA LO MISMO 
 			
+			this.vistaChat.setVisible(false);
+			this.consUsuario.getVista().setVisible(true);
+			
+			this.consUsuario.getUsuario().setModoEscucha();
+			this.consUsuario.getUsuario().setLlamada(null);
+			this.consUsuario.getUsuario().setRespuesta(null);
+			
+			UsuarioCliente c=new UsuarioCliente(this.puertoDestino);
+			Thread t = new Thread(c);
+			t.start();
+			
 		}
 		
 	}
@@ -87,8 +98,9 @@ public class ControladorChat implements ActionListener, Observer {
 			this.vistaChat.setVisible(false);
 			this.consUsuario.getVista().setVisible(true);
 			
-			//volver usaurio a modo escucha
-			
+			this.consUsuario.getUsuario().setModoEscucha();
+			this.consUsuario.getUsuario().setLlamada(null);
+			this.consUsuario.getUsuario().setRespuesta(null);
 		}
 		
 	}

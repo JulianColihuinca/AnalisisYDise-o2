@@ -5,6 +5,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.UnknownHostException;
 
+import Modelo.UsuarioCliente;
+
 public class Conexion {
 	
 	public static String getIP() {
@@ -31,5 +33,7 @@ public class Conexion {
 			return false;
 		}
 	}
+	
+	
 
 }

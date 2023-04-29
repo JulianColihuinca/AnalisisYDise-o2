@@ -1,10 +1,7 @@
 package Modelo;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import java.net.Socket;
 
 import Conexion.Conexion;
@@ -15,7 +12,7 @@ public class UsuarioCliente implements Runnable {
     private Llamada llamada=null;
     private Mensaje mensaje=null;
     private RespuestaLlamada respuesta=null;
-    
+   
 
   
     
@@ -31,10 +28,17 @@ public class UsuarioCliente implements Runnable {
 		this.mensaje = mensaje;
 		
 	}
+    
     //CONSTRUCTOR USADO PARA MANDAR RESPUESTA A LLAMADA ENTRANTE
     public UsuarioCliente(int puerto, RespuestaLlamada res) {
 		this.puerto = puerto;
 		this.respuesta = res;
+	}
+    
+    //CONSTRUCTOR USADO CUANDO SE ENVIA UNA FINALIZACION DE LLAMADA
+    public UsuarioCliente(int puerto) {
+		this.puerto = puerto;
+		
 	}
     
     
@@ -56,12 +60,15 @@ public class UsuarioCliente implements Runnable {
             out = new ObjectOutputStream(sc.getOutputStream());
             
             //---------------------------------Envio -----------------------------------
-            System.out.println("TODAVIA NO SE ROMPIO");
+            
             if(this.llamada==null) { 
             	System.out.println("no recibi llamada");
-            	if(this.mensaje==null) {//----> ENVIO RESPUESTA A PETICION DE LLAMADA
+            	if(this.mensaje==null) {
             		System.out.println("no es mensaje");
-            		out.writeObject(this.respuesta);
+            		if(this.respuesta==null)
+            			out.writeObject(new FinalizarLlamada());
+            		else
+            			out.writeObject(this.respuesta);//----> ENVIO RESPUESTA A PETICION DE LLAMADA
             	}else {
             		System.out.println("intento enviar mensaje");
             		out.writeObject(this.mensaje);//----> ENVIO MENSAJE

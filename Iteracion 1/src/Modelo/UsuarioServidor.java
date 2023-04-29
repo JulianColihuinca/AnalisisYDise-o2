@@ -138,4 +138,8 @@ public class UsuarioServidor extends Observable implements Runnable{
 		return this.modo;
 	}
 
+	public void setRespuesta(RespuestaLlamada res) {
+		this.respuesta=res;
+	}
+
 }

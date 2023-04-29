@@ -7,6 +7,8 @@ public interface IVentanaChat {
 	void addMensaje(String mensaje);
 	void setVisible(boolean res);
 	
+	void mensajeEnviado();
+	
 	void addActionListener(ActionListener listener);
 	
 	void tituloPuerto(String puerto);

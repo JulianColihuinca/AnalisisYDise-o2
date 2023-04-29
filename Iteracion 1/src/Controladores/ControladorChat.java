@@ -53,7 +53,7 @@ public class ControladorChat implements ActionListener, Observer {
 			String mensaje= this.vistaChat.getMensaje();
 			String mensajeCompleto="TU: "+mensaje+"\n";
 			this.vistaChat.addMensaje(mensajeCompleto);
-			
+			this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
 			
 			UsuarioCliente c = new UsuarioCliente(this.puertoDestino, new Mensaje(mensaje,this.puertoOrigen));// para un futuro agregar ip
 			Thread t = new Thread(c);

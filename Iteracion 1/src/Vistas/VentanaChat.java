@@ -139,7 +139,7 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 	public void addMensaje(String mensaje) {
 		
 		this.conversacionTA.append(mensaje);
-		this.mensajeTA.setText("");
+		
 	}
 
 	@Override
@@ -163,6 +163,12 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 		this.puerto1Label.setText("Puerto1: "+puerto1);
 		this.puerto2Label.setText("Puerto2: "+puerto2);
 		
+	}
+
+	@Override
+	public void mensajeEnviado() {
+		// TODO Auto-generated method stub
+		this.mensajeTA.setText("");
 	}
 
 	

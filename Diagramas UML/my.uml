@@ -305,4 +305,171 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_JfO8IOZhEe2rsuTxebE4yA" client="_RZUe0OZWEe2rsuTxebE4yA" supplier="_RjrJIOZgEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_KrJ8sOZhEe2rsuTxebE4yA" client="_Bw4JUOZhEe2rsuTxebE4yA" supplier="_RjrJIOZgEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_59DZUOawEe2km58nRP0i6Q" name="UsuarioCliente" visibility="public">
+    <ownedAttribute xmi:id="_QJPHoOaxEe2km58nRP0i6Q" name="puerto" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_QdrGkOaxEe2km58nRP0i6Q" name="llamada" visibility="private" type="_YfwtsOaxEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_QnSVkOaxEe2km58nRP0i6Q" name="mensaje" visibility="private" type="_dGZhoOaxEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_QvJREOaxEe2km58nRP0i6Q" name="respuesta" visibility="private" type="_i0yn0OaxEe2km58nRP0i6Q"/>
+    <ownedOperation xmi:id="_qi6KEOaxEe2km58nRP0i6Q" name="UsuarioCliente">
+      <ownedParameter xmi:id="_19jBYOaxEe2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_2UQRMOaxEe2km58nRP0i6Q" name="llamada" type="_YfwtsOaxEe2km58nRP0i6Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_xmlBIOaxEe2km58nRP0i6Q" name="UsuarioCliente">
+      <ownedParameter xmi:id="_C51RoOayEe2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_DLcmEOayEe2km58nRP0i6Q" name="mensaje" type="_dGZhoOaxEe2km58nRP0i6Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_yRSyEOaxEe2km58nRP0i6Q" name="UsuarioCliente">
+      <ownedParameter xmi:id="_MDrLAOayEe2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_MQuvkOayEe2km58nRP0i6Q" name="res" type="_i0yn0OaxEe2km58nRP0i6Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_yvei4OaxEe2km58nRP0i6Q" name="UsuarioCliente">
+      <ownedParameter xmi:id="_X8UM8OayEe2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YfwtsOaxEe2km58nRP0i6Q" name="Llamada"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_dGZhoOaxEe2km58nRP0i6Q" name="Mensaje"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_i0yn0OaxEe2km58nRP0i6Q" name="RespuestaLlamada"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kYRXUOayEe2km58nRP0i6Q" name="UsuarioServidor" visibility="public">
+    <ownedAttribute xmi:id="_71hE4OayEe2km58nRP0i6Q" name="puerto" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_mdFHsOayEe2km58nRP0i6Q" name="servidor" visibility="private" type="_C3nOoOazEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_87OvwOayEe2km58nRP0i6Q" name="llamada" visibility="private" type="_YfwtsOaxEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="__LLZIOayEe2km58nRP0i6Q" name="respuesta" visibility="private" type="_i0yn0OaxEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_m2j-sOayEe2km58nRP0i6Q" name="modo" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_PIUyUOazEe2km58nRP0i6Q" name="UsuarioServidor">
+      <ownedParameter xmi:id="_PIUyUeazEe2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_UbriUOazEe2km58nRP0i6Q" name="getPuerto">
+      <ownedParameter xmi:id="_UbriUeazEe2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_cB6T4OazEe2km58nRP0i6Q" name="getServidor">
+      <ownedParameter xmi:id="_flUJMOazEe2km58nRP0i6Q" type="_C3nOoOazEe2km58nRP0i6Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_dU0tQOazEe2km58nRP0i6Q" name="getLlamada">
+      <ownedParameter xmi:id="_mkW-8OazEe2km58nRP0i6Q" type="_YfwtsOaxEe2km58nRP0i6Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_dlcjMOazEe2km58nRP0i6Q" name="setLlamada">
+      <ownedParameter xmi:id="_q3yjAOazEe2km58nRP0i6Q" name="llamada" type="_YfwtsOaxEe2km58nRP0i6Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3yZ_UOazEe2km58nRP0i6Q" name="setModoEscucha"/>
+    <ownedOperation xmi:id="_4L5dYOazEe2km58nRP0i6Q" name="setModoLlamando"/>
+    <ownedOperation xmi:id="_4puB0OazEe2km58nRP0i6Q" name="setModoChat"/>
+    <ownedOperation xmi:id="_5FFvMOazEe2km58nRP0i6Q" name="getModo">
+      <ownedParameter xmi:id="_C-jHoOa0Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_5VHIMOazEe2km58nRP0i6Q" name="setRespuesta">
+      <ownedParameter xmi:id="_JZyswOa0Ee2km58nRP0i6Q" name="res" type="_i0yn0OaxEe2km58nRP0i6Q"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_C3nOoOazEe2km58nRP0i6Q" name="ServerSocket"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_lSggEOa0Ee2km58nRP0i6Q" name="Mensaje" visibility="public">
+    <ownedAttribute xmi:id="_nbgM4Oa0Ee2km58nRP0i6Q" name="mensaje" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_xf_woOa0Ee2km58nRP0i6Q" name="puerto" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_yipgcOa0Ee2km58nRP0i6Q" name="Mensaje">
+      <ownedParameter xmi:id="_2pSlsOa0Ee2km58nRP0i6Q" name="mensaje">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_3CP4QOa0Ee2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_yyfTQOa0Ee2km58nRP0i6Q" name="getMensaje">
+      <ownedParameter xmi:id="_98efcOa0Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_NspMkOa1Ee2km58nRP0i6Q" name="getPuerto">
+      <ownedParameter xmi:id="_NspMkea1Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WV9LwOa1Ee2km58nRP0i6Q" name="FinalizarLlamada" visibility="public"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eWWw0Oa1Ee2km58nRP0i6Q" name="Llamada" visibility="public">
+    <ownedAttribute xmi:id="_gc4YcOa1Ee2km58nRP0i6Q" name="puertoOrigen" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_liLeUOa1Ee2km58nRP0i6Q" name="IPOrigen" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_xCOaEOa1Ee2km58nRP0i6Q" name="Llamada">
+      <ownedParameter xmi:id="_xCOaEua1Ee2km58nRP0i6Q" name="puertoOrigen">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_xCOaEea1Ee2km58nRP0i6Q" name="ipOrigen">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_4xUzwOa1Ee2km58nRP0i6Q" name="getPuertoOrigen">
+      <ownedParameter xmi:id="_4xUzwea1Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_6CYzAOa1Ee2km58nRP0i6Q" name="getIPOrigen">
+      <ownedParameter xmi:id="_6CYzAea1Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FJ_ZkOa2Ee2km58nRP0i6Q" name="RespuestaLlamada" visibility="public">
+    <ownedAttribute xmi:id="_Nh0AIOa2Ee2km58nRP0i6Q" name="respuesta" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_I59EMOa2Ee2km58nRP0i6Q" name="puertoDestino" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_JotnoOa2Ee2km58nRP0i6Q" name="ipDestino" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_SepGgOa2Ee2km58nRP0i6Q" name="RespuestaLlamada">
+      <ownedParameter xmi:id="_VqUYUOa2Ee2km58nRP0i6Q" name="llamada" type="_eWWw0Oa1Ee2km58nRP0i6Q"/>
+      <ownedParameter xmi:id="_WdhW4Oa2Ee2km58nRP0i6Q" name="respuesta">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_W07KQOa2Ee2km58nRP0i6Q" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_XDgY0Oa2Ee2km58nRP0i6Q" name="ip">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_oWqisOa2Ee2km58nRP0i6Q" name="isRespuesta">
+      <ownedParameter xmi:id="_p-bKsOa2Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_kAHZMOa2Ee2km58nRP0i6Q" name="getPuertoDestino">
+      <ownedParameter xmi:id="_kAHZMea2Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_kjWpIOa2Ee2km58nRP0i6Q" name="getIpDestino">
+      <ownedParameter xmi:id="_kjWpIea2Ee2km58nRP0i6Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
 </uml:Model>

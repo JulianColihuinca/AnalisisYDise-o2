@@ -140,7 +140,7 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_xTq5wNV6Ee2aH489NeECiw" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_lNGJgNV6Ee2aH489NeECiw"/>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_mfmjwOZQEe2rsuTxebE4yA" name="NewModel"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_6X-cYOZQEe2rsuTxebE4yA" name="Package1"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_-5KIkOZQEe2rsuTxebE4yA" name="Package2"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-5KIkOZQEe2rsuTxebE4yA" name="java.util"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_xAEKcOZTEe2rsuTxebE4yA" name="ControladorInicioSesion" visibility="public">
     <ownedAttribute xmi:id="_9WJ9YOZTEe2rsuTxebE4yA" name="vistaInicioSesion" visibility="private" type="_OpftcOZUEe2rsuTxebE4yA"/>
     <interfaceRealization xmi:id="_OHloUOZWEe2rsuTxebE4yA" client="_xAEKcOZTEe2rsuTxebE4yA" supplier="_1lpZAOZUEe2rsuTxebE4yA" contract="_1lpZAOZUEe2rsuTxebE4yA"/>
@@ -546,4 +546,6 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_JjNmIObCEe2km58nRP0i6Q" name="UIInicioSesion">
     <ownedOperation xmi:id="_qh1jUObCEe2km58nRP0i6Q" name="Operation_1"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Fv6eIOeHEe2l7Mh0fQ-Pdg" name="java.swing"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HuVSoOeHEe2l7Mh0fQ-Pdg" name="java.net"/>
 </uml:Model>

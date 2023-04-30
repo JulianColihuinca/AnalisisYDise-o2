@@ -15,7 +15,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Interfaces.IVentanaUsuario;
 import Modelo.Llamada;
 import Modelo.RespuestaLlamada;
 
@@ -49,6 +48,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	 * Create the frame.
 	 */
 	public VentanaUsuario() {
+		setResizable(false);
 		setTitle("Comenzar Sesion Chat");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

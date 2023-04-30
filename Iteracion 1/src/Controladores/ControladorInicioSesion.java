@@ -6,9 +6,9 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-import Conexion.Conexion;
-import Interfaces.UIInicioSesion;
+import Modelo.Conexion;
 import Modelo.UsuarioServidor;
+import Vistas.UIInicioSesion;
 import Vistas.VentanaInicioSesion;
 
 public class ControladorInicioSesion implements ActionListener {

@@ -5,12 +5,12 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import Conexion.Conexion;
-import Interfaces.IVentanaUsuario;
+import Modelo.Conexion;
 import Modelo.Llamada;
 import Modelo.RespuestaLlamada;
 import Modelo.UsuarioCliente;
 import Modelo.UsuarioServidor;
+import Vistas.IVentanaUsuario;
 import Vistas.VentanaUsuario;
 
 public class ControladorUsuario implements ActionListener, Observer {

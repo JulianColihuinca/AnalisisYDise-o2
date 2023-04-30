@@ -6,8 +6,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Observable;
 
-import Conexion.Conexion;
-
 public class UsuarioServidor extends Observable implements Runnable{
 	private int puerto;
 	private ServerSocket servidor;

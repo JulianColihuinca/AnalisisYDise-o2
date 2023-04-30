@@ -7,8 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Interfaces.UIInicioSesion;
-
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -47,6 +45,7 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 	 * Create the frame.
 	 */
 	public VentanaInicioSesion() {
+		setResizable(false);
 		setTitle("Iniciar Sesion");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

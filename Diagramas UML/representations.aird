@@ -3894,15 +3894,62 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-7FbMuZQEe2rsuTxebE4yA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_-6C5YeZQEe2rsuTxebE4yA" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-6C5YuZQEe2rsuTxebE4yA" x="876" y="162" width="80" height="50"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-6C5YuZQEe2rsuTxebE4yA" x="636" y="192" width="80" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_FyClEOeHEe2l7Mh0fQ-Pdg" type="2001" element="_FwBL0OeHEe2l7Mh0fQ-Pdg">
+          <children xmi:type="notation:Node" xmi:id="_FyQAcOeHEe2l7Mh0fQ-Pdg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_FyQAceeHEe2l7Mh0fQ-Pdg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Fy4SkOeHEe2l7Mh0fQ-Pdg" type="3005" element="_FwDoEOeHEe2l7Mh0fQ-Pdg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Fy4SkeeHEe2l7Mh0fQ-Pdg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fy4SkueHEe2l7Mh0fQ-Pdg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_FyClEeeHEe2l7Mh0fQ-Pdg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FyClEueHEe2l7Mh0fQ-Pdg" x="624" y="120" width="80" height="50"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Hvw2AOeHEe2l7Mh0fQ-Pdg" type="2001" element="_HuV5sOeHEe2l7Mh0fQ-Pdg">
+          <children xmi:type="notation:Node" xmi:id="_HvyEIOeHEe2l7Mh0fQ-Pdg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_HvyEIeeHEe2l7Mh0fQ-Pdg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Hv-4cOeHEe2l7Mh0fQ-Pdg" type="3005" element="_HuWgwOeHEe2l7Mh0fQ-Pdg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Hv-4ceeHEe2l7Mh0fQ-Pdg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hv-4cueHEe2l7Mh0fQ-Pdg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Hvw2AeeHEe2l7Mh0fQ-Pdg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hvw2AueHEe2l7Mh0fQ-Pdg" x="642" y="48" width="80" height="50"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_9hvCouZQEe2rsuTxebE4yA"/>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-5PoIOZQEe2rsuTxebE4yA" name="Package2" width="8" height="8" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_-5PoIOZQEe2rsuTxebE4yA" name="java.util" width="8" height="8" resizeKind="NSEW">
       <target xmi:type="uml:Package" href="my.uml#_-5KIkOZQEe2rsuTxebE4yA"/>
       <semanticElements xmi:type="uml:Package" href="my.uml#_-5KIkOZQEe2rsuTxebE4yA"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
       <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_-5QPMOZQEe2rsuTxebE4yA" showIcon="false" labelPosition="node" workspacePath="/org.obeonetwork.dsl.uml2.design/images/package.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer/@nodeMappings[name='PH_Package']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer/@nodeMappings[name='PH_Package']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_FwBL0OeHEe2l7Mh0fQ-Pdg" name="java.swing" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="uml:Package" href="my.uml#_Fv6eIOeHEe2l7Mh0fQ-Pdg"/>
+      <semanticElements xmi:type="uml:Package" href="my.uml#_Fv6eIOeHEe2l7Mh0fQ-Pdg"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_FwDoEOeHEe2l7Mh0fQ-Pdg" showIcon="false" labelPosition="node" workspacePath="/org.obeonetwork.dsl.uml2.design/images/package.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer/@nodeMappings[name='PH_Package']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer/@nodeMappings[name='PH_Package']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_HuV5sOeHEe2l7Mh0fQ-Pdg" name="java.net" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="uml:Package" href="my.uml#_HuVSoOeHEe2l7Mh0fQ-Pdg"/>
+      <semanticElements xmi:type="uml:Package" href="my.uml#_HuVSoOeHEe2l7Mh0fQ-Pdg"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_HuWgwOeHEe2l7Mh0fQ-Pdg" showIcon="false" labelPosition="node" workspacePath="/org.obeonetwork.dsl.uml2.design/images/package.svg">
         <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer/@nodeMappings[name='PH_Package']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer/@nodeMappings[name='PH_Package']"/>

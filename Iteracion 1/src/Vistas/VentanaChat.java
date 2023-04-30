@@ -15,8 +15,6 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Interfaces.IVentanaChat;
-
 public class VentanaChat extends JFrame implements IVentanaChat{
 
 	private JPanel contentPane;
@@ -44,6 +42,7 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 	 * Create the frame.
 	 */
 	public VentanaChat() {
+		setResizable(false);
 		setTitle("Chat");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 550);

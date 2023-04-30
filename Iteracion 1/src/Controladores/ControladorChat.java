@@ -7,10 +7,10 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
-import Interfaces.IVentanaChat;
 import Modelo.FinalizarLlamada;
 import Modelo.Mensaje;
 import Modelo.UsuarioCliente;
+import Vistas.IVentanaChat;
 import Vistas.VentanaChat;
 
 public class ControladorChat implements ActionListener, Observer {

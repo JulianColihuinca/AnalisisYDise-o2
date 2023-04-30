@@ -145,6 +145,7 @@
     <ownedAttribute xmi:id="_9WJ9YOZTEe2rsuTxebE4yA" name="vistaInicioSesion" visibility="private" type="_OpftcOZUEe2rsuTxebE4yA"/>
     <interfaceRealization xmi:id="_OHloUOZWEe2rsuTxebE4yA" client="_xAEKcOZTEe2rsuTxebE4yA" supplier="_1lpZAOZUEe2rsuTxebE4yA" contract="_1lpZAOZUEe2rsuTxebE4yA"/>
     <ownedOperation xmi:id="_QkNJ0OZYEe2rsuTxebE4yA" name="ControladorInicioSesion"/>
+    <ownedOperation xmi:id="_CvyFQOeYEe2DLJCmB9S00Q" name="Operation_2"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_OpftcOZUEe2rsuTxebE4yA" name="UIInicioSesion"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_1lpZAOZUEe2rsuTxebE4yA" name="ActionListener" visibility="public">
@@ -528,23 +529,134 @@
     <ownedAttribute xmi:id="_4x6zMObBEe2km58nRP0i6Q" name="Actor1" type="_4x5lEObBEe2km58nRP0i6Q"/>
     <ownedAttribute xmi:id="_-Enb4ObBEe2km58nRP0i6Q" name="Actor2" type="_-EmNwObBEe2km58nRP0i6Q"/>
     <ownedAttribute xmi:id="_JjO0QObCEe2km58nRP0i6Q" name="Class23" type="_JjNmIObCEe2km58nRP0i6Q"/>
-    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qiH3MObCEe2km58nRP0i6Q" name="Operation_1"/>
-    <lifeline xmi:id="_4x6MIObBEe2km58nRP0i6Q" name="UsuarioA" represents="_4x6zMObBEe2km58nRP0i6Q" coveredBy="_qiIeQebCEe2km58nRP0i6Q _qiJFUObCEe2km58nRP0i6Q"/>
-    <lifeline xmi:id="_JjONMObCEe2km58nRP0i6Q" name="Class1" represents="_JjO0QObCEe2km58nRP0i6Q" coveredBy="_qiIeQubCEe2km58nRP0i6Q _qiIeRObCEe2km58nRP0i6Q _qiIeQ-bCEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_YJ0aYOeXEe2DLJCmB9S00Q" name="ControladorInicioSesion" type="_xAEKcOZTEe2rsuTxebE4yA"/>
+    <ownedAttribute xmi:id="_yC7GYOeXEe2DLJCmB9S00Q" name="ControladorUsuario" type="_ZNlsYOZWEe2rsuTxebE4yA"/>
+    <ownedAttribute xmi:id="_2EoBQOeXEe2DLJCmB9S00Q" name="VentanaUsuario" type="_68L-4OZfEe2rsuTxebE4yA"/>
+    <ownedAttribute xmi:id="_4vu8oOeXEe2DLJCmB9S00Q" name="ControladorChat" type="_RZUe0OZWEe2rsuTxebE4yA"/>
+    <ownedAttribute xmi:id="_8CnpsOeXEe2DLJCmB9S00Q" name="VentanaChat" type="_Bw4JUOZhEe2rsuTxebE4yA"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ZcyBoeeYEe2DLJCmB9S00Q" name="ControladorInicioSesion"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_h_2kAueaEe26555lWSwuVQ" name="Operation_3"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_o-1IUeeaEe26555lWSwuVQ" name="Operation_1"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_w1dGUeeaEe26555lWSwuVQ" name="ControladorInicioSesion"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4bNWweeaEe26555lWSwuVQ" name="ControladorUsuario"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_GYw2weebEe26555lWSwuVQ" name="actualizarDatos"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_O6QWseebEe26555lWSwuVQ" name="actualizarDatos"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XTAKUeebEe26555lWSwuVQ" name="ControladorUsuario"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_GuL3seecEe26555lWSwuVQ" name="ControladorChat"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_B48xoOedEe26555lWSwuVQ" name="actualizarEtiquetas"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_IIWTIeedEe26555lWSwuVQ" name="actualizarEtiquetas"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_PWYAEeedEe26555lWSwuVQ" name="ControladorChat"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kfSTgeedEe26555lWSwuVQ" name="actualizarEtiquetas"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_uuUTUeedEe26555lWSwuVQ" name="actualizarEtiquetas"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_7ntAkeedEe26555lWSwuVQ" name="ControladorUsuario"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_9ch0MeedEe26555lWSwuVQ" name="actualizarDatos"/>
+    <lifeline xmi:id="_4x6MIObBEe2km58nRP0i6Q" name="UsuarioA" represents="_4x6zMObBEe2km58nRP0i6Q" coveredBy="_qiJFUObCEe2km58nRP0i6Q _ZcyosOeYEe2DLJCmB9S00Q _o-1IUueaEe26555lWSwuVQ _O6QWsuebEe26555lWSwuVQ _IIW6MOedEe26555lWSwuVQ _uuU6YOedEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_YJ2PkOeXEe2DLJCmB9S00Q" name="ControladorInicioSesion" represents="_YJ0aYOeXEe2DLJCmB9S00Q" coveredBy="_ZcyoseeYEe2DLJCmB9S00Q _ZcyosueYEe2DLJCmB9S00Q _Zcyos-eYEe2DLJCmB9S00Q _h_2kA-eaEe26555lWSwuVQ _w1dGU-eaEe26555lWSwuVQ _w1dGVOeaEe26555lWSwuVQ _w1dGVeeaEe26555lWSwuVQ _4bNWwueaEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_JjONMObCEe2km58nRP0i6Q" name="Class1" represents="_JjO0QObCEe2km58nRP0i6Q" coveredBy="_qiIeQ-bCEe2km58nRP0i6Q _h_3LEOeaEe26555lWSwuVQ _h_3LEeeaEe26555lWSwuVQ _h_3LEueaEe26555lWSwuVQ _o-1IU-eaEe26555lWSwuVQ _o-1IVOeaEe26555lWSwuVQ _o-1IVeeaEe26555lWSwuVQ _w1dGUueaEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_yC7tcOeXEe2DLJCmB9S00Q" name="ControladorUsuario" represents="_yC7GYOeXEe2DLJCmB9S00Q" coveredBy="_4bNWw-eaEe26555lWSwuVQ _4bNWxOeaEe26555lWSwuVQ _4bNWxeeaEe26555lWSwuVQ _GYw2wuebEe26555lWSwuVQ _XTAKU-ebEe26555lWSwuVQ _XTAKVOebEe26555lWSwuVQ _XTAKVeebEe26555lWSwuVQ _GuL3suecEe26555lWSwuVQ _7ntAk-edEe26555lWSwuVQ _7ntAlOedEe26555lWSwuVQ _7ntAleedEe26555lWSwuVQ _9ch0MuedEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_2EooUOeXEe2DLJCmB9S00Q" name="VentanaUsuario" represents="_2EoBQOeXEe2DLJCmB9S00Q" coveredBy="_GYw2w-ebEe26555lWSwuVQ _GYw2xOebEe26555lWSwuVQ _GYw2xeebEe26555lWSwuVQ _O6QWs-ebEe26555lWSwuVQ _O6QWtOebEe26555lWSwuVQ _O6QWteebEe26555lWSwuVQ _XTAKUuebEe26555lWSwuVQ _9ch0M-edEe26555lWSwuVQ _9ch0NOedEe26555lWSwuVQ _9ch0NeedEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_4vvjsOeXEe2DLJCmB9S00Q" name="ControladorChat" represents="_4vu8oOeXEe2DLJCmB9S00Q" coveredBy="_GuL3s-ecEe26555lWSwuVQ _GuL3tOecEe26555lWSwuVQ _GuL3teecEe26555lWSwuVQ _B48xoeedEe26555lWSwuVQ _PWYnIeedEe26555lWSwuVQ _PWYnIuedEe26555lWSwuVQ _PWYnI-edEe26555lWSwuVQ _kfSTguedEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_8CoQwOeXEe2DLJCmB9S00Q" name="VentanaChat" represents="_8CnpsOeXEe2DLJCmB9S00Q" coveredBy="_B48xouedEe26555lWSwuVQ _B48xo-edEe26555lWSwuVQ _B48xpOedEe26555lWSwuVQ _IIW6MeedEe26555lWSwuVQ _IIW6MuedEe26555lWSwuVQ _IIW6M-edEe26555lWSwuVQ _PWYnIOedEe26555lWSwuVQ _kfSTg-edEe26555lWSwuVQ _kfSThOedEe26555lWSwuVQ _kfSTheedEe26555lWSwuVQ _uuU6YeedEe26555lWSwuVQ _uuU6YuedEe26555lWSwuVQ _uuU6Y-edEe26555lWSwuVQ _7ntAkuedEe26555lWSwuVQ"/>
     <lifeline xmi:id="_-Em00ObBEe2km58nRP0i6Q" name="Actor1" represents="_-Enb4ObBEe2km58nRP0i6Q"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qiIeQebCEe2km58nRP0i6Q" name="Operation_1_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_qiFa8ObCEe2km58nRP0i6Q"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qiIeQubCEe2km58nRP0i6Q" name="Operation_1_receiver" covered="_JjONMObCEe2km58nRP0i6Q" message="_qiFa8ObCEe2km58nRP0i6Q"/>
-    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_qiIeRObCEe2km58nRP0i6Q" name="Operation_1" covered="_JjONMObCEe2km58nRP0i6Q" finish="_qiIeQ-bCEe2km58nRP0i6Q" start="_qiIeQubCEe2km58nRP0i6Q" behavior="_qiH3MObCEe2km58nRP0i6Q"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qiIeQ-bCEe2km58nRP0i6Q" name="Operation_1_reply_sender" covered="_JjONMObCEe2km58nRP0i6Q" message="_qiIeQObCEe2km58nRP0i6Q"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qiJFUObCEe2km58nRP0i6Q" name="Operation_1_reply_receiver" covered="_4x6MIObBEe2km58nRP0i6Q" message="_qiIeQObCEe2km58nRP0i6Q"/>
-    <message xmi:id="_qiFa8ObCEe2km58nRP0i6Q" name="Operation_1" receiveEvent="_qiIeQubCEe2km58nRP0i6Q" sendEvent="_qiIeQebCEe2km58nRP0i6Q" signature="_qh1jUObCEe2km58nRP0i6Q"/>
-    <message xmi:id="_qiIeQObCEe2km58nRP0i6Q" name="Operation_1_reply" messageSort="reply"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZcyosOeYEe2DLJCmB9S00Q" name="ControladorInicioSesion_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_ZcyBoOeYEe2DLJCmB9S00Q"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZcyoseeYEe2DLJCmB9S00Q" name="ControladorInicioSesion_receiver" covered="_YJ2PkOeXEe2DLJCmB9S00Q" message="_ZcyBoOeYEe2DLJCmB9S00Q"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_ZcyosueYEe2DLJCmB9S00Q" name="ControladorInicioSesion" covered="_YJ2PkOeXEe2DLJCmB9S00Q" finish="_Zcyos-eYEe2DLJCmB9S00Q" start="_ZcyoseeYEe2DLJCmB9S00Q" behavior="_ZcyBoeeYEe2DLJCmB9S00Q"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_Zcyos-eYEe2DLJCmB9S00Q" name="ControladorInicioSesion_finish" covered="_YJ2PkOeXEe2DLJCmB9S00Q" execution="_ZcyosueYEe2DLJCmB9S00Q"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_h_2kA-eaEe26555lWSwuVQ" name="Operation_3_sender" covered="_YJ2PkOeXEe2DLJCmB9S00Q" message="_h_2kAeeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_h_3LEOeaEe26555lWSwuVQ" name="Operation_3_receiver" covered="_JjONMObCEe2km58nRP0i6Q" message="_h_2kAeeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_h_3LEeeaEe26555lWSwuVQ" name="Operation_3" covered="_JjONMObCEe2km58nRP0i6Q" finish="_h_3LEueaEe26555lWSwuVQ" start="_h_3LEOeaEe26555lWSwuVQ" behavior="_h_2kAueaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_h_3LEueaEe26555lWSwuVQ" name="Operation_3_finish" covered="_JjONMObCEe2km58nRP0i6Q" execution="_h_3LEeeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_o-1IUueaEe26555lWSwuVQ" name="Operation_1_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_o-1IUOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_o-1IU-eaEe26555lWSwuVQ" name="Operation_1_receiver" covered="_JjONMObCEe2km58nRP0i6Q" message="_o-1IUOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_o-1IVOeaEe26555lWSwuVQ" name="Operation_1" covered="_JjONMObCEe2km58nRP0i6Q" finish="_o-1IVeeaEe26555lWSwuVQ" start="_o-1IU-eaEe26555lWSwuVQ" behavior="_o-1IUeeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_o-1IVeeaEe26555lWSwuVQ" name="Operation_1_finish" covered="_JjONMObCEe2km58nRP0i6Q" execution="_o-1IVOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_w1dGUueaEe26555lWSwuVQ" name="ControladorInicioSesion_sender" covered="_JjONMObCEe2km58nRP0i6Q" message="_w1dGUOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_w1dGU-eaEe26555lWSwuVQ" name="ControladorInicioSesion_receiver" covered="_YJ2PkOeXEe2DLJCmB9S00Q" message="_w1dGUOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_w1dGVOeaEe26555lWSwuVQ" name="ControladorInicioSesion" covered="_YJ2PkOeXEe2DLJCmB9S00Q" finish="_w1dGVeeaEe26555lWSwuVQ" start="_w1dGU-eaEe26555lWSwuVQ" behavior="_w1dGUeeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_w1dGVeeaEe26555lWSwuVQ" name="ControladorInicioSesion_finish" covered="_YJ2PkOeXEe2DLJCmB9S00Q" execution="_w1dGVOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4bNWwueaEe26555lWSwuVQ" name="ControladorUsuario_sender" covered="_YJ2PkOeXEe2DLJCmB9S00Q" message="_4bNWwOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_4bNWw-eaEe26555lWSwuVQ" name="ControladorUsuario_receiver" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_4bNWwOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_4bNWxOeaEe26555lWSwuVQ" name="ControladorUsuario" covered="_yC7tcOeXEe2DLJCmB9S00Q" finish="_4bNWxeeaEe26555lWSwuVQ" start="_4bNWw-eaEe26555lWSwuVQ" behavior="_4bNWweeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_4bNWxeeaEe26555lWSwuVQ" name="ControladorUsuario_finish" covered="_yC7tcOeXEe2DLJCmB9S00Q" execution="_4bNWxOeaEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GYw2wuebEe26555lWSwuVQ" name="actualizarDatos_sender" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_GYw2wOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GYw2w-ebEe26555lWSwuVQ" name="actualizarDatos_receiver" covered="_2EooUOeXEe2DLJCmB9S00Q" message="_GYw2wOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_GYw2xOebEe26555lWSwuVQ" name="actualizarDatos" covered="_2EooUOeXEe2DLJCmB9S00Q" finish="_GYw2xeebEe26555lWSwuVQ" start="_GYw2w-ebEe26555lWSwuVQ" behavior="_GYw2weebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_GYw2xeebEe26555lWSwuVQ" name="actualizarDatos_finish" covered="_2EooUOeXEe2DLJCmB9S00Q" execution="_GYw2xOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O6QWsuebEe26555lWSwuVQ" name="actualizarDatos_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_O6QWsOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_O6QWs-ebEe26555lWSwuVQ" name="actualizarDatos_receiver" covered="_2EooUOeXEe2DLJCmB9S00Q" message="_O6QWsOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_O6QWtOebEe26555lWSwuVQ" name="actualizarDatos" covered="_2EooUOeXEe2DLJCmB9S00Q" finish="_O6QWteebEe26555lWSwuVQ" start="_O6QWs-ebEe26555lWSwuVQ" behavior="_O6QWseebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_O6QWteebEe26555lWSwuVQ" name="actualizarDatos_finish" covered="_2EooUOeXEe2DLJCmB9S00Q" execution="_O6QWtOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_XTAKUuebEe26555lWSwuVQ" name="ControladorUsuario_sender" covered="_2EooUOeXEe2DLJCmB9S00Q" message="_XTAKUOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_XTAKU-ebEe26555lWSwuVQ" name="ControladorUsuario_receiver" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_XTAKUOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_XTAKVOebEe26555lWSwuVQ" name="Crea Llamada y la envia a otra instancia de controlador usuario" covered="_yC7tcOeXEe2DLJCmB9S00Q" finish="_XTAKVeebEe26555lWSwuVQ" start="_XTAKU-ebEe26555lWSwuVQ" behavior="_XTAKUeebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_XTAKVeebEe26555lWSwuVQ" name="ControladorUsuario_finish" covered="_yC7tcOeXEe2DLJCmB9S00Q" execution="_XTAKVOebEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GuL3suecEe26555lWSwuVQ" name="ControladorChat_sender" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_GuL3sOecEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GuL3s-ecEe26555lWSwuVQ" name="ControladorChat_receiver" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_GuL3sOecEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_GuL3tOecEe26555lWSwuVQ" name="ControladorChat" covered="_4vvjsOeXEe2DLJCmB9S00Q" finish="_GuL3teecEe26555lWSwuVQ" start="_GuL3s-ecEe26555lWSwuVQ" behavior="_GuL3seecEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_GuL3teecEe26555lWSwuVQ" name="ControladorChat_finish" covered="_4vvjsOeXEe2DLJCmB9S00Q" execution="_GuL3tOecEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B48xoeedEe26555lWSwuVQ" name="actualizarEtiquetas_sender" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_B48KkOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B48xouedEe26555lWSwuVQ" name="actualizarEtiquetas_receiver" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_B48KkOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_B48xo-edEe26555lWSwuVQ" name="actualizarEtiquetas" covered="_8CoQwOeXEe2DLJCmB9S00Q" finish="_B48xpOedEe26555lWSwuVQ" start="_B48xouedEe26555lWSwuVQ" behavior="_B48xoOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_B48xpOedEe26555lWSwuVQ" name="actualizarEtiquetas_finish" covered="_8CoQwOeXEe2DLJCmB9S00Q" execution="_B48xo-edEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IIW6MOedEe26555lWSwuVQ" name="actualizarEtiquetas_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_IIWTIOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_IIW6MeedEe26555lWSwuVQ" name="actualizarEtiquetas_receiver" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_IIWTIOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_IIW6MuedEe26555lWSwuVQ" name="actualizarEtiquetas" covered="_8CoQwOeXEe2DLJCmB9S00Q" finish="_IIW6M-edEe26555lWSwuVQ" start="_IIW6MeedEe26555lWSwuVQ" behavior="_IIWTIeedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_IIW6M-edEe26555lWSwuVQ" name="actualizarEtiquetas_finish" covered="_8CoQwOeXEe2DLJCmB9S00Q" execution="_IIW6MuedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PWYnIOedEe26555lWSwuVQ" name="ControladorChat_sender" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_PWYAEOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PWYnIeedEe26555lWSwuVQ" name="ControladorChat_receiver" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_PWYAEOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_PWYnIuedEe26555lWSwuVQ" name="enviarMensaje(String mensaje)" covered="_4vvjsOeXEe2DLJCmB9S00Q" finish="_PWYnI-edEe26555lWSwuVQ" start="_PWYnIeedEe26555lWSwuVQ" behavior="_PWYAEeedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_PWYnI-edEe26555lWSwuVQ" name="ControladorChat_finish" covered="_4vvjsOeXEe2DLJCmB9S00Q" execution="_PWYnIuedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kfSTguedEe26555lWSwuVQ" name="actualizarEtiquetas_sender" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_kfSTgOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kfSTg-edEe26555lWSwuVQ" name="actualizarEtiquetas_receiver" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_kfSTgOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kfSThOedEe26555lWSwuVQ" name="actualizarEtiquetas" covered="_8CoQwOeXEe2DLJCmB9S00Q" finish="_kfSTheedEe26555lWSwuVQ" start="_kfSTg-edEe26555lWSwuVQ" behavior="_kfSTgeedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_kfSTheedEe26555lWSwuVQ" name="actualizarEtiquetas_finish" covered="_8CoQwOeXEe2DLJCmB9S00Q" execution="_kfSThOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uuU6YOedEe26555lWSwuVQ" name="actualizarEtiquetas_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_uuUTUOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uuU6YeedEe26555lWSwuVQ" name="actualizarEtiquetas_receiver" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_uuUTUOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_uuU6YuedEe26555lWSwuVQ" name="actualizarEtiquetas" covered="_8CoQwOeXEe2DLJCmB9S00Q" finish="_uuU6Y-edEe26555lWSwuVQ" start="_uuU6YeedEe26555lWSwuVQ" behavior="_uuUTUeedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_uuU6Y-edEe26555lWSwuVQ" name="actualizarEtiquetas_finish" covered="_8CoQwOeXEe2DLJCmB9S00Q" execution="_uuU6YuedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ntAkuedEe26555lWSwuVQ" name="ControladorUsuario_sender" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_7ntAkOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7ntAk-edEe26555lWSwuVQ" name="ControladorUsuario_receiver" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_7ntAkOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_7ntAlOedEe26555lWSwuVQ" name="ControladorUsuario" covered="_yC7tcOeXEe2DLJCmB9S00Q" finish="_7ntAleedEe26555lWSwuVQ" start="_7ntAk-edEe26555lWSwuVQ" behavior="_7ntAkeedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_7ntAleedEe26555lWSwuVQ" name="ControladorUsuario_finish" covered="_yC7tcOeXEe2DLJCmB9S00Q" execution="_7ntAlOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9ch0MuedEe26555lWSwuVQ" name="actualizarDatos_sender" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_9ch0MOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9ch0M-edEe26555lWSwuVQ" name="actualizarDatos_receiver" covered="_2EooUOeXEe2DLJCmB9S00Q" message="_9ch0MOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_9ch0NOedEe26555lWSwuVQ" name="actualizarDatos" covered="_2EooUOeXEe2DLJCmB9S00Q" finish="_9ch0NeedEe26555lWSwuVQ" start="_9ch0M-edEe26555lWSwuVQ" behavior="_9ch0MeedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_9ch0NeedEe26555lWSwuVQ" name="actualizarDatos_finish" covered="_2EooUOeXEe2DLJCmB9S00Q" execution="_9ch0NOedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qiIeQ-bCEe2km58nRP0i6Q" name="Operation_1_reply_sender" covered="_JjONMObCEe2km58nRP0i6Q"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qiJFUObCEe2km58nRP0i6Q" name="Operation_1_reply_receiver" covered="_4x6MIObBEe2km58nRP0i6Q"/>
+    <message xmi:id="_ZcyBoOeYEe2DLJCmB9S00Q" name="Ejecucion del programa" messageSort="asynchCall" receiveEvent="_ZcyoseeYEe2DLJCmB9S00Q" sendEvent="_ZcyosOeYEe2DLJCmB9S00Q" signature="_QkNJ0OZYEe2rsuTxebE4yA">
+      <ownedComment xmi:id="_eQ2YIOeZEe26555lWSwuVQ" annotatedElement="_ZcyBoOeYEe2DLJCmB9S00Q">
+        <body>Crea Controlador Inicio</body>
+      </ownedComment>
+    </message>
+    <message xmi:id="_h_2kAeeaEe26555lWSwuVQ" name="Crea Ventana Inicio" messageSort="asynchCall" receiveEvent="_h_3LEOeaEe26555lWSwuVQ" sendEvent="_h_2kA-eaEe26555lWSwuVQ" signature="_h_2kAOeaEe26555lWSwuVQ"/>
+    <message xmi:id="_o-1IUOeaEe26555lWSwuVQ" name="Ingresa puerto " messageSort="asynchCall" receiveEvent="_o-1IU-eaEe26555lWSwuVQ" sendEvent="_o-1IUueaEe26555lWSwuVQ" signature="_qh1jUObCEe2km58nRP0i6Q"/>
+    <message xmi:id="_w1dGUOeaEe26555lWSwuVQ" name="Devuelve puerto igresado" messageSort="asynchCall" receiveEvent="_w1dGU-eaEe26555lWSwuVQ" sendEvent="_w1dGUueaEe26555lWSwuVQ" signature="_QkNJ0OZYEe2rsuTxebE4yA"/>
+    <message xmi:id="_4bNWwOeaEe26555lWSwuVQ" name="iniciarSecion(int puerto)" messageSort="asynchCall" receiveEvent="_4bNWw-eaEe26555lWSwuVQ" sendEvent="_4bNWwueaEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
+    <message xmi:id="_GYw2wOebEe26555lWSwuVQ" name="Crea VentanaUsuario constructor" messageSort="asynchCall" receiveEvent="_GYw2w-ebEe26555lWSwuVQ" sendEvent="_GYw2wuebEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
+    <message xmi:id="_O6QWsOebEe26555lWSwuVQ" name="ComenzarChat(String ip,int puerto)" messageSort="asynchCall" receiveEvent="_O6QWs-ebEe26555lWSwuVQ" sendEvent="_O6QWsuebEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
+    <message xmi:id="_XTAKUOebEe26555lWSwuVQ" name="puerto" messageSort="asynchCall" receiveEvent="_XTAKU-ebEe26555lWSwuVQ" sendEvent="_XTAKUuebEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
+    <message xmi:id="_GuL3sOecEe26555lWSwuVQ" name="recibirRespuesta(Respuesta respuesta)" messageSort="asynchCall" receiveEvent="_GuL3s-ecEe26555lWSwuVQ" sendEvent="_GuL3suecEe26555lWSwuVQ" signature="_yplYcObAEe2km58nRP0i6Q">
+      <ownedComment xmi:id="_pQ-WUOecEe26555lWSwuVQ" annotatedElement="_GuL3sOecEe26555lWSwuVQ">
+        <body>se recibe respuesta y si es verdadero se crea controlador chat&#xD;
+</body>
+      </ownedComment>
+    </message>
+    <message xmi:id="_B48KkOedEe26555lWSwuVQ" name="crea ventana chat" messageSort="asynchCall" receiveEvent="_B48xouedEe26555lWSwuVQ" sendEvent="_B48xoeedEe26555lWSwuVQ" signature="_GANQgOZhEe2rsuTxebE4yA"/>
+    <message xmi:id="_IIWTIOedEe26555lWSwuVQ" name="ingresa mensaje y presiona enviar" messageSort="asynchCall" receiveEvent="_IIW6MeedEe26555lWSwuVQ" sendEvent="_IIW6MOedEe26555lWSwuVQ" signature="_GANQgOZhEe2rsuTxebE4yA"/>
+    <message xmi:id="_PWYAEOedEe26555lWSwuVQ" name="mensaje" messageSort="asynchCall" receiveEvent="_PWYnIeedEe26555lWSwuVQ" sendEvent="_PWYnIOedEe26555lWSwuVQ" signature="_yplYcObAEe2km58nRP0i6Q"/>
+    <message xmi:id="_kfSTgOedEe26555lWSwuVQ" name="recibirMensaje(int puerto,String mensaje)" messageSort="asynchCall" receiveEvent="_kfSTg-edEe26555lWSwuVQ" sendEvent="_kfSTguedEe26555lWSwuVQ" signature="_GANQgOZhEe2rsuTxebE4yA"/>
+    <message xmi:id="_uuUTUOedEe26555lWSwuVQ" name="finalizarChat()" messageSort="asynchCall" receiveEvent="_uuU6YeedEe26555lWSwuVQ" sendEvent="_uuU6YOedEe26555lWSwuVQ" signature="_GANQgOZhEe2rsuTxebE4yA"/>
+    <message xmi:id="_7ntAkOedEe26555lWSwuVQ" name="ControladorUsuario" messageSort="asynchCall" receiveEvent="_7ntAk-edEe26555lWSwuVQ" sendEvent="_7ntAkuedEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
+    <message xmi:id="_9ch0MOedEe26555lWSwuVQ" name="setVisible(true)" messageSort="asynchCall" receiveEvent="_9ch0M-edEe26555lWSwuVQ" sendEvent="_9ch0MuedEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_0Zy8YObBEe2km58nRP0i6Q" name="UsuarioA"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_4x5lEObBEe2km58nRP0i6Q" name="UsuarioA"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_-EmNwObBEe2km58nRP0i6Q" name="UsuarioB"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_JjNmIObCEe2km58nRP0i6Q" name="UIInicioSesion">
     <ownedOperation xmi:id="_qh1jUObCEe2km58nRP0i6Q" name="Operation_1"/>
+    <ownedOperation xmi:id="_gjCAsOeaEe26555lWSwuVQ" name="Operation_2"/>
+    <ownedOperation xmi:id="_h_2kAOeaEe26555lWSwuVQ" name="Operation_3"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_Fv6eIOeHEe2l7Mh0fQ-Pdg" name="java.swing"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_HuVSoOeHEe2l7Mh0fQ-Pdg" name="java.net"/>

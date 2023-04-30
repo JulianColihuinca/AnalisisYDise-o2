@@ -52,7 +52,7 @@
         <description xmi:type="description_2:SequenceDiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Sequence%20Diagram']"/>
         <target xmi:type="uml:Interaction" href="my.uml#_mfmjwOZQEe2rsuTxebE4yA"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_mjFEMObBEe2km58nRP0i6Q" name="Diagrama de Secuencia" repPath="#_mhDq8ObBEe2km58nRP0i6Q">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_mjFEMObBEe2km58nRP0i6Q" name="EnviarMensaje DSS" repPath="#_mhDq8ObBEe2km58nRP0i6Q">
         <description xmi:type="description_2:SequenceDiagramDescription" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Sequence%20Diagram']"/>
         <target xmi:type="uml:Interaction" href="my.uml#_lfECcObBEe2km58nRP0i6Q"/>
       </ownedRepresentationDescriptors>
@@ -4388,7 +4388,7 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.obeonetwork.dsl.uml2.design/description/uml2.odesign#//@ownedViewpoints[name='Capture']/@ownedRepresentations[name='Package%20Hierarchy']/@defaultLayer"/>
     <target xmi:type="uml:Model" href="my.uml#_2H-5YNAAEe25upg2EKoYqg"/>
   </diagram:DSemanticDiagram>
-  <sequence:SequenceDDiagram uid="_mhDq8ObBEe2km58nRP0i6Q" name="Diagrama de Secuencia">
+  <sequence:SequenceDDiagram uid="_mhDq8ObBEe2km58nRP0i6Q" name="EnviarMensaje DSS">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_mii4sObBEe2km58nRP0i6Q" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_mii4sebBEe2km58nRP0i6Q"/>
     </ownedAnnotationEntries>

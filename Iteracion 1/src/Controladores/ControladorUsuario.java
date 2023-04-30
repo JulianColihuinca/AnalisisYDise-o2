@@ -99,6 +99,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// ---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
+		//Metodo recibe respuesta
 		if (arg instanceof RespuestaLlamada) {
 			System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
 			RespuestaLlamada respuesta = (RespuestaLlamada) arg;

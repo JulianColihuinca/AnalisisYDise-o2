@@ -89,7 +89,7 @@ public class ControladorChat implements ActionListener, Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// EN ESTA INSTANCIA SOLO DEBERIA RECIBIR UN MENSAJE PARA AGREGAR AL CHAT O LA FINALIZACION DEL CHAT
-		
+		//Metodo:Recibir mensaje
 		if( arg instanceof Mensaje) {
 			Mensaje mensaje= (Mensaje) arg;
 			String mensajeCompleto = "PUERTO "+ mensaje.getPuerto()+": "+mensaje.getMensaje()+"\n";

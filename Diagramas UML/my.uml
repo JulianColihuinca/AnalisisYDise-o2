@@ -548,4 +548,35 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_Fv6eIOeHEe2l7Mh0fQ-Pdg" name="java.swing"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_HuVSoOeHEe2l7Mh0fQ-Pdg" name="java.net"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_LnoqAOeIEe2l7Mh0fQ-Pdg" name="Controladores">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_2WtNkOeIEe2l7Mh0fQ-Pdg" client="_LnoqAOeIEe2l7Mh0fQ-Pdg" supplier="_OiQoEOeIEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_4EF8cOeIEe2l7Mh0fQ-Pdg" client="_LnoqAOeIEe2l7Mh0fQ-Pdg" supplier="_RfyJIOeIEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_NCoy8OeJEe2l7Mh0fQ-Pdg" client="_LnoqAOeIEe2l7Mh0fQ-Pdg" supplier="_dFavgOeIEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_vddBUOeJEe2l7Mh0fQ-Pdg" client="_LnoqAOeIEe2l7Mh0fQ-Pdg" supplier="_-5KIkOZQEe2rsuTxebE4yA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_OiQoEOeIEe2l7Mh0fQ-Pdg" name="Vistas">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_jpF34OeIEe2l7Mh0fQ-Pdg" client="_OiQoEOeIEe2l7Mh0fQ-Pdg" supplier="_Fv6eIOeHEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_oVadEOeIEe2l7Mh0fQ-Pdg" client="_OiQoEOeIEe2l7Mh0fQ-Pdg" supplier="_dFavgOeIEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_uqO0oOeJEe2l7Mh0fQ-Pdg" client="_OiQoEOeIEe2l7Mh0fQ-Pdg" supplier="_-5KIkOZQEe2rsuTxebE4yA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_RfyJIOeIEe2l7Mh0fQ-Pdg" name="Modelo">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_5v7zMOeIEe2l7Mh0fQ-Pdg" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_HuVSoOeHEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_ghxFIOeJEe2l7Mh0fQ-Pdg" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_bPXz4OeIEe2l7Mh0fQ-Pdg"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_wRnCIOeJEe2l7Mh0fQ-Pdg" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_-5KIkOZQEe2rsuTxebE4yA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_bPXz4OeIEe2l7Mh0fQ-Pdg" name="java.io"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_dFavgOeIEe2l7Mh0fQ-Pdg" name="java.awt.event"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_c9fQoOeKEe2l7Mh0fQ-Pdg" name="Conexion" visibility="public">
+    <ownedOperation xmi:id="_iWeukOeKEe2l7Mh0fQ-Pdg" name="getIP">
+      <ownedParameter xmi:id="_kgSTsOeKEe2l7Mh0fQ-Pdg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_imvYIOeKEe2l7Mh0fQ-Pdg" name="puertoDisponible">
+      <ownedParameter xmi:id="_o32J0OeKEe2l7Mh0fQ-Pdg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_DD61IOeLEe2l7Mh0fQ-Pdg" client="_c9fQoOeKEe2l7Mh0fQ-Pdg" supplier="_xAEKcOZTEe2rsuTxebE4yA"/>
 </uml:Model>

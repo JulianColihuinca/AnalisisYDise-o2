@@ -36,118 +36,111 @@ public class ControladorUsuario implements ActionListener, Observer {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
-
 		// ---------------------------------------ACEPTO LA LLAMADA ENTRANTE-----------------------------------------
 		if (command.equalsIgnoreCase("Atender Llamada")) {
-			
-			this.enviarRespuesta(true);
-			this.vista.llamadaAceptada(); //este metodo solo oculta la ventana usuario
-			this.vista.llamadaRechazada(); //este metodo es para que oculte la llamada recibida despues de ser contestada
-			
-			ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),this.usuario.getLlamada().getPuertoOrigen(),
-					Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
-																   //USUARIO QUE ATIENDE LA LLAMADA
-			
-			this.usuario.setModoChat();
-			this.usuario.setLlamada(null);// SE ATENDIO LA LLAMADA, YA ESTOY EN MODO CHAT
-			
+			this.atenderLlamada();
 		} // --------------------------------------RECHAZO LA LLAMADA ENTRANTE------------------------------------
 		else if (command.equalsIgnoreCase("Rechazar Llamada")) {
-			// OCULTO LA PARTE DONDE RECIBI LA LLAMADA
-			this.vista.llamadaRechazada();
-
-			this.enviarRespuesta(false);
-			this.usuario.setLlamada(null);
-
+			this.rechazarLlamada();
 		} // ---------------------------------------SOLICITO COMENZAR UN CHAT------------------------------------------
 		else if (command.equalsIgnoreCase("Comenzar Chat")) {
-
-			int puerto;
-			String ip;
+			this.comenzarChat();
 			
-			try {
-				//SOLO INICIA UN LLAMADO SI NO TIENE UNO QUE RESPONDER Y SI NO ESPERA RESPUESTA DE OTRO LLAMADO
-				if(this.usuario.getLlamada()==null && this.usuario.getModo().equals("ESCUCHA")) {				
-					// VERIFICO QUE ESTEN BIEN INGRESADO EL PUERTO, FALTA VERIFICAR IP
-					puerto = Integer.parseInt(this.vista.getPuerto());
-					ip = this.vista.getIP();
-
-					// CREO UNA LLAMADA CON EL PUERTO DEL USUARIO ORIGEN, FALTA INCLUIR IP ESPECIFICA
-					Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP());
-				
-					
-					//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
-					//MIENTRAS ESPERA QUE LE CONTESTEN
-					
-					this.usuario.setModoLlamando();
-				
-				
-					// CREO UN USUARIO CLIENTE QUE ENVIA LA LLAMADA AL PUERTO DESTINO Y EJECUTO EL HILO
-					UsuarioCliente c = new UsuarioCliente(puerto, llamada);//***********************************************
-					Thread t = new Thread(c);//*************************************************************************
-					t.start();
-				}
-			} catch (NumberFormatException ex) {
-				System.out.println("Formato puerto mal ingresado,ingrese numero entero");
-			}
-
 		} // -------------------------------------------------------------------------------------------------------------------------
-
 	}
 
 	
 	@Override
 	public void update(Observable o, Object arg) {
 		// ---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
-		//Metodo recibe respuesta
 		if (arg instanceof RespuestaLlamada) {
 			System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
 			RespuestaLlamada respuesta = (RespuestaLlamada) arg;
-			
-			if (!respuesta.isRespuesta()) { // SI NO ME ATENDIERON
-				System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
-
-				//this.usuario.setLlamada(null); EL USUARIO QUE LLAMA YA TIENE NULL EN LLAMADA
-				this.usuario.setModoEscucha();//VUELVE A MODO ESCUCHA
-				this.vista.llamadaRechazada();
-
-			} else {
-				System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
-				
-				
-				this.vista.llamadaAceptada();
-				//CREAR CONTROLADOR DE LA VENTANA CHAT
-				ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),
-						respuesta.getPuertoDestino(),Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
-				   													   //USUARIO QUE SOLICITO INICIAR LA LLAMADA
-				this.usuario.setModoChat(); //PASA A MODO CHAT
-				
-				
-			}
-			
-			
-
+			this.recibirRespuesta(respuesta);
 			// -----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------
 		} else if (arg instanceof Llamada) {
+			Llamada llamada = (Llamada) arg;	
+			this.recibirLlamada(llamada);
+		}
+		// SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
+	}
+	
+	private  void atenderLlamada() {
+		this.enviarRespuesta(true);
+		this.vista.llamadaAceptada(); //este metodo solo oculta la ventana usuario
+		this.vista.llamadaRechazada(); //este metodo es para que oculte la llamada recibida despues de ser contestada
+		
+		ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),this.usuario.getLlamada().getPuertoOrigen(),
+				Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
+															   //USUARIO QUE ATIENDE LA LLAMADA
+		
+		this.usuario.setModoChat();
+		this.usuario.setLlamada(null);// SE ATENDIO LA LLAMADA, YA ESTOY EN MODO CHAT
+	}
+	
+	private void rechazarLlamada() {
+		// OCULTO LA PARTE DONDE RECIBI LA LLAMADA
+					this.vista.llamadaRechazada();
 
-			Llamada llamada = (Llamada) arg;
-
-			String ip = llamada.getIPOrigen();
-			int puerto = llamada.getPuertoOrigen();
-
-			this.vista.recibirLlamada(ip, puerto);
-			
-			this.usuario.setLlamada(llamada);
+					this.enviarRespuesta(false);
+					this.usuario.setLlamada(null);
+	}
+	
+	private void comenzarChat() {
+		int puerto;
+		String ip;
+		
+		try {
+			//SOLO INICIA UN LLAMADO SI NO TIENE UNO QUE RESPONDER Y SI NO ESPERA RESPUESTA DE OTRO LLAMADO
+			if(this.usuario.getLlamada()==null && this.usuario.getModo().equals("ESCUCHA")) {				
+				// VERIFICO QUE ESTEN BIEN INGRESADO EL PUERTO, FALTA VERIFICAR IP
+				puerto = Integer.parseInt(this.vista.getPuerto());
+				ip = this.vista.getIP();
+				// CREO UNA LLAMADA CON EL PUERTO DEL USUARIO ORIGEN, FALTA INCLUIR IP ESPECIFICA
+				Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP());
+				//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
+				//MIENTRAS ESPERA QUE LE CONTESTEN
+				this.usuario.setModoLlamando();
+			    Conexion.crearUsuarioCliente(puerto, llamada);
+			}
+		} catch (NumberFormatException ex) {
+			System.out.println("Formato puerto mal ingresado,ingrese numero entero");
 		}
 
-		// SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
+	}
+	
+	private  void recibirRespuesta(RespuestaLlamada respuesta) {
+		if (!respuesta.isRespuesta()) { // SI NO ME ATENDIERON
+			System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
+			//this.usuario.setLlamada(null); EL USUARIO QUE LLAMA YA TIENE NULL EN LLAMADA
+			this.usuario.setModoEscucha();//VUELVE A MODO ESCUCHA
+			this.vista.llamadaRechazada();
+
+		} else {
+			System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
+			
+			
+			this.vista.llamadaAceptada();
+			//CREAR CONTROLADOR DE LA VENTANA CHAT
+			ControladorChat controladorChat= new ControladorChat(this, this.usuario.getPuerto(),
+					respuesta.getPuertoDestino(),Conexion.getIP(),Conexion.getIP());//ESTE CONTROLADOR LANZA LA VENTANA CHAT DEL 
+			   													   //USUARIO QUE SOLICITO INICIAR LA LLAMADA
+			this.usuario.setModoChat(); //PASA A MODO CHAT	
+		}
+	}
+	
+	private void recibirLlamada(Llamada llamada) {
+		String ip = llamada.getIPOrigen();
+		int puerto = llamada.getPuertoOrigen();
+
+		this.vista.recibirLlamada(ip, puerto);
+		
+		this.usuario.setLlamada(llamada);
 	}
 	
 	public void enviarRespuesta(boolean res) {
 		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res,this.usuario.getPuerto(),Conexion.getIP());
-		UsuarioCliente c = new UsuarioCliente(respuesta.getPuertoOrigen(), respuesta);// para un futuro agregar ip
-		Thread t = new Thread(c);
-		t.start();
+		Conexion.crearUsuarioCliente(respuesta.getPuertoOrigen(), respuesta);
 	}
 
 	public UsuarioServidor getUsuario() {

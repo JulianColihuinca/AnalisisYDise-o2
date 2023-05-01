@@ -7,6 +7,7 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
+import Modelo.Conexion;
 import Modelo.FinalizarLlamada;
 import Modelo.Mensaje;
 import Modelo.UsuarioCliente;
@@ -50,35 +51,12 @@ public class ControladorChat implements ActionListener, Observer {
 	public void actionPerformed(ActionEvent e) {
 		String command= e.getActionCommand();
 		if (command.equalsIgnoreCase("Enviar Mensaje")) {
-			
-			//DEBERIA LEER EL MENSAJE INGRESADO, AGREGARLO AL TEXTAREA Y MANDARLO PARA QUE LO AGREGUE EL DESTINATARIO
 			String mensaje= this.vistaChat.getMensaje();
-			String mensajeCompleto="TU: "+mensaje+"\n";
-			this.vistaChat.addMensaje(mensajeCompleto);
-			this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
-			
-			UsuarioCliente c = new UsuarioCliente(this.puertoDestino, new Mensaje(mensaje,this.puertoOrigen));// para un futuro agregar ip
-			Thread t = new Thread(c);
-			t.start();
+			this.enviarMensaje(mensaje);
 			
 		}
 		else if (command.equalsIgnoreCase("Finalizar Chat")) {
-			
-			//CIERRA VENTANA CHAT Y VUELVE A ABRIR VENTANA USUARIO
-			//MODIFICA EL MODO DEL USUARIO A ESCUCHA
-			//Y NOTIFICA AL OTRO USUARIO QUE CERRO EL CHAT PARA QUE HAGA LO MISMO 
-			
-			this.vistaChat.setVisible(false);
-			this.consUsuario.getVista().setVisible(true);
-			
-			this.consUsuario.getUsuario().setModoEscucha();
-			this.consUsuario.getUsuario().setLlamada(null);
-			this.consUsuario.getUsuario().setRespuesta(null);
-			
-			UsuarioCliente c=new UsuarioCliente(this.puertoDestino);
-			Thread t = new Thread(c);
-			t.start();
-			
+			this.finalizarChat();
 		}
 		
 	}
@@ -89,22 +67,52 @@ public class ControladorChat implements ActionListener, Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		// EN ESTA INSTANCIA SOLO DEBERIA RECIBIR UN MENSAJE PARA AGREGAR AL CHAT O LA FINALIZACION DEL CHAT
-		//Metodo:Recibir mensaje
 		if( arg instanceof Mensaje) {
 			Mensaje mensaje= (Mensaje) arg;
-			String mensajeCompleto = "PUERTO "+ mensaje.getPuerto()+": "+mensaje.getMensaje()+"\n";
-			this.vistaChat.addMensaje(mensajeCompleto);
+			this.recibirMensaje(mensaje);
 		}else if(arg instanceof FinalizarLlamada) {
-			//CREAR JOPTION PANE
-			JOptionPane.showMessageDialog(null, "El chat ha finalizado");
-			this.vistaChat.setVisible(false);
-			this.consUsuario.getVista().setVisible(true);
-			
-			this.consUsuario.getUsuario().setModoEscucha();
-			this.consUsuario.getUsuario().setLlamada(null);
-			this.consUsuario.getUsuario().setRespuesta(null);
+			this.recibirFinalizarChat();
 		}
 		
 	}
+	
+	
+	private void enviarMensaje(String mensaje) {
+		//DEBERIA LEER EL MENSAJE INGRESADO, AGREGARLO AL TEXTAREA Y MANDARLO PARA QUE LO AGREGUE EL DESTINATARIO
+		String mensajeCompleto="TU: "+mensaje+"\n";
+		this.vistaChat.addMensaje(mensajeCompleto);
+		this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
+		Conexion.crearUsuarioCliente(this.puertoDestino,new Mensaje(mensaje,this.puertoOrigen) );
+	}
+	
+	private void finalizarChat(){
+		//CIERRA VENTANA CHAT Y VUELVE A ABRIR VENTANA USUARIO
+		//MODIFICA EL MODO DEL USUARIO A ESCUCHA
+		//Y NOTIFICA AL OTRO USUARIO QUE CERRO EL CHAT PARA QUE HAGA LO MISMO 
+		this.vistaChat.setVisible(false);
+		this.consUsuario.getVista().setVisible(true);
+		
+		this.consUsuario.getUsuario().setModoEscucha();
+		this.consUsuario.getUsuario().setLlamada(null);
+		this.consUsuario.getUsuario().setRespuesta(null);
+		JOptionPane.showMessageDialog(null, "El chat ha finalizado");
+		Conexion.crearUsuarioCliente(this.puertoDestino, null);
+	}
+	
+	private void recibirMensaje(Mensaje mensaje) {
+		String mensajeCompleto = "PUERTO "+ mensaje.getPuerto()+": "+mensaje.getMensaje()+"\n";
+		this.vistaChat.addMensaje(mensajeCompleto);
+	}
+	
+	private void recibirFinalizarChat() {
+		this.vistaChat.setVisible(false);
+		this.consUsuario.getVista().setVisible(true);
+		
+		this.consUsuario.getUsuario().setModoEscucha();
+		this.consUsuario.getUsuario().setLlamada(null);
+		this.consUsuario.getUsuario().setRespuesta(null);
+	}
+	
+	
 
 }

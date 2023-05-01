@@ -145,7 +145,7 @@
     <ownedAttribute xmi:id="_9WJ9YOZTEe2rsuTxebE4yA" name="vistaInicioSesion" visibility="private" type="_OpftcOZUEe2rsuTxebE4yA"/>
     <interfaceRealization xmi:id="_OHloUOZWEe2rsuTxebE4yA" client="_xAEKcOZTEe2rsuTxebE4yA" supplier="_1lpZAOZUEe2rsuTxebE4yA" contract="_1lpZAOZUEe2rsuTxebE4yA"/>
     <ownedOperation xmi:id="_QkNJ0OZYEe2rsuTxebE4yA" name="ControladorInicioSesion"/>
-    <ownedOperation xmi:id="_CvyFQOeYEe2DLJCmB9S00Q" name="Operation_2"/>
+    <ownedOperation xmi:id="_CvyFQOeYEe2DLJCmB9S00Q" name="iniciarSesion" visibility="private"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_OpftcOZUEe2rsuTxebE4yA" name="UIInicioSesion"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_1lpZAOZUEe2rsuTxebE4yA" name="ActionListener" visibility="public">
@@ -185,6 +185,17 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:id="_kpWekOfWEe2tir5ZwFdHFQ" name="enviarMensaje" visibility="private">
+      <ownedParameter xmi:id="_mPRTgOfWEe2tir5ZwFdHFQ" name="mensaje">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_tqMM8OfWEe2tir5ZwFdHFQ" name="finalizarChat" visibility="private"/>
+    <ownedOperation xmi:id="_xhX54OfWEe2tir5ZwFdHFQ" name="recibirMensaje" visibility="private">
+      <ownedParameter xmi:id="_zNsRwOfWEe2tir5ZwFdHFQ" name="mensaje" type="_dGZhoOaxEe2km58nRP0i6Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_5GAI8OfWEe2tir5ZwFdHFQ" name="recibirFinalizarChat" visibility="private"/>
+    <ownedOperation xmi:id="_MBkJIOfZEe2tir5ZwFdHFQ" name="Operation_6"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZNlsYOZWEe2rsuTxebE4yA" name="ControladorUsuario" visibility="private">
     <ownedAttribute xmi:id="_ws9loOa-Ee2km58nRP0i6Q" name="vista" visibility="private" type="_or7wEOZeEe2rsuTxebE4yA"/>
@@ -200,6 +211,15 @@
     </ownedOperation>
     <ownedOperation xmi:id="_K09pQOa_Ee2km58nRP0i6Q" name="getUsuario">
       <ownedParameter xmi:id="_NQkJAOa_Ee2km58nRP0i6Q" type="_kYRXUOayEe2km58nRP0i6Q" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_2MSmUOfVEe2tir5ZwFdHFQ" name="atenderLlamada" visibility="private"/>
+    <ownedOperation xmi:id="_4YlewOfVEe2tir5ZwFdHFQ" name="rechazarLlamada" visibility="private"/>
+    <ownedOperation xmi:id="_7u0awOfVEe2tir5ZwFdHFQ" name="comenzarChat" visibility="private"/>
+    <ownedOperation xmi:id="__XQhEOfVEe2tir5ZwFdHFQ" name="recibirRespuesta" visibility="private">
+      <ownedParameter xmi:id="_BJBZoOfWEe2tir5ZwFdHFQ" name="respuesta" type="_FJ_ZkOa2Ee2km58nRP0i6Q"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GJb_gOfWEe2tir5ZwFdHFQ" name="recibirLlamada" visibility="private">
+      <ownedParameter xmi:id="_IOzJgOfWEe2tir5ZwFdHFQ" name="llamada" type="_eWWw0Oa1Ee2km58nRP0i6Q"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_ppdo8OZWEe2rsuTxebE4yA" name="UIInicioSesion" visibility="public">
@@ -344,6 +364,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:id="_WLCTgOfZEe2tir5ZwFdHFQ" name="Operation_4"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_KrJ8sOZhEe2rsuTxebE4yA" client="_Bw4JUOZhEe2rsuTxebE4yA" supplier="_RjrJIOZgEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_59DZUOawEe2km58nRP0i6Q" name="UsuarioCliente" visibility="public">
@@ -516,11 +537,9 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_bwlZsOa7Ee2km58nRP0i6Q" client="_RZUe0OZWEe2rsuTxebE4yA" supplier="_RjrJIOZgEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_crPrIOa7Ee2km58nRP0i6Q" client="_ZNlsYOZWEe2rsuTxebE4yA" supplier="_or7wEOZeEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_zEYa4Oa8Ee2km58nRP0i6Q" client="_59DZUOawEe2km58nRP0i6Q" supplier="_RZUe0OZWEe2rsuTxebE4yA"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_0nE8sOa8Ee2km58nRP0i6Q" client="_kYRXUOayEe2km58nRP0i6Q" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_OVgpwOa9Ee2km58nRP0i6Q" client="_ZNlsYOZWEe2rsuTxebE4yA" supplier="_xAEKcOZTEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_P64sIOa9Ee2km58nRP0i6Q" client="_RZUe0OZWEe2rsuTxebE4yA" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_DEgaIOa-Ee2km58nRP0i6Q" client="_lSggEOa0Ee2km58nRP0i6Q" supplier="_RZUe0OZWEe2rsuTxebE4yA"/>
-  <packagedElement xmi:type="uml:Dependency" xmi:id="_bl_L4Oa-Ee2km58nRP0i6Q" client="_eWWw0Oa1Ee2km58nRP0i6Q" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_l10c8Oa-Ee2km58nRP0i6Q" client="_FJ_ZkOa2Ee2km58nRP0i6Q" supplier="_eWWw0Oa1Ee2km58nRP0i6Q"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_3oh0IOa_Ee2km58nRP0i6Q" client="_WV9LwOa1Ee2km58nRP0i6Q" supplier="_59DZUOawEe2km58nRP0i6Q"/>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_b0O74ObBEe2km58nRP0i6Q" name="NewModel"/>
@@ -528,7 +547,7 @@
     <ownedAttribute xmi:id="_0Z0xkObBEe2km58nRP0i6Q" name="Actor1" type="_0Zy8YObBEe2km58nRP0i6Q"/>
     <ownedAttribute xmi:id="_4x6zMObBEe2km58nRP0i6Q" name="Actor1" type="_4x5lEObBEe2km58nRP0i6Q"/>
     <ownedAttribute xmi:id="_-Enb4ObBEe2km58nRP0i6Q" name="Actor2" type="_-EmNwObBEe2km58nRP0i6Q"/>
-    <ownedAttribute xmi:id="_JjO0QObCEe2km58nRP0i6Q" name="Class23" type="_JjNmIObCEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_JjO0QObCEe2km58nRP0i6Q" name="VentanaIniciarSesion" type="_JjNmIObCEe2km58nRP0i6Q"/>
     <ownedAttribute xmi:id="_YJ0aYOeXEe2DLJCmB9S00Q" name="ControladorInicioSesion" type="_xAEKcOZTEe2rsuTxebE4yA"/>
     <ownedAttribute xmi:id="_yC7GYOeXEe2DLJCmB9S00Q" name="ControladorUsuario" type="_ZNlsYOZWEe2rsuTxebE4yA"/>
     <ownedAttribute xmi:id="_2EoBQOeXEe2DLJCmB9S00Q" name="VentanaUsuario" type="_68L-4OZfEe2rsuTxebE4yA"/>
@@ -550,13 +569,15 @@
     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_uuUTUeedEe26555lWSwuVQ" name="actualizarEtiquetas"/>
     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_7ntAkeedEe26555lWSwuVQ" name="ControladorUsuario"/>
     <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_9ch0MeedEe26555lWSwuVQ" name="actualizarDatos"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_MBkwMOfZEe2tir5ZwFdHFQ" name="Operation_6"/>
+    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WLDhoOfZEe2tir5ZwFdHFQ" name="Operation_4"/>
     <lifeline xmi:id="_4x6MIObBEe2km58nRP0i6Q" name="UsuarioA" represents="_4x6zMObBEe2km58nRP0i6Q" coveredBy="_qiJFUObCEe2km58nRP0i6Q _ZcyosOeYEe2DLJCmB9S00Q _o-1IUueaEe26555lWSwuVQ _O6QWsuebEe26555lWSwuVQ _IIW6MOedEe26555lWSwuVQ _uuU6YOedEe26555lWSwuVQ"/>
     <lifeline xmi:id="_YJ2PkOeXEe2DLJCmB9S00Q" name="ControladorInicioSesion" represents="_YJ0aYOeXEe2DLJCmB9S00Q" coveredBy="_ZcyoseeYEe2DLJCmB9S00Q _ZcyosueYEe2DLJCmB9S00Q _Zcyos-eYEe2DLJCmB9S00Q _h_2kA-eaEe26555lWSwuVQ _w1dGU-eaEe26555lWSwuVQ _w1dGVOeaEe26555lWSwuVQ _w1dGVeeaEe26555lWSwuVQ _4bNWwueaEe26555lWSwuVQ"/>
     <lifeline xmi:id="_JjONMObCEe2km58nRP0i6Q" name="Class1" represents="_JjO0QObCEe2km58nRP0i6Q" coveredBy="_qiIeQ-bCEe2km58nRP0i6Q _h_3LEOeaEe26555lWSwuVQ _h_3LEeeaEe26555lWSwuVQ _h_3LEueaEe26555lWSwuVQ _o-1IU-eaEe26555lWSwuVQ _o-1IVOeaEe26555lWSwuVQ _o-1IVeeaEe26555lWSwuVQ _w1dGUueaEe26555lWSwuVQ"/>
-    <lifeline xmi:id="_yC7tcOeXEe2DLJCmB9S00Q" name="ControladorUsuario" represents="_yC7GYOeXEe2DLJCmB9S00Q" coveredBy="_4bNWw-eaEe26555lWSwuVQ _4bNWxOeaEe26555lWSwuVQ _4bNWxeeaEe26555lWSwuVQ _GYw2wuebEe26555lWSwuVQ _XTAKU-ebEe26555lWSwuVQ _XTAKVOebEe26555lWSwuVQ _XTAKVeebEe26555lWSwuVQ _GuL3suecEe26555lWSwuVQ _7ntAk-edEe26555lWSwuVQ _7ntAlOedEe26555lWSwuVQ _7ntAleedEe26555lWSwuVQ _9ch0MuedEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_yC7tcOeXEe2DLJCmB9S00Q" name="ControladorUsuario" represents="_yC7GYOeXEe2DLJCmB9S00Q" coveredBy="_4bNWw-eaEe26555lWSwuVQ _4bNWxOeaEe26555lWSwuVQ _4bNWxeeaEe26555lWSwuVQ _GYw2wuebEe26555lWSwuVQ _XTAKU-ebEe26555lWSwuVQ _XTAKVOebEe26555lWSwuVQ _XTAKVeebEe26555lWSwuVQ _GuL3suecEe26555lWSwuVQ _7ntAk-edEe26555lWSwuVQ _7ntAlOedEe26555lWSwuVQ _7ntAleedEe26555lWSwuVQ _9ch0MuedEe26555lWSwuVQ _MBkwMefZEe2tir5ZwFdHFQ"/>
     <lifeline xmi:id="_2EooUOeXEe2DLJCmB9S00Q" name="VentanaUsuario" represents="_2EoBQOeXEe2DLJCmB9S00Q" coveredBy="_GYw2w-ebEe26555lWSwuVQ _GYw2xOebEe26555lWSwuVQ _GYw2xeebEe26555lWSwuVQ _O6QWs-ebEe26555lWSwuVQ _O6QWtOebEe26555lWSwuVQ _O6QWteebEe26555lWSwuVQ _XTAKUuebEe26555lWSwuVQ _9ch0M-edEe26555lWSwuVQ _9ch0NOedEe26555lWSwuVQ _9ch0NeedEe26555lWSwuVQ"/>
-    <lifeline xmi:id="_4vvjsOeXEe2DLJCmB9S00Q" name="ControladorChat" represents="_4vu8oOeXEe2DLJCmB9S00Q" coveredBy="_GuL3s-ecEe26555lWSwuVQ _GuL3tOecEe26555lWSwuVQ _GuL3teecEe26555lWSwuVQ _B48xoeedEe26555lWSwuVQ _PWYnIeedEe26555lWSwuVQ _PWYnIuedEe26555lWSwuVQ _PWYnI-edEe26555lWSwuVQ _kfSTguedEe26555lWSwuVQ"/>
-    <lifeline xmi:id="_8CoQwOeXEe2DLJCmB9S00Q" name="VentanaChat" represents="_8CnpsOeXEe2DLJCmB9S00Q" coveredBy="_B48xouedEe26555lWSwuVQ _B48xo-edEe26555lWSwuVQ _B48xpOedEe26555lWSwuVQ _IIW6MeedEe26555lWSwuVQ _IIW6MuedEe26555lWSwuVQ _IIW6M-edEe26555lWSwuVQ _PWYnIOedEe26555lWSwuVQ _kfSTg-edEe26555lWSwuVQ _kfSThOedEe26555lWSwuVQ _kfSTheedEe26555lWSwuVQ _uuU6YeedEe26555lWSwuVQ _uuU6YuedEe26555lWSwuVQ _uuU6Y-edEe26555lWSwuVQ _7ntAkuedEe26555lWSwuVQ"/>
+    <lifeline xmi:id="_4vvjsOeXEe2DLJCmB9S00Q" name="ControladorChat" represents="_4vu8oOeXEe2DLJCmB9S00Q" coveredBy="_GuL3s-ecEe26555lWSwuVQ _GuL3tOecEe26555lWSwuVQ _GuL3teecEe26555lWSwuVQ _B48xoeedEe26555lWSwuVQ _PWYnIeedEe26555lWSwuVQ _PWYnIuedEe26555lWSwuVQ _PWYnI-edEe26555lWSwuVQ _kfSTguedEe26555lWSwuVQ _MBkwMufZEe2tir5ZwFdHFQ _MBkwM-fZEe2tir5ZwFdHFQ _MBkwNOfZEe2tir5ZwFdHFQ _WLDhoefZEe2tir5ZwFdHFQ"/>
+    <lifeline xmi:id="_8CoQwOeXEe2DLJCmB9S00Q" name="VentanaChat" represents="_8CnpsOeXEe2DLJCmB9S00Q" coveredBy="_B48xouedEe26555lWSwuVQ _B48xo-edEe26555lWSwuVQ _B48xpOedEe26555lWSwuVQ _IIW6MeedEe26555lWSwuVQ _IIW6MuedEe26555lWSwuVQ _IIW6M-edEe26555lWSwuVQ _PWYnIOedEe26555lWSwuVQ _kfSTg-edEe26555lWSwuVQ _kfSThOedEe26555lWSwuVQ _kfSTheedEe26555lWSwuVQ _uuU6YeedEe26555lWSwuVQ _uuU6YuedEe26555lWSwuVQ _uuU6Y-edEe26555lWSwuVQ _7ntAkuedEe26555lWSwuVQ _WLDhoufZEe2tir5ZwFdHFQ _WLDho-fZEe2tir5ZwFdHFQ _WLDhpOfZEe2tir5ZwFdHFQ"/>
     <lifeline xmi:id="_-Em00ObBEe2km58nRP0i6Q" name="Actor1" represents="_-Enb4ObBEe2km58nRP0i6Q"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZcyosOeYEe2DLJCmB9S00Q" name="ControladorInicioSesion_sender" covered="_4x6MIObBEe2km58nRP0i6Q" message="_ZcyBoOeYEe2DLJCmB9S00Q"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZcyoseeYEe2DLJCmB9S00Q" name="ControladorInicioSesion_receiver" covered="_YJ2PkOeXEe2DLJCmB9S00Q" message="_ZcyBoOeYEe2DLJCmB9S00Q"/>
@@ -606,6 +627,14 @@
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PWYnIeedEe26555lWSwuVQ" name="ControladorChat_receiver" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_PWYAEOedEe26555lWSwuVQ"/>
     <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_PWYnIuedEe26555lWSwuVQ" name="enviarMensaje(String mensaje)" covered="_4vvjsOeXEe2DLJCmB9S00Q" finish="_PWYnI-edEe26555lWSwuVQ" start="_PWYnIeedEe26555lWSwuVQ" behavior="_PWYAEeedEe26555lWSwuVQ"/>
     <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_PWYnI-edEe26555lWSwuVQ" name="ControladorChat_finish" covered="_4vvjsOeXEe2DLJCmB9S00Q" execution="_PWYnIuedEe26555lWSwuVQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MBkwMefZEe2tir5ZwFdHFQ" name="Operation_6_sender" covered="_yC7tcOeXEe2DLJCmB9S00Q" message="_MBkJIefZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MBkwMufZEe2tir5ZwFdHFQ" name="Operation_6_receiver" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_MBkJIefZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_MBkwM-fZEe2tir5ZwFdHFQ" name="ControladorChat" covered="_4vvjsOeXEe2DLJCmB9S00Q" finish="_MBkwNOfZEe2tir5ZwFdHFQ" start="_MBkwMufZEe2tir5ZwFdHFQ" behavior="_MBkwMOfZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_MBkwNOfZEe2tir5ZwFdHFQ" name="Operation_6_finish" covered="_4vvjsOeXEe2DLJCmB9S00Q" execution="_MBkwM-fZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WLDhoefZEe2tir5ZwFdHFQ" name="Operation_4_sender" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_WLC6kOfZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_WLDhoufZEe2tir5ZwFdHFQ" name="Operation_4_receiver" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_WLC6kOfZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_WLDho-fZEe2tir5ZwFdHFQ" name="actualizarEtiquetas" covered="_8CoQwOeXEe2DLJCmB9S00Q" finish="_WLDhpOfZEe2tir5ZwFdHFQ" start="_WLDhoufZEe2tir5ZwFdHFQ" behavior="_WLDhoOfZEe2tir5ZwFdHFQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_WLDhpOfZEe2tir5ZwFdHFQ" name="Operation_4_finish" covered="_8CoQwOeXEe2DLJCmB9S00Q" execution="_WLDho-fZEe2tir5ZwFdHFQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kfSTguedEe26555lWSwuVQ" name="actualizarEtiquetas_sender" covered="_4vvjsOeXEe2DLJCmB9S00Q" message="_kfSTgOedEe26555lWSwuVQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kfSTg-edEe26555lWSwuVQ" name="actualizarEtiquetas_receiver" covered="_8CoQwOeXEe2DLJCmB9S00Q" message="_kfSTgOedEe26555lWSwuVQ"/>
     <fragment xmi:type="uml:BehaviorExecutionSpecification" xmi:id="_kfSThOedEe26555lWSwuVQ" name="actualizarEtiquetas" covered="_8CoQwOeXEe2DLJCmB9S00Q" finish="_kfSTheedEe26555lWSwuVQ" start="_kfSTg-edEe26555lWSwuVQ" behavior="_kfSTgeedEe26555lWSwuVQ"/>
@@ -631,10 +660,10 @@
     </message>
     <message xmi:id="_h_2kAeeaEe26555lWSwuVQ" name="Crea Ventana Inicio" messageSort="asynchCall" receiveEvent="_h_3LEOeaEe26555lWSwuVQ" sendEvent="_h_2kA-eaEe26555lWSwuVQ" signature="_h_2kAOeaEe26555lWSwuVQ"/>
     <message xmi:id="_o-1IUOeaEe26555lWSwuVQ" name="Ingresa puerto " messageSort="asynchCall" receiveEvent="_o-1IU-eaEe26555lWSwuVQ" sendEvent="_o-1IUueaEe26555lWSwuVQ" signature="_qh1jUObCEe2km58nRP0i6Q"/>
-    <message xmi:id="_w1dGUOeaEe26555lWSwuVQ" name="Devuelve puerto igresado" messageSort="asynchCall" receiveEvent="_w1dGU-eaEe26555lWSwuVQ" sendEvent="_w1dGUueaEe26555lWSwuVQ" signature="_QkNJ0OZYEe2rsuTxebE4yA"/>
-    <message xmi:id="_4bNWwOeaEe26555lWSwuVQ" name="iniciarSecion(int puerto)" messageSort="asynchCall" receiveEvent="_4bNWw-eaEe26555lWSwuVQ" sendEvent="_4bNWwueaEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
+    <message xmi:id="_w1dGUOeaEe26555lWSwuVQ" name="getPuerto()" messageSort="asynchCall" receiveEvent="_w1dGU-eaEe26555lWSwuVQ" sendEvent="_w1dGUueaEe26555lWSwuVQ" signature="_QkNJ0OZYEe2rsuTxebE4yA"/>
+    <message xmi:id="_4bNWwOeaEe26555lWSwuVQ" name="iniciarSesion()" messageSort="asynchCall" receiveEvent="_4bNWw-eaEe26555lWSwuVQ" sendEvent="_4bNWwueaEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
     <message xmi:id="_GYw2wOebEe26555lWSwuVQ" name="Crea VentanaUsuario constructor" messageSort="asynchCall" receiveEvent="_GYw2w-ebEe26555lWSwuVQ" sendEvent="_GYw2wuebEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
-    <message xmi:id="_O6QWsOebEe26555lWSwuVQ" name="ComenzarChat(String ip,int puerto)" messageSort="asynchCall" receiveEvent="_O6QWs-ebEe26555lWSwuVQ" sendEvent="_O6QWsuebEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
+    <message xmi:id="_O6QWsOebEe26555lWSwuVQ" name="comenzarChat()" messageSort="asynchCall" receiveEvent="_O6QWs-ebEe26555lWSwuVQ" sendEvent="_O6QWsuebEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
     <message xmi:id="_XTAKUOebEe26555lWSwuVQ" name="puerto" messageSort="asynchCall" receiveEvent="_XTAKU-ebEe26555lWSwuVQ" sendEvent="_XTAKUuebEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
     <message xmi:id="_GuL3sOecEe26555lWSwuVQ" name="recibirRespuesta(Respuesta respuesta)" messageSort="asynchCall" receiveEvent="_GuL3s-ecEe26555lWSwuVQ" sendEvent="_GuL3suecEe26555lWSwuVQ" signature="_yplYcObAEe2km58nRP0i6Q">
       <ownedComment xmi:id="_pQ-WUOecEe26555lWSwuVQ" annotatedElement="_GuL3sOecEe26555lWSwuVQ">
@@ -649,11 +678,13 @@
     <message xmi:id="_uuUTUOedEe26555lWSwuVQ" name="finalizarChat()" messageSort="asynchCall" receiveEvent="_uuU6YeedEe26555lWSwuVQ" sendEvent="_uuU6YOedEe26555lWSwuVQ" signature="_GANQgOZhEe2rsuTxebE4yA"/>
     <message xmi:id="_7ntAkOedEe26555lWSwuVQ" name="ControladorUsuario" messageSort="asynchCall" receiveEvent="_7ntAk-edEe26555lWSwuVQ" sendEvent="_7ntAkuedEe26555lWSwuVQ" signature="_BWREwObAEe2km58nRP0i6Q"/>
     <message xmi:id="_9ch0MOedEe26555lWSwuVQ" name="setVisible(true)" messageSort="asynchCall" receiveEvent="_9ch0M-edEe26555lWSwuVQ" sendEvent="_9ch0MuedEe26555lWSwuVQ" signature="_AArzgOZgEe2rsuTxebE4yA"/>
+    <message xmi:id="_MBkJIefZEe2tir5ZwFdHFQ" name="recibirLlamada(Llamada llamada)" messageSort="asynchCall" receiveEvent="_MBkwMufZEe2tir5ZwFdHFQ" sendEvent="_MBkwMefZEe2tir5ZwFdHFQ" signature="_MBkJIOfZEe2tir5ZwFdHFQ"/>
+    <message xmi:id="_WLC6kOfZEe2tir5ZwFdHFQ" name="crea ventana chat" messageSort="asynchCall" receiveEvent="_WLDhoufZEe2tir5ZwFdHFQ" sendEvent="_WLDhoefZEe2tir5ZwFdHFQ" signature="_WLCTgOfZEe2tir5ZwFdHFQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_0Zy8YObBEe2km58nRP0i6Q" name="UsuarioA"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_4x5lEObBEe2km58nRP0i6Q" name="UsuarioA"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_-EmNwObBEe2km58nRP0i6Q" name="UsuarioB"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_JjNmIObCEe2km58nRP0i6Q" name="UIInicioSesion">
+  <packagedElement xmi:type="uml:Class" xmi:id="_JjNmIObCEe2km58nRP0i6Q" name="VentanaInicioSesion">
     <ownedOperation xmi:id="_qh1jUObCEe2km58nRP0i6Q" name="Operation_1"/>
     <ownedOperation xmi:id="_gjCAsOeaEe26555lWSwuVQ" name="Operation_2"/>
     <ownedOperation xmi:id="_h_2kAOeaEe26555lWSwuVQ" name="Operation_3"/>
@@ -689,6 +720,15 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:id="_smuPsOfUEe2tir5ZwFdHFQ" name="crearUsuarioCliente">
+      <ownedParameter xmi:id="_vK8f8OfUEe2tir5ZwFdHFQ" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_yqBO4OfUEe2tir5ZwFdHFQ" name="o" type="_69gvEOfUEe2tir5ZwFdHFQ"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_DD61IOeLEe2l7Mh0fQ-Pdg" client="_c9fQoOeKEe2l7Mh0fQ-Pdg" supplier="_xAEKcOZTEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_69gvEOfUEe2tir5ZwFdHFQ" name="Object" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_T9I_8OfWEe2tir5ZwFdHFQ" client="_eWWw0Oa1Ee2km58nRP0i6Q" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Wj18cOfWEe2tir5ZwFdHFQ" client="_kYRXUOayEe2km58nRP0i6Q" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
 </uml:Model>

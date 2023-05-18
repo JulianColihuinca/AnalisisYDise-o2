@@ -3,15 +3,13 @@ package Modelo;
 public class RespuestaLlamada extends Llamada{
 	
 	private boolean respuesta;
-	private int puertoDestino;
-	private String ipDestino;
 	
 	
-	public RespuestaLlamada(Llamada llamada, boolean respuesta,int puerto,String ip) {
-		super(llamada.getPuertoOrigen(),llamada.getIPOrigen());
+	
+	public RespuestaLlamada(Llamada llamada, boolean respuesta) {
+		super(llamada.getPuertoOrigen(),llamada.getIPOrigen(),llamada.getPuertoDestino(),llamada.getIpDestino());
 		this.respuesta = respuesta;
-		this.puertoDestino=puerto;
-		this.ipDestino=ip;
+		
 	}
 
 
@@ -20,15 +18,6 @@ public class RespuestaLlamada extends Llamada{
 	}
 
 
-	public int getPuertoDestino() {
-		return puertoDestino;
-	}
-
-
-	public String getIpDestino() {
-		return ipDestino;
-	}
-	
 	
 	
 	

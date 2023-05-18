@@ -3,12 +3,25 @@ package Modelo;
 import java.io.Serializable;
 
 public class Llamada implements Serializable{
-	private int puertoOrigen;
-	private String IPOrigen;
+	private int puertoOrigen;//EL QUE LLAMO
+	private String ipOrigen;
+	private int puertoDestino;//EL QUE ES LLAMADO
+	private String ipDestino;
 	
-	public Llamada(int puertoOrigen, String iPOrigen) {
+
+	public Llamada(int puertoOrigen, String ipOrigen, int puertoDestino, String ipDestino) {
 		this.puertoOrigen = puertoOrigen;
-		IPOrigen = iPOrigen;
+		this.ipOrigen = ipOrigen;
+		this.puertoDestino = puertoDestino;
+		this.ipDestino = ipDestino;
+	}
+
+	public int getPuertoDestino() {
+		return puertoDestino;
+	}
+
+	public String getIpDestino() {
+		return ipDestino;
 	}
 
 	public int getPuertoOrigen() {
@@ -16,7 +29,7 @@ public class Llamada implements Serializable{
 	}
 
 	public String getIPOrigen() {
-		return IPOrigen;
+		return ipOrigen;
 	}
 	
 	

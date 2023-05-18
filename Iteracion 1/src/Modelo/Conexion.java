@@ -50,9 +50,11 @@ public class Conexion {
 			}
 			else if(o instanceof Llamada) {
 				// CREO UN USUARIO CLIENTE QUE ENVIA LA LLAMADA AL PUERTO DESTINO Y EJECUTO EL HILO
-				c = new UsuarioCliente(puerto, (Llamada) o );
+				Llamada llamada=(Llamada) o;
+				c = new UsuarioCliente(puerto,llamada  );
 				Thread t = new Thread(c);
 				t.start();
+				
 			}
 			
 		}

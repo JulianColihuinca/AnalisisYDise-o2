@@ -60,20 +60,20 @@ public class UsuarioCliente implements Runnable {
             //---------------------------------Envio -----------------------------------
             
             if(this.llamada==null) { 
-            	System.out.println("no recibi llamada");
+            	//System.out.println("no recibi llamada");
             	if(this.mensaje==null) {
-            		System.out.println("no es mensaje");
+            		//System.out.println("no es mensaje");
             		if(this.respuesta==null)
             			out.writeObject(new FinalizarLlamada());
             		else
             			out.writeObject(this.respuesta);//----> ENVIO RESPUESTA A PETICION DE LLAMADA
             	}else {
-            		System.out.println("intento enviar mensaje");
+            		//System.out.println("intento enviar mensaje");
             		out.writeObject(this.mensaje);//----> ENVIO MENSAJE
             	
             	}
             }else {//----> ENVIO SOLICITUD DE LLAMADA
-            	System.out.println("es llamada");
+            	//System.out.println("es llamada");
             	out.writeObject(this.llamada);
             	
             }

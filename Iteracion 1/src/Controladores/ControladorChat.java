@@ -2,6 +2,7 @@ package Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -23,6 +24,7 @@ public class ControladorChat implements ActionListener, Observer {
 	private int puertoDestino;
 	private String ipOrigen;
 	private String ipDestino;
+	
 	
 	
 	public ControladorChat( ControladorUsuario consUsuario, int puertoOrigen, int puertoDestino,

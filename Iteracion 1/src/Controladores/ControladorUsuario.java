@@ -49,7 +49,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 		} // -------------------------------------------------------------------------------------------------------------------------
 	}
 
-	
+	//CON UPDATE USUARIO RECIBE RESPUESTA A LLAMADA O UNA LLAMADA
 	@Override
 	public void update(Observable o, Object arg) {
 		// ---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
@@ -97,11 +97,11 @@ public class ControladorUsuario implements ActionListener, Observer {
 				puerto = Integer.parseInt(this.vista.getPuerto());
 				ip = this.vista.getIP();
 				// CREO UNA LLAMADA CON EL PUERTO DEL USUARIO ORIGEN, FALTA INCLUIR IP ESPECIFICA
-				Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP());
+				Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP(),puerto,Conexion.getIP());
 				//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
 				//MIENTRAS ESPERA QUE LE CONTESTEN
 				this.usuario.setModoLlamando();
-			    Conexion.crearUsuarioCliente(puerto, llamada);
+			    Conexion.crearUsuarioCliente(Conexion.PUERTO_SERVER, llamada);
 			}
 		} catch (NumberFormatException ex) {
 			System.out.println("Formato puerto mal ingresado,ingrese numero entero");
@@ -139,8 +139,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 	}
 	
 	public void enviarRespuesta(boolean res) {
-		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res,this.usuario.getPuerto(),Conexion.getIP());
-		Conexion.crearUsuarioCliente(respuesta.getPuertoOrigen(), respuesta);
+		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res/*,this.usuario.getPuerto(),Conexion.getIP()*/);
+		Conexion.crearUsuarioCliente(Conexion.PUERTO_SERVER, respuesta);
 	}
 
 	public UsuarioServidor getUsuario() {

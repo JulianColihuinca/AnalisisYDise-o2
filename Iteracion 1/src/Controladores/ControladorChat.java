@@ -2,16 +2,15 @@ package Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
 import Modelo.Conexion;
+import Modelo.CustomHashUtility;
 import Modelo.FinalizarLlamada;
 import Modelo.Mensaje;
-import Modelo.UsuarioCliente;
 import Vistas.IVentanaChat;
 import Vistas.VentanaChat;
 
@@ -56,6 +55,8 @@ public class ControladorChat implements ActionListener, Observer {
 			String mensaje= this.vistaChat.getMensaje();
 			this.enviarMensaje(mensaje);
 			
+			
+			
 		}
 		else if (command.equalsIgnoreCase("Finalizar Chat")) {
 			this.finalizarChat();
@@ -72,6 +73,7 @@ public class ControladorChat implements ActionListener, Observer {
 		if( arg instanceof Mensaje) {
 			Mensaje mensaje= (Mensaje) arg;
 			this.recibirMensaje(mensaje);
+			System.out.println("hash al recibir mensaje"+CustomHashUtility.generateCustomHash(puertoOrigen, puertoDestino));
 		}else if(arg instanceof FinalizarLlamada) {
 			this.recibirFinalizarChat();
 		}
@@ -84,7 +86,23 @@ public class ControladorChat implements ActionListener, Observer {
 		String mensajeCompleto="TU: "+mensaje+"\n";
 		this.vistaChat.addMensaje(mensajeCompleto);
 		this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
-		Conexion.crearUsuarioCliente(this.puertoDestino,new Mensaje(mensaje,this.puertoOrigen) );
+		
+		try {
+			int n1=this.puertoOrigen;
+			int n2=this.puertoDestino;
+			
+			System.out.println("hash al enviar mensaje: "+CustomHashUtility.generateCustomHash(n1, n2));
+			
+			String hash= CustomHashUtility.generateCustomHash(n1,n2);
+			String mensajeEncriptado=Conexion.encriptar(hash,mensaje, "TripleDES");
+			
+			Conexion.crearUsuarioCliente(Conexion.PUERTO_SERVER,new Mensaje(mensajeEncriptado/*mensaje*/,this.puertoDestino) );
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	private void finalizarChat(){
@@ -102,8 +120,23 @@ public class ControladorChat implements ActionListener, Observer {
 	}
 	
 	private void recibirMensaje(Mensaje mensaje) {
-		String mensajeCompleto = "PUERTO "+ mensaje.getPuerto()+": "+mensaje.getMensaje()+"\n";
-		this.vistaChat.addMensaje(mensajeCompleto);
+		
+		int n1=this.puertoOrigen;
+		int n2=this.puertoDestino;
+		
+		System.out.println("hash al recibir mensaje: "+CustomHashUtility.generateCustomHash(n2, n1));
+		try {
+		    
+			String hash= CustomHashUtility.generateCustomHash(n2, n1);
+			String mensajeDescifrado= Conexion.desencriptar(hash,mensaje.getMensaje(), "TripleDES");
+			String mensajeCompleto = "PUERTO "+ this.puertoDestino+": "+mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
+			this.vistaChat.addMensaje(mensajeCompleto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	private void recibirFinalizarChat() {

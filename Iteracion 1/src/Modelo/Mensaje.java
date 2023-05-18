@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class Mensaje implements Serializable {
 	private String mensaje;
-	private int puerto;
+	private int puertoDestino;
 	
-	public Mensaje(String mensaje, int puerto) {
+	public Mensaje(String mensaje, int puertoDestino) {
 		this.mensaje=mensaje;
-		this.puerto=puerto;
+		this.puertoDestino=puertoDestino;
 	}
 
 	public String getMensaje() {
 		return mensaje;
 	}
 
-	public int getPuerto() {
-		return puerto;
+	public int getPuertoDestino() {
+		return puertoDestino;
 	}
 	
 	

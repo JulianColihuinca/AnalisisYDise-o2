@@ -91,8 +91,9 @@ public class UsuarioServidor extends Observable implements Runnable {
 					} else if (o instanceof Mensaje) {
 						// SERVIDOR RECIBE MENSAJE, ENVIA MENSAJE AL USUARIO
 						Mensaje mensaje = (Mensaje) o;
-
-						////////////////////////////////////////////////////////////////////////////////////////
+						System.out.println(mensaje.getMensaje());//aca se muestra el mensaje en el servidor, tiene que estar cifrado
+						Conexion.crearUsuarioCliente(mensaje.getPuertoDestino(),mensaje);
+						
 					}
 
 				} else { // EL USUARIO RECIBIO ALGO

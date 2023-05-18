@@ -7,6 +7,8 @@ import java.net.UnknownHostException;
 
 public class Conexion {
 	
+	public static final int PUERTO_SERVER=5000;
+	
 	public static String getIP() {
 		String ip="";
 		InetAddress adress;

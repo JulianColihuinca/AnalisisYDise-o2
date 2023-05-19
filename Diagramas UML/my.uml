@@ -706,6 +706,7 @@
     <packagedElement xmi:type="uml:Dependency" xmi:id="_5v7zMOeIEe2l7Mh0fQ-Pdg" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_HuVSoOeHEe2l7Mh0fQ-Pdg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_ghxFIOeJEe2l7Mh0fQ-Pdg" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_bPXz4OeIEe2l7Mh0fQ-Pdg"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_wRnCIOeJEe2l7Mh0fQ-Pdg" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_-5KIkOZQEe2rsuTxebE4yA"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_3J8BgPZTEe2sWKVacrwRaA" client="_RfyJIOeIEe2l7Mh0fQ-Pdg" supplier="_sGapsPZTEe2sWKVacrwRaA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_bPXz4OeIEe2l7Mh0fQ-Pdg" name="java.io"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_dFavgOeIEe2l7Mh0fQ-Pdg" name="java.awt.event"/>
@@ -731,4 +732,5 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_69gvEOfUEe2tir5ZwFdHFQ" name="Object" isAbstract="true"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_T9I_8OfWEe2tir5ZwFdHFQ" client="_eWWw0Oa1Ee2km58nRP0i6Q" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_Wj18cOfWEe2tir5ZwFdHFQ" client="_kYRXUOayEe2km58nRP0i6Q" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_sGapsPZTEe2sWKVacrwRaA" name="java.security"/>
 </uml:Model>

@@ -32,16 +32,11 @@ public class Conexion {
 		}
 	}
 	
-	public static void crearUsuarioCliente(int puerto,Object o) {
+	public static void EnviarLlamada(int puerto,Object o) {
 		UsuarioCliente c;
 		
 		if (o!=null) {
-			if (o instanceof Mensaje) {
-				 c = new UsuarioCliente(puerto, (Mensaje) o);// para un futuro agregar ip
-				 Thread t = new Thread(c);
-				  t.start();
-			}
-			else if(o instanceof RespuestaLlamada) {
+			if(o instanceof RespuestaLlamada) {
 				c = new UsuarioCliente(puerto, (RespuestaLlamada) o);// para un futuro agregar ip
 				Thread t = new Thread(c);
 				t.start();
@@ -60,8 +55,18 @@ public class Conexion {
 			Thread t = new Thread(c);
 			t.start();
 		}
-		
-		
+	}
+	
+	public static void EnviarMensaje(int puerto,Mensaje m) {
+		UsuarioCliente c;
+		c = new UsuarioCliente(puerto,m);// para un futuro agregar ip
+		 Thread t = new Thread(c);
+		  t.start();
+	}
+	
+	public static void Escuchar(UsuarioServidor usuario) {
+		Thread t = new Thread(usuario);
+		t.start();
 	}
 	
 	

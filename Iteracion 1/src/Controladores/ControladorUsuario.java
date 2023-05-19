@@ -29,8 +29,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 		// AL CREARSE ESTE CONTROLADOR CREA LA VENTANA USUARIO Y EJECUTA EL HILO DEL 	USUARIO PARA
 		// QUE QUEDE PENDIENTE A RECIBIR UNA LLAMADA
 		this.usuario.addObserver((Observer) this);
-		Thread t = new Thread(usuario);
-		t.start();
+		Conexion.Escuchar(usuario);
 	}
 
 	@Override
@@ -101,7 +100,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 				//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
 				//MIENTRAS ESPERA QUE LE CONTESTEN
 				this.usuario.setModoLlamando();
-			    Conexion.crearUsuarioCliente(puerto, llamada);
+			    Conexion.EnviarLlamada(puerto, llamada);
 			}
 		} catch (NumberFormatException ex) {
 			System.out.println("Formato puerto mal ingresado,ingrese numero entero");
@@ -140,7 +139,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 	
 	public void enviarRespuesta(boolean res) {
 		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res,this.usuario.getPuerto(),Conexion.getIP());
-		Conexion.crearUsuarioCliente(respuesta.getPuertoOrigen(), respuesta);
+		Conexion.EnviarLlamada(respuesta.getPuertoOrigen(), respuesta);
 	}
 
 	public UsuarioServidor getUsuario() {

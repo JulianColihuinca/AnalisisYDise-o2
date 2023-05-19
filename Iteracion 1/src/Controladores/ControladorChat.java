@@ -82,7 +82,7 @@ public class ControladorChat implements ActionListener, Observer {
 		String mensajeCompleto="TU: "+mensaje+"\n";
 		this.vistaChat.addMensaje(mensajeCompleto);
 		this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
-		Conexion.crearUsuarioCliente(this.puertoDestino,new Mensaje(mensaje,this.puertoOrigen) );
+		Conexion.EnviarMensaje(this.puertoDestino,new Mensaje(mensaje,this.puertoOrigen) );
 	}
 	
 	private void finalizarChat(){
@@ -96,7 +96,7 @@ public class ControladorChat implements ActionListener, Observer {
 		this.consUsuario.getUsuario().setLlamada(null);
 		this.consUsuario.getUsuario().setRespuesta(null);
 		JOptionPane.showMessageDialog(null, "El chat ha finalizado");
-		Conexion.crearUsuarioCliente(this.puertoDestino, null);
+		Conexion.EnviarLlamada(this.puertoDestino, null);
 	}
 	
 	private void recibirMensaje(Mensaje mensaje) {

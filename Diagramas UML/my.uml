@@ -736,6 +736,7 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_sB9fIPZhEe2UZ6Awnc1uhQ" client="_VT8hAPZfEe2UZ6Awnc1uhQ" supplier="_Lv3QwPZhEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="__xVMwPZhEe2UZ6Awnc1uhQ" client="_VT8hAPZfEe2UZ6Awnc1uhQ" supplier="_4rJ0QPZhEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_3eYpsPZiEe2UZ6Awnc1uhQ" name="UsuarioA">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_aaKkMPZwEe2UZ6Awnc1uhQ" name="" aggregation="composite" isConjugated="true"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_VT8hAPZfEe2UZ6Awnc1uhQ" name="UI UsuarioA"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_c3gZEPZfEe2UZ6Awnc1uhQ" name="ControladorUsuarioA">
       <interfaceRealization xmi:id="_Utt8kPZhEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_Lv3QwPZhEe2UZ6Awnc1uhQ" contract="_Lv3QwPZhEe2UZ6Awnc1uhQ"/>
@@ -748,7 +749,12 @@
       <interfaceRealization xmi:id="_w5Aw0PZlEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_Y_G8cPZlEe2UZ6Awnc1uhQ" contract="_Y_G8cPZlEe2UZ6Awnc1uhQ"/>
       <interfaceRealization xmi:id="_zIVvIPZlEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_LfhK0PZlEe2UZ6Awnc1uhQ" contract="_LfhK0PZlEe2UZ6Awnc1uhQ"/>
     </nestedClassifier>
-    <nestedClassifier xmi:type="uml:Component" xmi:id="_ghZQ4PZfEe2UZ6Awnc1uhQ" name="RedUsuarioA"/>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_ghZQ4PZfEe2UZ6Awnc1uhQ" name="RedUsuarioA">
+      <interfaceRealization xmi:id="_PTpNoPZuEe2UZ6Awnc1uhQ" client="_ghZQ4PZfEe2UZ6Awnc1uhQ" supplier="_Hft-UPZuEe2UZ6Awnc1uhQ" contract="_Hft-UPZuEe2UZ6Awnc1uhQ"/>
+      <interfaceRealization xmi:id="_RYD8cPZuEe2UZ6Awnc1uhQ" client="_ghZQ4PZfEe2UZ6Awnc1uhQ" supplier="_KmMnEPZuEe2UZ6Awnc1uhQ" contract="_KmMnEPZuEe2UZ6Awnc1uhQ"/>
+      <interfaceRealization xmi:id="_SJk48PZuEe2UZ6Awnc1uhQ" client="_ghZQ4PZfEe2UZ6Awnc1uhQ" supplier="_JMheYPZuEe2UZ6Awnc1uhQ" contract="_JMheYPZuEe2UZ6Awnc1uhQ"/>
+      <interfaceRealization xmi:id="_1BkEIPZxEe2UZ6Awnc1uhQ" client="_ghZQ4PZfEe2UZ6Awnc1uhQ" supplier="_uw0e0PZxEe2UZ6Awnc1uhQ" contract="_uw0e0PZxEe2UZ6Awnc1uhQ"/>
+    </nestedClassifier>
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_Lv3QwPZhEe2UZ6Awnc1uhQ" name="IniciarSesion"/>
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_4rJ0QPZhEe2UZ6Awnc1uhQ" name="ComenzarChat"/>
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_W1jg4PZjEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
@@ -758,6 +764,10 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_WgwqsPZlEe2UZ6Awnc1uhQ" name="ComenzarChat"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_Y_G8cPZlEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_aut44PZlEe2UZ6Awnc1uhQ" name="RecibirMensaje"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_Hft-UPZuEe2UZ6Awnc1uhQ" name="AtenderLlamada"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_JMheYPZuEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_KmMnEPZuEe2UZ6Awnc1uhQ" name="Escuchar"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_uw0e0PZxEe2UZ6Awnc1uhQ" name="RechazarLlamada"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_45ZPIPZiEe2UZ6Awnc1uhQ" name="UsuarioB"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_aFFX8PZjEe2UZ6Awnc1uhQ" client="_VT8hAPZfEe2UZ6Awnc1uhQ" supplier="_W1jg4PZjEe2UZ6Awnc1uhQ"/>
@@ -798,6 +808,9 @@
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_d8fxoPZnEe2UZ6Awnc1uhQ" name="FinalizarChat"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_moyMQPZnEe2UZ6Awnc1uhQ" name="UsuarioB">
+    <ownedAttribute xmi:type="uml:Port" xmi:id="_fZC5APZwEe2UZ6Awnc1uhQ" name="" aggregation="composite" isConjugated="true"/>
+    <interfaceRealization xmi:id="_cHv1cPZyEe2UZ6Awnc1uhQ" client="_moyMQPZnEe2UZ6Awnc1uhQ _fZC5APZwEe2UZ6Awnc1uhQ" supplier="_CyTQIPZyEe2UZ6Awnc1uhQ" contract="_CyTQIPZyEe2UZ6Awnc1uhQ"/>
+    <interfaceRealization xmi:id="_ulNPQPZyEe2UZ6Awnc1uhQ" client="_moyMQPZnEe2UZ6Awnc1uhQ _fZC5APZwEe2UZ6Awnc1uhQ" supplier="_E10nEPZyEe2UZ6Awnc1uhQ" contract="_E10nEPZyEe2UZ6Awnc1uhQ"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_moyMQfZnEe2UZ6Awnc1uhQ" name="UI Usuario"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_moyMQvZnEe2UZ6Awnc1uhQ" name="ControladorUsuarioA">
       <interfaceRealization xmi:id="_moyMQ_ZnEe2UZ6Awnc1uhQ" client="_moyMQvZnEe2UZ6Awnc1uhQ _moyMQvZnEe2UZ6Awnc1uhQ" supplier="_moyMTfZnEe2UZ6Awnc1uhQ" contract="_moyMTfZnEe2UZ6Awnc1uhQ"/>
@@ -817,7 +830,7 @@
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_moyMUPZnEe2UZ6Awnc1uhQ" name="FinalizarChat"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_tW304PZnEe2UZ6Awnc1uhQ" name="UI Usuario"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_x7RNIPZnEe2UZ6Awnc1uhQ" name="UI UsuarioB"/>
-    <nestedClassifier xmi:type="uml:Component" xmi:id="_2yjFIPZnEe2UZ6Awnc1uhQ" name="ControladorUsuarioA">
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_2yjFIPZnEe2UZ6Awnc1uhQ" name="ControladorUsuarioB">
       <interfaceRealization xmi:id="_2yjFIfZnEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ _2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_Lv3QwPZhEe2UZ6Awnc1uhQ" contract="_Lv3QwPZhEe2UZ6Awnc1uhQ"/>
       <interfaceRealization xmi:id="_2yjFIvZnEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ _2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_4rJ0QPZhEe2UZ6Awnc1uhQ" contract="_4rJ0QPZhEe2UZ6Awnc1uhQ"/>
       <interfaceRealization xmi:id="_2yjFI_ZnEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ _2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_W1jg4PZjEe2UZ6Awnc1uhQ" contract="_W1jg4PZjEe2UZ6Awnc1uhQ"/>
@@ -838,16 +851,37 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_mozaYvZnEe2UZ6Awnc1uhQ" name="ComenzarChat"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_mozaY_ZnEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_mozaZPZnEe2UZ6Awnc1uhQ" name="RecibirMensaje"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_9kc2wPZnEe2UZ6Awnc1uhQ" name="RedUsuarioB"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_9kc2wPZnEe2UZ6Awnc1uhQ" name="RedUsuarioB">
+      <interfaceRealization xmi:id="_1gFTgPZuEe2UZ6Awnc1uhQ" client="_9kc2wPZnEe2UZ6Awnc1uhQ" supplier="_pXns4PZuEe2UZ6Awnc1uhQ" contract="_pXns4PZuEe2UZ6Awnc1uhQ"/>
+      <interfaceRealization xmi:id="_7w4jMPZuEe2UZ6Awnc1uhQ" client="_9kc2wPZnEe2UZ6Awnc1uhQ" supplier="_q-b5sPZuEe2UZ6Awnc1uhQ" contract="_q-b5sPZuEe2UZ6Awnc1uhQ"/>
+      <interfaceRealization xmi:id="_Fp4BkPZvEe2UZ6Awnc1uhQ" client="_9kc2wPZnEe2UZ6Awnc1uhQ" supplier="_AdNvcPZvEe2UZ6Awnc1uhQ" contract="_AdNvcPZvEe2UZ6Awnc1uhQ"/>
+      <interfaceRealization xmi:id="_Og5lQPZyEe2UZ6Awnc1uhQ" client="_9kc2wPZnEe2UZ6Awnc1uhQ" supplier="_IfFMwPZyEe2UZ6Awnc1uhQ" contract="_IfFMwPZyEe2UZ6Awnc1uhQ"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ECR10PZoEe2UZ6Awnc1uhQ" name="IniciarSesion"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_HMnq4PZoEe2UZ6Awnc1uhQ" name="ComenzarChat"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_32Be4PZoEe2UZ6Awnc1uhQ" name="RecibirMensaje"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_PDj8gPZpEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_bCAEcPZpEe2UZ6Awnc1uhQ" name="FinalizarChat"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_pXns4PZuEe2UZ6Awnc1uhQ" name="AtenderLlamada"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_q-b5sPZuEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_AdNvcPZvEe2UZ6Awnc1uhQ" name="Escuchar"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_IfFMwPZyEe2UZ6Awnc1uhQ" name="RechazarLlamada"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_d6YcQPZoEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ" supplier="_ECR10PZoEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_sCniQPZoEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ" supplier="_HMnq4PZoEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_AQABkPZpEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ" supplier="_32Be4PZoEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_XGJS4PZpEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ" supplier="_PDj8gPZpEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_i8ICYPZpEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ" supplier="_bCAEcPZpEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_VmfrwPZuEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_Hft-UPZuEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_WOzo8PZuEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_JMheYPZuEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_W2wZwPZuEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_KmMnEPZuEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_28ni8PZuEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_pXns4PZuEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_9f_wYPZuEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_q-b5sPZuEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_GqyE8PZvEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_AdNvcPZvEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_3FFbEPZxEe2UZ6Awnc1uhQ" client="_c3gZEPZfEe2UZ6Awnc1uhQ" supplier="_uw0e0PZxEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_CyTQIPZyEe2UZ6Awnc1uhQ" name="EnviarLlamada"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_E10nEPZyEe2UZ6Awnc1uhQ" name="EnviarMensaje"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RvdzAPZyEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_IfFMwPZyEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gIl0sPZyEe2UZ6Awnc1uhQ" client="_aaKkMPZwEe2UZ6Awnc1uhQ" supplier="_CyTQIPZyEe2UZ6Awnc1uhQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_wP3aQPZyEe2UZ6Awnc1uhQ" client="_aaKkMPZwEe2UZ6Awnc1uhQ" supplier="_E10nEPZyEe2UZ6Awnc1uhQ"/>
 </uml:Model>

@@ -132,4 +132,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_lNGJgNV6Ee2aH489NeECiw" name="Finalizar Sesion Chat"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_xTq5wNV6Ee2aH489NeECiw" client="_jVBhENNrEe2e5vCgIcYW1g" supplier="_lNGJgNV6Ee2aH489NeECiw"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_D1zroPZeEe2UZ6Awnc1uhQ" name="UI Usuario"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_MihkIPZeEe2UZ6Awnc1uhQ" name="Controllers"/>
 </uml:Model>

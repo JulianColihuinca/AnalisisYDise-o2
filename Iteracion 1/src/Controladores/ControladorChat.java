@@ -73,7 +73,6 @@ public class ControladorChat implements ActionListener, Observer {
 		if( arg instanceof Mensaje) {
 			Mensaje mensaje= (Mensaje) arg;
 			this.recibirMensaje(mensaje);
-			System.out.println("hash al recibir mensaje"+CustomHashUtility.generateCustomHash(puertoOrigen, puertoDestino));
 		}else if(arg instanceof FinalizarLlamada) {
 			this.recibirFinalizarChat();
 		}
@@ -91,7 +90,6 @@ public class ControladorChat implements ActionListener, Observer {
 			int n1=this.puertoOrigen;
 			int n2=this.puertoDestino;
 			
-			System.out.println("hash al enviar mensaje: "+CustomHashUtility.generateCustomHash(n1, n2));
 			
 			String hash= CustomHashUtility.generateCustomHash(n1,n2);
 			String mensajeEncriptado=Conexion.encriptar(hash,mensaje, "TripleDES");
@@ -124,7 +122,6 @@ public class ControladorChat implements ActionListener, Observer {
 		int n1=this.puertoOrigen;
 		int n2=this.puertoDestino;
 		
-		System.out.println("hash al recibir mensaje: "+CustomHashUtility.generateCustomHash(n2, n1));
 		try {
 		    
 			String hash= CustomHashUtility.generateCustomHash(n2, n1);

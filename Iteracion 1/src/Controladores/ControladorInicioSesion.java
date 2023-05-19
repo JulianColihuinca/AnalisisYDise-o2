@@ -44,7 +44,7 @@ public class ControladorInicioSesion implements ActionListener {
 			//SE VERIFICA QUE EL PUERTO INGRESADO ESTE DISPONIBLE
 			if(Conexion.puertoDisponible(puerto)) {
 				
-				System.out.println("InicioSesion en localhost y puerto: " + this.vista.getPuerto());
+				//System.out.println("InicioSesion en localhost y puerto: " + this.vista.getPuerto());
 				
 				//SE CREA UN USUARIO SERVIDOR CON ESTE PUERTO Y SE CREA UN CONTROLADOR DE LA VENTANA USUARIO
 				UsuarioServidor usuario=new UsuarioServidor(puerto);

@@ -54,7 +54,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 	public void update(Observable o, Object arg) {
 		// ---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
 		if (arg instanceof RespuestaLlamada) {
-			System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
+			//System.out.println("RECIBI UNA RESPUESTA A LA LLAMADA");
 			RespuestaLlamada respuesta = (RespuestaLlamada) arg;
 			this.recibirRespuesta(respuesta);
 			// -----------------------------EL OBJETO RECIBIDO ES UNA LLAMADA----------------------------------
@@ -111,13 +111,13 @@ public class ControladorUsuario implements ActionListener, Observer {
 	
 	private  void recibirRespuesta(RespuestaLlamada respuesta) {
 		if (!respuesta.isRespuesta()) { // SI NO ME ATENDIERON
-			System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
+			//System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
 			//this.usuario.setLlamada(null); EL USUARIO QUE LLAMA YA TIENE NULL EN LLAMADA
 			this.usuario.setModoEscucha();//VUELVE A MODO ESCUCHA
 			this.vista.llamadaRechazada();
 
 		} else {
-			System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
+			//System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
 			
 			
 			this.vista.llamadaAceptada();

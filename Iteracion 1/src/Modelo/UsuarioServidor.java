@@ -56,11 +56,11 @@ public class UsuarioServidor extends Observable implements Runnable {
 				cond = true;
 
 				// ESPERA A QUE UN CLIENTE SE CONECTE
-				System.out.println(
-						"----------------CREO UN USUARIO SERVIDOR, ESPERA A QUE SE CONECTE ALGUIEN-----------------------------------");
+				//System.out.println(
+			//			"----------------CREO UN USUARIO SERVIDOR, ESPERA A QUE SE CONECTE ALGUIEN-----------------------------------");
 				sc = servidor.accept();
 
-				System.out.println("----------------ALGUIEN SE CONECTO-----------------------------------");
+			//	System.out.println("----------------ALGUIEN SE CONECTO-----------------------------------");
 
 				in = new ObjectInputStream(sc.getInputStream());
 
@@ -91,7 +91,7 @@ public class UsuarioServidor extends Observable implements Runnable {
 					} else if (o instanceof Mensaje) {
 						// SERVIDOR RECIBE MENSAJE, ENVIA MENSAJE AL USUARIO
 						Mensaje mensaje = (Mensaje) o;
-						System.out.println(mensaje.getMensaje());//aca se muestra el mensaje en el servidor, tiene que estar cifrado
+						//System.out.println(mensaje.getMensaje());//aca se muestra el mensaje en el servidor, tiene que estar cifrado
 						Conexion.crearUsuarioCliente(mensaje.getPuertoDestino(),mensaje);
 						
 					}

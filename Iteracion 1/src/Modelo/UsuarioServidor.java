@@ -94,6 +94,9 @@ public class UsuarioServidor extends Observable implements Runnable {
 						//System.out.println(mensaje.getMensaje());//aca se muestra el mensaje en el servidor, tiene que estar cifrado
 						Conexion.crearUsuarioCliente(mensaje.getPuertoDestino(),mensaje);
 						
+						System.out.println("EL SERVIDOR RECIBIO EL MENSAJE: "+mensaje.getMensaje());
+						System.out.println("EL SERVIDOR ENVIA ESTE MENSAJE");
+						
 					}
 
 				} else { // EL USUARIO RECIBIO ALGO

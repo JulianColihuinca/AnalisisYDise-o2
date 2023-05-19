@@ -95,6 +95,10 @@ public class ControladorChat implements ActionListener, Observer {
 			String mensajeEncriptado=Conexion.encriptar(hash,mensaje, "TripleDES");
 			
 			Conexion.crearUsuarioCliente(Conexion.PUERTO_SERVER,new Mensaje(mensajeEncriptado/*mensaje*/,this.puertoDestino) );
+			
+			System.out.println("EL MENSAJE ORIGINAL QUE SE ENVIA ES: "+mensaje);
+			System.out.println("EL MENSAJE CIFRADO QUE VA AL SERVIDOR ES: "+mensajeEncriptado);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -128,6 +132,10 @@ public class ControladorChat implements ActionListener, Observer {
 			String mensajeDescifrado= Conexion.desencriptar(hash,mensaje.getMensaje(), "TripleDES");
 			String mensajeCompleto = "PUERTO "+ this.puertoDestino+": "+mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
 			this.vistaChat.addMensaje(mensajeCompleto);
+			
+			System.out.println("EL MENSAJE ENCRIPTADO RECIBIDO ES: "+mensaje.getMensaje());
+			System.out.println("EL MENSAJE DESENCRIPTADO ES: "+mensajeDescifrado);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import Modelo.Conexion;
-import Modelo.Llamada;
-import Modelo.RespuestaLlamada;
-import Modelo.UsuarioCliente;
-import Modelo.UsuarioServidor;
+import Red.Conexion;
+import Red.Llamada;
+import Red.RespuestaLlamada;
+import Red.UsuarioCliente;
+import Red.UsuarioServidor;
 import Vistas.IVentanaUsuario;
 import Vistas.VentanaUsuario;
 

@@ -6,8 +6,8 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-import Modelo.Conexion;
-import Modelo.UsuarioServidor;
+import Red.Conexion;
+import Red.UsuarioServidor;
 import Vistas.UIInicioSesion;
 import Vistas.VentanaInicioSesion;
 

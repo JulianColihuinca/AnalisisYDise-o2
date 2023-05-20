@@ -1,4 +1,4 @@
-package Modelo;
+package Red;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

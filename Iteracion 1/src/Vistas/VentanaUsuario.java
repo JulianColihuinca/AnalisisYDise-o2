@@ -15,8 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Modelo.Llamada;
-import Modelo.RespuestaLlamada;
+import Red.Llamada;
+import Red.RespuestaLlamada;
 
 public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 

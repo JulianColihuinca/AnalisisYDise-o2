@@ -7,10 +7,10 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
-import Modelo.Conexion;
-import Modelo.FinalizarLlamada;
-import Modelo.Mensaje;
-import Modelo.UsuarioCliente;
+import Red.Conexion;
+import Red.FinalizarLlamada;
+import Red.Mensaje;
+import Red.UsuarioCliente;
 import Vistas.IVentanaChat;
 import Vistas.VentanaChat;
 

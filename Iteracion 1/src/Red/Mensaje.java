@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Mensaje implements Serializable {
 	private String mensaje;
-	private int puerto;
+	private int puertoOrigen;
 	
-	public Mensaje(String mensaje, int puerto) {
+	public Mensaje(String mensaje, int puertoOrigen) {
 		this.mensaje=mensaje;
-		this.puerto=puerto;
+		this.puertoOrigen=puertoOrigen;
 	}
 
 	public String getMensaje() {
@@ -16,7 +16,7 @@ public class Mensaje implements Serializable {
 	}
 
 	public int getPuerto() {
-		return puerto;
+		return puertoOrigen;
 	}
 	
 	

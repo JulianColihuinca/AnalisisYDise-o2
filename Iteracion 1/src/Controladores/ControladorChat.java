@@ -130,7 +130,7 @@ public class ControladorChat implements ActionListener, Observer {
 		    
 			String hash= CustomHashUtility.generateCustomHash(n2, n1);
 			String mensajeDescifrado= Conexion.desencriptar(hash,mensaje.getMensaje(), "TripleDES");
-			String mensajeCompleto = "PUERTO "+ this.puertoDestino+": "+mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
+			String mensajeCompleto = "IP "+this.ipDestino+", PUERTO "+ this.puertoDestino+": "+mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
 			this.vistaChat.addMensaje(mensajeCompleto);
 			
 			System.out.println("EL MENSAJE ENCRIPTADO RECIBIDO ES: "+mensaje.getMensaje());

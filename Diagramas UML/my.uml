@@ -836,21 +836,21 @@
     <ownedAttribute xmi:type="uml:Port" xmi:id="_YSiYAfcuEe2TQKpulOekuw" name="" aggregation="composite" isConjugated="true"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_YSiYAvcuEe2TQKpulOekuw" name="UI UsuarioA"/>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_YSiYA_cuEe2TQKpulOekuw" name="ControladorUsuarioA">
-      <interfaceRealization xmi:id="_YSiYBPcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYEvcuEe2TQKpulOekuw" contract="_YSiYEvcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYBfcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYE_cuEe2TQKpulOekuw" contract="_YSiYE_cuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYBvcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYFPcuEe2TQKpulOekuw" contract="_YSiYFPcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYB_cuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYFfcuEe2TQKpulOekuw" contract="_YSiYFfcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYCPcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYF_cuEe2TQKpulOekuw" contract="_YSiYF_cuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYCfcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYGPcuEe2TQKpulOekuw" contract="_YSiYGPcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYCvcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYGvcuEe2TQKpulOekuw" contract="_YSiYGvcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYC_cuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYGfcuEe2TQKpulOekuw" contract="_YSiYGfcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYDPcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw _YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYFvcuEe2TQKpulOekuw" contract="_YSiYFvcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYBPcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYEvcuEe2TQKpulOekuw" contract="_YSiYEvcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYBfcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYE_cuEe2TQKpulOekuw" contract="_YSiYE_cuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYBvcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYFPcuEe2TQKpulOekuw" contract="_YSiYFPcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYB_cuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYFfcuEe2TQKpulOekuw" contract="_YSiYFfcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYCPcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYF_cuEe2TQKpulOekuw" contract="_YSiYF_cuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYCfcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYGPcuEe2TQKpulOekuw" contract="_YSiYGPcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYCvcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYGvcuEe2TQKpulOekuw" contract="_YSiYGvcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYC_cuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYGfcuEe2TQKpulOekuw" contract="_YSiYGfcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYDPcuEe2TQKpulOekuw" client="_YSiYA_cuEe2TQKpulOekuw" supplier="_YSiYFvcuEe2TQKpulOekuw" contract="_YSiYFvcuEe2TQKpulOekuw"/>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Component" xmi:id="_YSiYDfcuEe2TQKpulOekuw" name="RedUsuarioA">
-      <interfaceRealization xmi:id="_YSiYDvcuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw _YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYG_cuEe2TQKpulOekuw" contract="_YSiYG_cuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYD_cuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw _YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYHfcuEe2TQKpulOekuw" contract="_YSiYHfcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYEPcuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw _YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYHPcuEe2TQKpulOekuw" contract="_YSiYHPcuEe2TQKpulOekuw"/>
-      <interfaceRealization xmi:id="_YSiYEfcuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw _YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYHvcuEe2TQKpulOekuw" contract="_YSiYHvcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYDvcuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYG_cuEe2TQKpulOekuw" contract="_YSiYG_cuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYD_cuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYHfcuEe2TQKpulOekuw" contract="_YSiYHfcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYEPcuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYHPcuEe2TQKpulOekuw" contract="_YSiYHPcuEe2TQKpulOekuw"/>
+      <interfaceRealization xmi:id="_YSiYEfcuEe2TQKpulOekuw" client="_YSiYDfcuEe2TQKpulOekuw" supplier="_YSiYHvcuEe2TQKpulOekuw" contract="_YSiYHvcuEe2TQKpulOekuw"/>
     </nestedClassifier>
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_YSiYEvcuEe2TQKpulOekuw" name="IniciarSesion"/>
     <nestedClassifier xmi:type="uml:Interface" xmi:id="_YSiYE_cuEe2TQKpulOekuw" name="ComenzarChat"/>
@@ -865,5 +865,68 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_YSiYHPcuEe2TQKpulOekuw" name="EnviarMensaje"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_YSiYHfcuEe2TQKpulOekuw" name="Escuchar"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_YSiYHvcuEe2TQKpulOekuw" name="RechazarLlamada"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hehBsPgmEe2HOf4_g3Tq6g" name="java.swing"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_heiP0PgmEe2HOf4_g3Tq6g" name="Vistas">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_heiP0fgmEe2HOf4_g3Tq6g" client="_heiP0PgmEe2HOf4_g3Tq6g" supplier="_hehBsPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_heiP0vgmEe2HOf4_g3Tq6g" client="_heiP0PgmEe2HOf4_g3Tq6g" supplier="_hei26PgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_heiP0_gmEe2HOf4_g3Tq6g" client="_heiP0PgmEe2HOf4_g3Tq6g" supplier="_hei25_gmEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hei24PgmEe2HOf4_g3Tq6g" name="Controladores">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei24fgmEe2HOf4_g3Tq6g" client="_hei24PgmEe2HOf4_g3Tq6g" supplier="_heiP0PgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei24vgmEe2HOf4_g3Tq6g" client="_hei24PgmEe2HOf4_g3Tq6g" supplier="_hei26fgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei24_gmEe2HOf4_g3Tq6g" client="_hei24PgmEe2HOf4_g3Tq6g" supplier="_hei26PgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei25PgmEe2HOf4_g3Tq6g" client="_hei24PgmEe2HOf4_g3Tq6g" supplier="_hei25_gmEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hei25fgmEe2HOf4_g3Tq6g" name="java.net"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hei25vgmEe2HOf4_g3Tq6g" name="java.io"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hei25_gmEe2HOf4_g3Tq6g" name="java.util"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hei26PgmEe2HOf4_g3Tq6g" name="java.awt.event"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_hei26fgmEe2HOf4_g3Tq6g" name="Red">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei26vgmEe2HOf4_g3Tq6g" client="_hei26fgmEe2HOf4_g3Tq6g" supplier="_hei25fgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei26_gmEe2HOf4_g3Tq6g" client="_hei26fgmEe2HOf4_g3Tq6g" supplier="_hei25vgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_hei27PgmEe2HOf4_g3Tq6g" client="_hei26fgmEe2HOf4_g3Tq6g" supplier="_hei25_gmEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pbbN4PgmEe2HOf4_g3Tq6g" name="Red">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_d7JMIPgnEe2HOf4_g3Tq6g" client="_pbbN4PgmEe2HOf4_g3Tq6g" supplier="_pc50kPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_LQnKMPgoEe2HOf4_g3Tq6g" client="_pbbN4PgmEe2HOf4_g3Tq6g" supplier="_pdfqcPgmEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pcx4wPgmEe2HOf4_g3Tq6g" name="Vistas">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_aEcnYPgnEe2HOf4_g3Tq6g" client="_pcx4wPgmEe2HOf4_g3Tq6g" supplier="_pc1jIPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_OEni4PgoEe2HOf4_g3Tq6g" client="_pcx4wPgmEe2HOf4_g3Tq6g" supplier="_pdfqcPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_RhFpwPgoEe2HOf4_g3Tq6g" client="_pcx4wPgmEe2HOf4_g3Tq6g" supplier="_pdJFIPgmEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pc1jIPgmEe2HOf4_g3Tq6g" name="java.swing"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pc50kPgmEe2HOf4_g3Tq6g" name="java.net">
+    <packagedElement xmi:type="uml:Package" xmi:id="_VNRAkPgoEe2HOf4_g3Tq6g" name="Cifrado"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pdC-gPgmEe2HOf4_g3Tq6g" name="java.io"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pdJFIPgmEe2HOf4_g3Tq6g" name="java.awt.event"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pdMvgPgmEe2HOf4_g3Tq6g" name="Controladores">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_UmZqUPgnEe2HOf4_g3Tq6g" client="_pdMvgPgmEe2HOf4_g3Tq6g" supplier="_pbbN4PgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_XxWjYPgnEe2HOf4_g3Tq6g" client="_pdMvgPgmEe2HOf4_g3Tq6g" supplier="_pcx4wPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_fyRF0PgnEe2HOf4_g3Tq6g" client="_pdMvgPgmEe2HOf4_g3Tq6g" supplier="_pdfqcPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_SJWjoPgoEe2HOf4_g3Tq6g" client="_pdMvgPgmEe2HOf4_g3Tq6g" supplier="_pdJFIPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_sjITwPgoEe2HOf4_g3Tq6g" client="_pdMvgPgmEe2HOf4_g3Tq6g" supplier="_lcnZgPgnEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_pbbN4vgmEe2HOf4_g3Tq6g" client="_pbbN4PgmEe2HOf4_g3Tq6g" supplier="_pdC-gPgmEe2HOf4_g3Tq6g"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_pdfqcPgmEe2HOf4_g3Tq6g" name="java.util"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lcnZgPgnEe2HOf4_g3Tq6g" name="Cifrado">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_l0LvgPgoEe2HOf4_g3Tq6g" client="_lcnZgPgnEe2HOf4_g3Tq6g" supplier="_WLsXsPgoEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_oFRoYPgoEe2HOf4_g3Tq6g" client="_lcnZgPgnEe2HOf4_g3Tq6g" supplier="_eV71QPgoEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_pPNE4PgoEe2HOf4_g3Tq6g" client="_lcnZgPgnEe2HOf4_g3Tq6g" supplier="_aufNcPgoEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_qcBSwPgnEe2HOf4_g3Tq6g" name="Servidor">
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_4h0v0PgnEe2HOf4_g3Tq6g" client="_qcBSwPgnEe2HOf4_g3Tq6g" supplier="_pc1jIPgmEe2HOf4_g3Tq6g"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_wCCDkPgoEe2HOf4_g3Tq6g" client="_qcBSwPgnEe2HOf4_g3Tq6g" supplier="_pbbN4PgmEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_WLsXsPgoEe2HOf4_g3Tq6g" name="java.security">
+    <packagedElement xmi:type="uml:Package" xmi:id="_WLsXsfgoEe2HOf4_g3Tq6g" name="Cifrado"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_aufNcPgoEe2HOf4_g3Tq6g" name="java.crypto">
+    <packagedElement xmi:type="uml:Package" xmi:id="_aufNcfgoEe2HOf4_g3Tq6g" name="Cifrado"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_eV71QPgoEe2HOf4_g3Tq6g" name="java.nio">
+    <packagedElement xmi:type="uml:Package" xmi:id="_eV71QfgoEe2HOf4_g3Tq6g" name="Cifrado"/>
   </packagedElement>
 </uml:Model>

@@ -16,6 +16,12 @@ private boolean respuesta;
 	public boolean isRespuesta() {
 		return respuesta;
 	}
+
+
+	@Override
+	public String toString() {
+		return "RespuestaLlamada [respuesta=" + respuesta + "]";
+	}
 	
 	
 }

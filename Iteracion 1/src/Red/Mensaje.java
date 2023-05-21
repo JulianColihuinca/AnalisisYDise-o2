@@ -18,6 +18,11 @@ public class Mensaje implements Serializable {
 	public int getPuertoDestino() {
 		return puertoDestino;
 	}
+
+	@Override
+	public String toString() {
+		return "Mensaje [mensaje=" + mensaje + ", puertoDestino=" + puertoDestino + "]";
+	}
 	
 	
 }

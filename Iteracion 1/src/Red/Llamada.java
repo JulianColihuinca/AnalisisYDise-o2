@@ -31,6 +31,13 @@ public class Llamada implements Serializable{
 	public String getIPOrigen() {
 		return ipOrigen;
 	}
+
+	
+	@Override
+	public String toString() {
+		return "Llamada [puertoOrigen=" + puertoOrigen + ", ipOrigen=" + ipOrigen + ", puertoDestino=" + puertoDestino
+				+ ", ipDestino=" + ipDestino + "]";
+	}
 	
 	
 	

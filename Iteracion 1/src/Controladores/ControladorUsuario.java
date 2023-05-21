@@ -101,7 +101,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 				//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
 				//MIENTRAS ESPERA QUE LE CONTESTEN
 				this.usuario.setModoLlamando();
-			    Conexion.EnviarLlamada(puerto, llamada);
+			    Conexion.EnviarLlamada(Conexion.getPuertoServidor(), llamada);
 			}
 		} catch (NumberFormatException ex) {
 			System.out.println("Formato puerto mal ingresado,ingrese numero entero");
@@ -140,7 +140,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 	
 	public void enviarRespuesta(boolean res) {
 		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res);
-		Conexion.EnviarLlamada(respuesta.getPuertoOrigen(), respuesta);
+		Conexion.EnviarLlamada(Conexion.getPuertoServidor(), respuesta);
 	}
 
 	public UsuarioServidor getUsuario() {

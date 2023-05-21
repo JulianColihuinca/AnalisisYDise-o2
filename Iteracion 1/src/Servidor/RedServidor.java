@@ -55,7 +55,7 @@ public class RedServidor {
             	
                 //ESPERA A QUE UN CLIENTE SE CONECTE
                 sc = servidor.accept();
-
+                System.out.println("servidor a la espera de que se conecte alguien");
                 //SE CONECTO UN USUARIO
                 
                 in = new ObjectInputStream(sc.getInputStream());
@@ -66,17 +66,26 @@ public class RedServidor {
 				o =in.readObject();
 				
 				if(o instanceof RespuestaLlamada) {
+					
 					RespuestaLlamada respuesta=(RespuestaLlamada)o;
-					System.out.println("El servidor recive una respuesta de "+respuesta.getPuertoDestino()+" de la llamada iniciada por puerto "+respuesta.getPuertoOrigen());
+					System.out.println("El servidor recive "+respuesta.toString());
 					//el servidor recibio una respuesta, ahora debe enviarla al estinatario
+					Conexion.EnviarLlamada(respuesta.getPuertoOrigen(),respuesta);
+					
 				}else if(o instanceof Llamada) {
+					
 					Llamada llamada=(Llamada)o;
-					System.out.println("El servidor recive una solicitud de llamada de puerto "+llamada.getPuertoOrigen()+" a puerto "+llamada.getPuertoOrigen());
+					System.out.println("El servidor recive "+llamada.toString());
 					//el servidor recibio una llamada, ahora debe enviarla al destinatario
+					Conexion.EnviarLlamada(llamada.getPuertoDestino(),llamada);
+					
 				}else if(o instanceof Mensaje){
+					
 					Mensaje mensaje=(Mensaje)o;
-					System.out.println("El servidor recibe un mensaje para el puerto "+mensaje.getPuertoDestino());
+					System.out.println("El servidor recibe "+mensaje.toString());
 					//el servidor recibio un mensaje, ahora debe enviarlo al destinatario
+					Conexion.EnviarMensaje(mensaje.getPuertoDestino(), mensaje);
+					
 				}
 				else if(o instanceof UsuarioRegistro) { //Registra un nuevo usuario en el servidor
 					this.registrarUsuario( (UsuarioRegistro) o );

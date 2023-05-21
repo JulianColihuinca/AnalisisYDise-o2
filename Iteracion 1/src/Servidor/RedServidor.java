@@ -1,14 +1,12 @@
 package Servidor;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Properties;
 
+import Red.Conexion;
 import Red.Llamada;
 import Red.Mensaje;
 import Red.RespuestaLlamada;
@@ -20,7 +18,7 @@ public class RedServidor {
 	
 	public RedServidor() throws IOException{
 		this.usuarioRegistrados= new ArrayList<Usuario>();
-		this.servidor=new ServerSocket(RedServidor.getPuertoServidor("config.properties"));
+		this.servidor=new ServerSocket(Conexion.getPuertoServidor("configServidor.properties"));
 		new Thread() {public void run() {registrarUsuario(); }}.start(); // Ejecuta el hilo para agregar usuarios
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
 	}
@@ -89,28 +87,8 @@ public class RedServidor {
 	}
 	
 	
-	//ver donde dejar este metodo
 	
-	public static int getPuertoServidor(String pathConfig) {
-		Properties prop=new Properties();
-		int puertoServidor=0;
-		
-		try {
-			FileInputStream in=new FileInputStream(pathConfig);
-			prop.load(in);
-			
-			String puertoServidorString=prop.getProperty("puerto");
-			puertoServidor=Integer.parseInt(puertoServidorString);
-			
-			
-			
-		} catch (FileNotFoundException e) {
-			System.out.println("Archivo "+pathConfig+" no encotnrado");
-		} catch (IOException e) {
-			System.out.println("Error al leer el archivo");
-		}
-		
-		return puertoServidor;
-	}
+	
+	
 
 }

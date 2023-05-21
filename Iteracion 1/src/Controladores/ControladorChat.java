@@ -7,9 +7,9 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
-import Red.Cifrado;
+import Cifrado.Cifrado;
+import Cifrado.CustomHashUtility;
 import Red.Conexion;
-import Red.CustomHashUtility;
 import Red.FinalizarLlamada;
 import Red.Mensaje;
 import Vistas.IVentanaChat;

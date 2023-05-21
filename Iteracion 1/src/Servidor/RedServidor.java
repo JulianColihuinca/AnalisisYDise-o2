@@ -14,27 +14,33 @@ import Red.RespuestaLlamada;
 public class RedServidor {
 	
 	private ServerSocket servidor;
-	private ArrayList<Usuario> usuarioRegistrados;
+	private ArrayList<UsuarioRegistro> usuarioRegistrados;
 	
 	public RedServidor() throws IOException{
-		this.usuarioRegistrados= new ArrayList<Usuario>();
+		this.usuarioRegistrados= new ArrayList<UsuarioRegistro>();
 		this.servidor=new ServerSocket(Conexion.getPuertoServidor());
-		new Thread() {public void run() {registrarUsuario(); }}.start(); // Ejecuta el hilo para agregar usuarios
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
 	}
 	
-	// Para registrar usuarios, lo ejecuta un hilo
-	public void registrarUsuario() {
-		while (true) {
-			
+	
+	private  void registrarUsuario(UsuarioRegistro u) {
+		int i=0;
+		boolean existe=false;
+		while(i<this.usuarioRegistrados.size() && !existe ) {
+			UsuarioRegistro us= this.usuarioRegistrados.get(i);
+			if ( us.getIp().equals(u.getIp()) && us.getPuerto()==u.getPuerto() ) {
+			    existe=true;
+			}
+		}
+		if(!existe) {
+			this.usuarioRegistrados.add(u);
+			System.out.println("IP="+u.getIp() +", Puerto= "+ u.getPuerto() + "  --> Registrado en el servidor");
 		}
 	}
 	
-	private  void addUsuario(Usuario u) {
-		this.usuarioRegistrados.add(u);
+	public void enviarConfirmacionRegistro() { // Envia confirmacion de registro al servidor
+		
 	}
-	
-	
 	public void enviarMensaje() {}
 	public void enviarLlamada() {}
 	
@@ -71,6 +77,9 @@ public class RedServidor {
 					Mensaje mensaje=(Mensaje)o;
 					System.out.println("El servidor recibe un mensaje para el puerto "+mensaje.getPuertoDestino());
 					//el servidor recibio un mensaje, ahora debe enviarlo al destinatario
+				}
+				else if(o instanceof UsuarioRegistro) { //Registra un nuevo usuario en el servidor
+					this.registrarUsuario( (UsuarioRegistro) o );
 				}
 				
                 //CIERRO EL SOCKET DONDE SE CONECTO EL CLIENTE

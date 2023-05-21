@@ -1,12 +1,12 @@
 package Servidor;
 
-public class Usuario {
+public class UsuarioRegistro {
 	
 	private String ip;
 	private int puerto;
 	
 	
-	public Usuario(String ip, int puerto) {
+	public UsuarioRegistro(String ip, int puerto) {
 		super();
 		this.ip = ip;
 		this.puerto = puerto;

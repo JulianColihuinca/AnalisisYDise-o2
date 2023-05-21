@@ -8,6 +8,8 @@ import java.net.ServerSocket;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
+import Servidor.UsuarioRegistro;
+
 public class Conexion {
 
 	public static String getIP() {
@@ -36,7 +38,16 @@ public class Conexion {
 		}else
 			return false;
 	}
-
+    
+	public static void EnviarRegistro(String ip, int puerto) {
+		int puertoServidor=Conexion.getPuertoServidor();
+		UsuarioCliente c;
+		UsuarioRegistro u= new UsuarioRegistro(ip,puerto);
+		c = new UsuarioCliente(puertoServidor, u);
+		Thread t = new Thread(c);
+		t.start();
+	}
+	
 	public static void EnviarLlamada(int puerto, Object o) {
 		UsuarioCliente c;
 

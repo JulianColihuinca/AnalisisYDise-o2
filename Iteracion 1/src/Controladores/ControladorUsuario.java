@@ -30,6 +30,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 		// QUE QUEDE PENDIENTE A RECIBIR UNA LLAMADA
 		this.usuario.addObserver((Observer) this);
 		Conexion.Escuchar(usuario);
+		Conexion.EnviarRegistro(Conexion.getIP(), this.usuario.getPuerto());
 	}
 
 	@Override

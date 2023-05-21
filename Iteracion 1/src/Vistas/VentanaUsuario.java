@@ -27,6 +27,11 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	private JLabel notificacionLlamada;
 	private JLabel ipLabel;
 	private JLabel puertoLabel;
+	private JPanel panel_5;
+	private JPanel panel_6;
+	private JLabel lblNewLabel;
+	private JLabel estadoServidor;
+	private JButton conectar_Boton;
 
 	/**
 	 * Launch the application.
@@ -59,7 +64,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
-		panel.setLayout(new GridLayout(0, 2, 0, 0));
+		panel.setLayout(new GridLayout(2, 2, 0, 0));
 
 		ipLabel = new JLabel("IP: ");
 		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -70,6 +75,20 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		puertoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		puertoLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel.add(puertoLabel);
+		
+		panel_5 = new JPanel();
+		panel.add(panel_5);
+		
+		lblNewLabel = new JLabel("Servidor: ");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_5.add(lblNewLabel);
+		
+		panel_6 = new JPanel();
+		panel.add(panel_6);
+		
+		estadoServidor = new JLabel("Desconectado");
+		estadoServidor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_6.add(estadoServidor);
 
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -117,6 +136,10 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
 		this.atenderBoton.setActionCommand("Atender Llamada");
 		this.comenzarChatBoton.setActionCommand("Comenzar Chat");
+		
+		conectar_Boton = new JButton("ConectarServidor");
+		panel_2.add(conectar_Boton);
+		this.conectar_Boton.setActionCommand("Conectar Servidor");
 		this.rechazarBoton.setActionCommand("Rechazar Llamada");
 
 		this.atenderBoton.setEnabled(false);
@@ -130,6 +153,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		this.atenderBoton.addActionListener(a);
 		this.comenzarChatBoton.addActionListener(a);
 		this.rechazarBoton.addActionListener(a);
+		this.conectar_Boton.addActionListener(a);
 
 	}
 
@@ -184,6 +208,17 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	public void llamadaAceptada() {
 		this.setVisible(false);
 
+	}
+
+	@Override
+	public void actualizarEstadoServidor(boolean estado) {
+		if (estado) {
+			this.estadoServidor.setText("Conectado");
+		}
+		else {
+			this.estadoServidor.setText("Desconectado");
+		}
+		
 	}
 
 }

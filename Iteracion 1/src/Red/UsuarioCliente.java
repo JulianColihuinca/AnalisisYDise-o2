@@ -6,6 +6,7 @@ import java.net.Socket;
 
 import javax.swing.JOptionPane;
 
+import Servidor.ConfirmacionRegistro;
 import Servidor.UsuarioRegistro;
 
 public class UsuarioCliente implements Runnable {
@@ -15,6 +16,7 @@ public class UsuarioCliente implements Runnable {
     private Mensaje mensaje=null;
     private RespuestaLlamada respuesta=null;
     private UsuarioRegistro registro=null;
+    private ConfirmacionRegistro conf=null;
    
 
   
@@ -44,6 +46,11 @@ public class UsuarioCliente implements Runnable {
 		this.registro=registro;
 	}
     
+    public UsuarioCliente(int puerto, ConfirmacionRegistro conf) {
+		this.puerto = puerto;
+		this.conf=conf;
+	}
+    
     //CONSTRUCTOR USADO CUANDO SE ENVIA UNA FINALIZACION DE LLAMADA
     public UsuarioCliente(int puerto) {
 		this.puerto = puerto;
@@ -69,33 +76,36 @@ public class UsuarioCliente implements Runnable {
             out = new ObjectOutputStream(sc.getOutputStream());
             
             //---------------------------------Envio -----------------------------------
-           
-            if(this.registro!= null) {
-            	//System.out.println("Registrarme");
-        		out.writeObject(this.registro);//----> ENVIO MENSAJE
-        		//System.out.println("Regsitrarme2");
+           if(this.conf!=null) {
+        	   out.writeObject(this.conf);
+           }
+           else { 
+	            if(this.registro!= null) {
+	            	//System.out.println("Registrarme");
+	        		out.writeObject(this.registro);//----> ENVIO MENSAJE
+	        		//System.out.println("Regsitrarme2");
+	            }
+	            else {
+			            if(this.llamada==null) { 
+			            //	System.out.println("no recibi llamada");
+			            	if(this.mensaje==null) {
+			            	//	System.out.println("no es mensaje");
+			            		if(this.respuesta==null)
+			            			out.writeObject(new FinalizarLlamada());
+			            		else
+			            			out.writeObject(this.respuesta);//----> ENVIO RESPUESTA A PETICION DE LLAMADA
+			            	}else {
+			            	//	System.out.println("intento enviar mensaje");
+			            		out.writeObject(this.mensaje);//----> ENVIO MENSAJE
+			            	
+			            	}
+			            }else {//----> ENVIO SOLICITUD DE LLAMADA
+			            	System.out.println("es llamada");
+			            	out.writeObject(this.llamada);
+			            	System.out.println("se envio la llamada");
+			            }
+	            }
             }
-            else {
-		            if(this.llamada==null) { 
-		            //	System.out.println("no recibi llamada");
-		            	if(this.mensaje==null) {
-		            	//	System.out.println("no es mensaje");
-		            		if(this.respuesta==null)
-		            			out.writeObject(new FinalizarLlamada());
-		            		else
-		            			out.writeObject(this.respuesta);//----> ENVIO RESPUESTA A PETICION DE LLAMADA
-		            	}else {
-		            	//	System.out.println("intento enviar mensaje");
-		            		out.writeObject(this.mensaje);//----> ENVIO MENSAJE
-		            	
-		            	}
-		            }else {//----> ENVIO SOLICITUD DE LLAMADA
-		            	System.out.println("es llamada");
-		            	out.writeObject(this.llamada);
-		            	System.out.println("se envio la llamada");
-		            }
-            }
-            
             sc.close();
            
         } catch (IOException ex) {

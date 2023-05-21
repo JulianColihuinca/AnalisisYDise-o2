@@ -18,4 +18,5 @@ public interface IVentanaUsuario {
 	void llamadaAceptada();
 
 	void setVisible(boolean res);
+	void actualizarEstadoServidor(boolean estado);
 }

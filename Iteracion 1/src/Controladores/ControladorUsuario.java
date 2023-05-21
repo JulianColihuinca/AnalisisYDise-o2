@@ -5,10 +5,13 @@ import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JOptionPane;
+
 import Red.Conexion;
 import Red.Llamada;
 import Red.RespuestaLlamada;
 import Red.UsuarioServidor;
+import Servidor.ConfirmacionRegistro;
 import Servidor.UsuarioRegistro;
 import Vistas.IVentanaUsuario;
 import Vistas.VentanaUsuario;
@@ -33,7 +36,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 		Conexion.Escuchar(usuario);
 		
 		usuarioRegistro=new UsuarioRegistro(Conexion.getIP(),this.usuario.getPuerto());
-		resgistrarAlServer();
+		registrarAlServer();
 	}
 
 	@Override
@@ -50,13 +53,13 @@ public class ControladorUsuario implements ActionListener, Observer {
 			this.comenzarChat();
 			
 		} // -------------------------------------------------------------------------------------------------------------------------
-		else if(command.equalsIgnoreCase("Registrarse al server")) {
-			this.resgistrarAlServer();
+		else if(command.equalsIgnoreCase("Conectar Servidor")) {
+			this.registrarAlServer();
 		}
 	}
 
 	
-	private void resgistrarAlServer() {
+	private void registrarAlServer() {
 		Conexion.EnviarRegistro(this.usuarioRegistro);
 		
 	}
@@ -72,6 +75,11 @@ public class ControladorUsuario implements ActionListener, Observer {
 		} else if (arg instanceof Llamada) {
 			Llamada llamada = (Llamada) arg;	
 			this.recibirLlamada(llamada);
+		}
+		
+		else if (arg instanceof ConfirmacionRegistro) {
+			ConfirmacionRegistro conf= (ConfirmacionRegistro) arg;
+			this.vista.actualizarEstadoServidor(conf.isRegistrado());
 		}
 		// SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
 	}

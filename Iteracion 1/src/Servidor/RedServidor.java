@@ -26,7 +26,7 @@ public class RedServidor extends Observable{
 	}
 	
 	
-	private  void registrarUsuario(UsuarioRegistro u) {
+	private  boolean registrarUsuario(UsuarioRegistro u) {
 		int i=0;
 		boolean existe=false;
 		while(i<this.usuarioRegistrados.size() && !existe ) {
@@ -40,6 +40,7 @@ public class RedServidor extends Observable{
 			this.usuarioRegistrados.add(u);
 			System.out.println("IP="+u.getIp() +", Puerto= "+ u.getPuerto() + "  --> Registrado en el servidor");
 		}
+		return existe;
 		
 	}
 	
@@ -106,7 +107,8 @@ public class RedServidor extends Observable{
 					System.out.println("red servidor recibio usaurio registro");
 					
 					UsuarioRegistro usuarioReg=(UsuarioRegistro)o;
-					this.registrarUsuario(usuarioReg);
+					boolean registrado= !this.registrarUsuario(usuarioReg);
+					Conexion.EnviarConfirmacion(usuarioReg.getPuerto(), new ConfirmacionRegistro(registrado) );
 					System.out.println(usuarioReg.toString());
 				}
 				

@@ -8,6 +8,7 @@ import java.net.ServerSocket;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
+import Servidor.ConfirmacionRegistro;
 import Servidor.UsuarioRegistro;
 
 public class Conexion {
@@ -79,6 +80,14 @@ public class Conexion {
 		Thread t = new Thread(c);
 		t.start();
 	}
+	
+	public static void EnviarConfirmacion(int puerto, ConfirmacionRegistro conf) {
+		UsuarioCliente c;
+		c = new UsuarioCliente(puerto, conf);// para un futuro agregar ip
+		Thread t = new Thread(c);
+		t.start();
+	}
+	
 
 	public static void Escuchar(UsuarioServidor usuario) {
 		Thread t = new Thread(usuario);

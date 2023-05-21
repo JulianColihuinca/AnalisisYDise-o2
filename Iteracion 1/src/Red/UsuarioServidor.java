@@ -6,6 +6,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Observable;
 
+import Servidor.ConfirmacionRegistro;
+
 public class UsuarioServidor extends Observable implements Runnable{
 	private int puerto;
 	private ServerSocket servidor;
@@ -87,6 +89,11 @@ public class UsuarioServidor extends Observable implements Runnable{
                 }else if(o instanceof Mensaje){//ES MENSAJE
                 	Mensaje mensaje =(Mensaje) o;
                 //	System.out.println("SERVIDOR USUARIO RECIBIO MENSAJE-> "+mensaje.getMensaje());
+                }
+                else if(o instanceof ConfirmacionRegistro) {
+                	this.setChanged();
+                	this.notifyObservers(o);
+                	this.clearChanged();
                 }
 				
                 if(cond) {  //SI LA CONDICION ES FALSA EL USUARIO NO PUEDE RECIBIR UNA LLAMADA, O PORQUE TIENE UNA

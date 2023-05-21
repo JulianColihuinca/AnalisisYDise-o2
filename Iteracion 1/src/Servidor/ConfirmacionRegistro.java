@@ -1,6 +1,8 @@
 package Servidor;
 
-public class ConfirmacionRegistro {
+import java.io.Serializable;
+
+public class ConfirmacionRegistro implements Serializable{
 	
 	private boolean registrado;
 

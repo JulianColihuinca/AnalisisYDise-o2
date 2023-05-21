@@ -5,13 +5,14 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Observable;
 
 import Red.Conexion;
 import Red.Llamada;
 import Red.Mensaje;
 import Red.RespuestaLlamada;
 
-public class RedServidor {
+public class RedServidor extends Observable{
 	
 	private ServerSocket servidor;
 	private ArrayList<UsuarioRegistro> usuarioRegistrados;
@@ -92,9 +93,13 @@ public class RedServidor {
 					this.registrarUsuario( (UsuarioRegistro) o );
 				}
 				
+				this.setChanged();
+            	this.notifyObservers(o);
+            	this.clearChanged();
+            	
                 //CIERRO EL SOCKET DONDE SE CONECTO EL CLIENTE
                 sc.close();
-                in.close();
+               
             }
 
         } catch (IOException ex) {

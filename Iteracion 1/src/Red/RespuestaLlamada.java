@@ -20,7 +20,7 @@ private boolean respuesta;
 
 	@Override
 	public String toString() {
-		return "RespuestaLlamada [respuesta=" + respuesta + "]";
+		return "RespuestaLlamada [PuertoOrigen: "+this.getPuertoOrigen()+",Respuesta= " + respuesta + "]";
 	}
 	
 	

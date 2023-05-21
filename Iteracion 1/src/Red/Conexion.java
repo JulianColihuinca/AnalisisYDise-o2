@@ -24,7 +24,7 @@ public class Conexion {
 	}
 
 	public static boolean puertoDisponible(int puerto) {
-		if (puerto != Conexion.getPuertoServidor("Config.properties")) {
+		if (puerto != Conexion.getPuertoServidor()) {
 			try {
 				ServerSocket s = new ServerSocket(puerto);
 				s.close();
@@ -74,7 +74,8 @@ public class Conexion {
 		t.start();
 	}
 
-	public static int getPuertoServidor(String pathConfig) {
+	public static int getPuertoServidor() {
+		String pathConfig="configServidor.properties";
 		Properties prop = new Properties();
 		int puertoServidor = 0;
 

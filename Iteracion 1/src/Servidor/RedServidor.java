@@ -18,7 +18,7 @@ public class RedServidor {
 	
 	public RedServidor() throws IOException{
 		this.usuarioRegistrados= new ArrayList<Usuario>();
-		this.servidor=new ServerSocket(Conexion.getPuertoServidor("configServidor.properties"));
+		this.servidor=new ServerSocket(Conexion.getPuertoServidor());
 		new Thread() {public void run() {registrarUsuario(); }}.start(); // Ejecuta el hilo para agregar usuarios
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
 	}

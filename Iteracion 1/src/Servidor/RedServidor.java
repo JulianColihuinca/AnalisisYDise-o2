@@ -80,11 +80,19 @@ public class RedServidor extends Observable{
 					
 				}else if(o instanceof Llamada) {
 					
+					
 					Llamada llamada=(Llamada)o;
 					System.out.println("El servidor recive "+llamada.toString());
 					//el servidor recibio una llamada, ahora debe enviarla al destinatario
 					System.out.println("el puerto destino es "+llamada.getPuertoDestino()+" y el puerto del servidor es "+Conexion.getPuertoServidor());
-					Conexion.EnviarLlamada(llamada.getPuertoDestino(),llamada);
+					
+					if(puertosRegistrados(llamada.getPuertoOrigen(), llamada.getIPOrigen()) && puertosRegistrados(llamada.getPuertoDestino(), llamada.getIpDestino())){
+						Conexion.EnviarLlamada(llamada.getPuertoDestino(),llamada);
+					}
+					else {
+						System.out.println("El servidor no envia la llamada ya que al menos un usuario no esta registrado");
+					}
+					
 					
 				}else if(o instanceof Mensaje){
 					
@@ -124,7 +132,21 @@ public class RedServidor extends Observable{
 	}
 	
 	
-	
+	public boolean puertosRegistrados(int puerto,String ip) {
+		int i=0;
+		boolean encontrado=false;
+		
+		while(i<this.usuarioRegistrados.size()&& !encontrado) {
+			UsuarioRegistro usuarioReg=this.usuarioRegistrados.get(i);
+			if(usuarioReg.getIp().equals(ip)&&usuarioReg.getPuerto()==puerto) {
+				encontrado=true;
+			}
+			
+			i++;
+		}
+		
+		return encontrado;
+	}
 	
 	
 

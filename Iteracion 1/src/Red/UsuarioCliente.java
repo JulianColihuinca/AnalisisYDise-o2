@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import javax.swing.JOptionPane;
+
 import Servidor.UsuarioRegistro;
 
 public class UsuarioCliente implements Runnable {
@@ -69,27 +71,28 @@ public class UsuarioCliente implements Runnable {
             //---------------------------------Envio -----------------------------------
            
             if(this.registro!= null) {
-            	System.out.println("Registrarme");
+            	//System.out.println("Registrarme");
         		out.writeObject(this.registro);//----> ENVIO MENSAJE
+        		//System.out.println("Regsitrarme2");
             }
             else {
 		            if(this.llamada==null) { 
-		            	System.out.println("no recibi llamada");
+		            //	System.out.println("no recibi llamada");
 		            	if(this.mensaje==null) {
-		            		System.out.println("no es mensaje");
+		            	//	System.out.println("no es mensaje");
 		            		if(this.respuesta==null)
 		            			out.writeObject(new FinalizarLlamada());
 		            		else
 		            			out.writeObject(this.respuesta);//----> ENVIO RESPUESTA A PETICION DE LLAMADA
 		            	}else {
-		            		System.out.println("intento enviar mensaje");
+		            	//	System.out.println("intento enviar mensaje");
 		            		out.writeObject(this.mensaje);//----> ENVIO MENSAJE
 		            	
 		            	}
 		            }else {//----> ENVIO SOLICITUD DE LLAMADA
 		            	System.out.println("es llamada");
 		            	out.writeObject(this.llamada);
-		            	
+		            	System.out.println("se envio la llamada");
 		            }
             }
             
@@ -98,6 +101,10 @@ public class UsuarioCliente implements Runnable {
         } catch (IOException ex) {
             //Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         	System.out.println("hubo un problema");
+        	
+        	if(this.puerto==Conexion.getPuertoServidor()) {//aca no esta creado el servidor
+        		JOptionPane.showMessageDialog(null, "El servidor no disponible");
+        	}
         }
 
     }

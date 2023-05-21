@@ -8,8 +8,8 @@ import java.util.Observer;
 import Red.Conexion;
 import Red.Llamada;
 import Red.RespuestaLlamada;
-import Red.UsuarioCliente;
 import Red.UsuarioServidor;
+import Servidor.UsuarioRegistro;
 import Vistas.IVentanaUsuario;
 import Vistas.VentanaUsuario;
 
@@ -17,6 +17,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 
 	private IVentanaUsuario vista;
 	private UsuarioServidor usuario;
+	private UsuarioRegistro usuarioRegistro;
 
 	public ControladorUsuario(UsuarioServidor usuario) {
 		this.vista = new VentanaUsuario();
@@ -30,7 +31,9 @@ public class ControladorUsuario implements ActionListener, Observer {
 		// QUE QUEDE PENDIENTE A RECIBIR UNA LLAMADA
 		this.usuario.addObserver((Observer) this);
 		Conexion.Escuchar(usuario);
-		//Conexion.EnviarRegistro(Conexion.getIP(), this.usuario.getPuerto());
+		
+		usuarioRegistro=new UsuarioRegistro(Conexion.getIP(),this.usuario.getPuerto());
+		resgistrarAlServer();
 	}
 
 	@Override
@@ -47,9 +50,17 @@ public class ControladorUsuario implements ActionListener, Observer {
 			this.comenzarChat();
 			
 		} // -------------------------------------------------------------------------------------------------------------------------
+		else if(command.equalsIgnoreCase("Registrarse al server")) {
+			this.resgistrarAlServer();
+		}
 	}
 
 	
+	private void resgistrarAlServer() {
+		Conexion.EnviarRegistro(this.usuarioRegistro);
+		
+	}
+
 	@Override
 	public void update(Observable o, Object arg) {
 		// ---------------------EL OBJETO RECIBIDO ES UNA RESPUESTA A LA LLAMADA----------------------------------
@@ -102,6 +113,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 				//MIENTRAS ESPERA QUE LE CONTESTEN
 				this.usuario.setModoLlamando();
 			    Conexion.EnviarLlamada(Conexion.getPuertoServidor(), llamada);
+			    System.out.println("envio de llamada");
 			}
 		} catch (NumberFormatException ex) {
 			System.out.println("Formato puerto mal ingresado,ingrese numero entero");
@@ -111,13 +123,13 @@ public class ControladorUsuario implements ActionListener, Observer {
 	
 	private  void recibirRespuesta(RespuestaLlamada respuesta) {
 		if (!respuesta.isRespuesta()) { // SI NO ME ATENDIERON
-			System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
+			//System.out.println("LA RESPUESTA A LA LLAMADA FUE NEGATIVA");
 			//this.usuario.setLlamada(null); EL USUARIO QUE LLAMA YA TIENE NULL EN LLAMADA
 			this.usuario.setModoEscucha();//VUELVE A MODO ESCUCHA
 			this.vista.llamadaRechazada();
 
 		} else {
-			System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
+			//System.out.println("LA RESPUESTA A LA LLAMADA FUE POSITIVA");
 			
 			
 			this.vista.llamadaAceptada();

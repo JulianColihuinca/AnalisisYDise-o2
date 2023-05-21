@@ -7,6 +7,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import javax.swing.JOptionPane;
+
 import Red.Conexion;
 import Red.Llamada;
 import Red.Mensaje;
@@ -32,11 +34,13 @@ public class RedServidor extends Observable{
 			if ( us.getIp().equals(u.getIp()) && us.getPuerto()==u.getPuerto() ) {
 			    existe=true;
 			}
+			i++;
 		}
 		if(!existe) {
 			this.usuarioRegistrados.add(u);
 			System.out.println("IP="+u.getIp() +", Puerto= "+ u.getPuerto() + "  --> Registrado en el servidor");
 		}
+		
 	}
 	
 	public void enviarConfirmacionRegistro() { // Envia confirmacion de registro al servidor
@@ -55,8 +59,9 @@ public class RedServidor extends Observable{
             while (true) {
             	
                 //ESPERA A QUE UN CLIENTE SE CONECTE
+            	System.out.println("servidor a la espera de que se conecte alguien");
                 sc = servidor.accept();
-                System.out.println("servidor a la espera de que se conecte alguien");
+                System.out.println("alguien se conecto");
                 //SE CONECTO UN USUARIO
                 
                 in = new ObjectInputStream(sc.getInputStream());
@@ -65,7 +70,7 @@ public class RedServidor extends Observable{
 				
                 //SE LEE EL OBJETO PASADO
 				o =in.readObject();
-				
+				System.out.println("Servidor recibio algo");
 				if(o instanceof RespuestaLlamada) {
 					
 					RespuestaLlamada respuesta=(RespuestaLlamada)o;
@@ -88,9 +93,13 @@ public class RedServidor extends Observable{
 					//el servidor recibio un mensaje, ahora debe enviarlo al destinatario
 					Conexion.EnviarMensaje(mensaje.getPuertoDestino(), mensaje);
 					
-				}
-				else if(o instanceof UsuarioRegistro) { //Registra un nuevo usuario en el servidor
-					this.registrarUsuario( (UsuarioRegistro) o );
+				}else if(o instanceof UsuarioRegistro) { //Registra un nuevo usuario en el servidor
+					
+					System.out.println("red servidor recibio usaurio registro");
+					
+					UsuarioRegistro usuarioReg=(UsuarioRegistro)o;
+					this.registrarUsuario(usuarioReg);
+					System.out.println(usuarioReg.toString());
 				}
 				
 				this.setChanged();
@@ -99,12 +108,15 @@ public class RedServidor extends Observable{
             	
                 //CIERRO EL SOCKET DONDE SE CONECTO EL CLIENTE
                 sc.close();
-               
+               System.out.println("servidor sc cerrado");
             }
 
         } catch (IOException ex) {
             //Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
         	System.out.println("explota todo");
+        
+        	JOptionPane.showMessageDialog(null, "Usuario no disponible");
+        	
         } catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

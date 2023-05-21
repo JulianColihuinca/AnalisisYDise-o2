@@ -1,6 +1,8 @@
 package Servidor;
 
-public class UsuarioRegistro {
+import java.io.Serializable;
+
+public class UsuarioRegistro implements Serializable{
 	
 	private String ip;
 	private int puerto;
@@ -21,7 +23,13 @@ public class UsuarioRegistro {
 	public int getPuerto() {
 		return puerto;
 	}
-	
-	
 
+
+	@Override
+	public String toString() {
+		return "UsuarioRegistro [ip=" + ip + ", puerto=" + puerto + "]";
+	}
+	
+	
+	
 }

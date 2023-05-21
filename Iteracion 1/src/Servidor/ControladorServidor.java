@@ -49,7 +49,8 @@ public class ControladorServidor implements Observer{
 			
 		}
 		else if(arg instanceof UsuarioRegistro) { //Registra un nuevo usuario en el servidor
-			
+			UsuarioRegistro usuarioReg=(UsuarioRegistro)arg;
+			this.vistaServidor.actualizarLista("Recibo "+usuarioReg.toString());
 		}
 		
 	}

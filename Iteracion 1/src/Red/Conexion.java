@@ -39,11 +39,11 @@ public class Conexion {
 			return false;
 	}
     
-	public static void EnviarRegistro(String ip, int puerto) {
+	public static void EnviarRegistro(UsuarioRegistro usaurioReg) {
 		int puertoServidor=Conexion.getPuertoServidor();
 		UsuarioCliente c;
-		UsuarioRegistro u= new UsuarioRegistro(ip,puerto);
-		c = new UsuarioCliente(puertoServidor, u);
+		
+		c = new UsuarioCliente(puertoServidor, usaurioReg);
 		Thread t = new Thread(c);
 		t.start();
 	}

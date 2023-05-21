@@ -57,10 +57,10 @@ public class UsuarioServidor extends Observable implements Runnable{
             	cond=true;
             	
                 //ESPERA A QUE UN CLIENTE SE CONECTE
-            	System.out.println("----------------CREO UN USUARIO SERVIDOR, ESPERA A QUE SE CONECTE ALGUIEN-----------------------------------");
+            	//System.out.println("----------------CREO UN USUARIO SERVIDOR, ESPERA A QUE SE CONECTE ALGUIEN-----------------------------------");
                 sc = servidor.accept();
 
-                System.out.println("----------------ALGUIEN SE CONECTO-----------------------------------");
+               // System.out.println("----------------ALGUIEN SE CONECTO-----------------------------------");
                 
                 in = new ObjectInputStream(sc.getInputStream());
                 
@@ -77,7 +77,7 @@ public class UsuarioServidor extends Observable implements Runnable{
 				if(o instanceof RespuestaLlamada) {//ES RESPUESTA A UNA LLAMADA
                 	this.respuesta=(RespuestaLlamada) o;
 				}else if(o instanceof Llamada) {//ES LLAMADA
-                	System.out.println("SERVIDOR RECIBE LLAMADA");
+                	//System.out.println("SERVIDOR RECIBE LLAMADA");
                 	//SI NO TIENE NINGUNA LLAMADA ESPERANDO RESPUESTA Y ESTA EN MODO ESCUCHA
                 	if(this.llamada==null && this.modo.equals("ESCUCHA"))
                 		this.llamada=(Llamada) o;
@@ -86,7 +86,7 @@ public class UsuarioServidor extends Observable implements Runnable{
                 	
                 }else if(o instanceof Mensaje){//ES MENSAJE
                 	Mensaje mensaje =(Mensaje) o;
-                	System.out.println("SERVIDOR USUARIO RECIBIO MENSAJE-> "+mensaje.getMensaje());
+                //	System.out.println("SERVIDOR USUARIO RECIBIO MENSAJE-> "+mensaje.getMensaje());
                 }
 				
                 if(cond) {  //SI LA CONDICION ES FALSA EL USUARIO NO PUEDE RECIBIR UNA LLAMADA, O PORQUE TIENE UNA

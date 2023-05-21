@@ -7,10 +7,11 @@ import java.util.Observer;
 
 import javax.swing.JOptionPane;
 
+import Red.Cifrado;
 import Red.Conexion;
+import Red.CustomHashUtility;
 import Red.FinalizarLlamada;
 import Red.Mensaje;
-import Red.UsuarioCliente;
 import Vistas.IVentanaChat;
 import Vistas.VentanaChat;
 
@@ -82,8 +83,23 @@ public class ControladorChat implements ActionListener, Observer {
 		String mensajeCompleto="TU: "+mensaje+"\n";
 		this.vistaChat.addMensaje(mensajeCompleto);
 		this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
-		System.out.println("\n\n\n"+this.puertoDestino+"\n\n\n");
-		Conexion.EnviarMensaje(Conexion.getPuertoServidor(),new Mensaje(mensaje,this.puertoDestino) );
+		
+		try {
+			int n1=this.puertoOrigen;
+			int n2=this.puertoDestino;
+			
+			
+			String hash= CustomHashUtility.generateCustomHash(n1,n2);
+			String mensajeEncriptado=Cifrado.encriptar(hash,mensaje, "TripleDES");
+			
+			Conexion.EnviarMensaje(Conexion.getPuertoServidor(),new Mensaje(mensajeEncriptado,this.puertoDestino) );
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
 	
 	private void finalizarChat(){
@@ -101,8 +117,24 @@ public class ControladorChat implements ActionListener, Observer {
 	}
 	
 	private void recibirMensaje(Mensaje mensaje) {
-		String mensajeCompleto = "IP "+this.ipDestino+", PUERTO "+ this.puertoDestino+": "+mensaje.getMensaje()+"\n";
-		this.vistaChat.addMensaje(mensajeCompleto);
+		
+		int n1=this.puertoOrigen;
+		int n2=this.puertoDestino;
+		
+		
+		try {
+		    
+			String hash= CustomHashUtility.generateCustomHash(n2, n1);
+			String mensajeDescifrado= Cifrado.desencriptar(hash,mensaje.getMensaje(), "TripleDES");
+			String mensajeCompleto = "IP "+this.ipDestino+", PUERTO "+ this.puertoDestino+": "+mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
+			this.vistaChat.addMensaje(mensajeCompleto);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	private void recibirFinalizarChat() {

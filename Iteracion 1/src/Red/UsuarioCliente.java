@@ -62,7 +62,7 @@ public class UsuarioCliente implements Runnable {
 
         try {
             //-----------------------------Creo el socket para conectarme con el cliente
-            Socket sc = new Socket(HOST, Conexion.getPuertoServidor());
+            Socket sc = new Socket(HOST,/* Conexion.getPuertoServidor()*/this.puerto);
                         
             out = new ObjectOutputStream(sc.getOutputStream());
             

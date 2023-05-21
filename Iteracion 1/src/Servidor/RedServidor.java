@@ -77,6 +77,7 @@ public class RedServidor {
 					Llamada llamada=(Llamada)o;
 					System.out.println("El servidor recive "+llamada.toString());
 					//el servidor recibio una llamada, ahora debe enviarla al destinatario
+					System.out.println("el puerto destino es "+llamada.getPuertoDestino()+" y el puerto del servidor es "+Conexion.getPuertoServidor());
 					Conexion.EnviarLlamada(llamada.getPuertoDestino(),llamada);
 					
 				}else if(o instanceof Mensaje){
@@ -93,11 +94,12 @@ public class RedServidor {
 				
                 //CIERRO EL SOCKET DONDE SE CONECTO EL CLIENTE
                 sc.close();
-                
+                in.close();
             }
 
         } catch (IOException ex) {
             //Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+        	System.out.println("explota todo");
         } catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

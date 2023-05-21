@@ -14,6 +14,7 @@ public class ControladorServidor {
 		try {
 			this.redServidor = new RedServidor();
 			this.vistaServidor = new VentanaServidor();
+			this.vistaServidor.setVisible(true);
 		} catch (IOException e) {
 			System.out.println("ERROR AL CREAR EL CONTROLADOR SERVIDOR, PUERTO DEL SERVIDOR EN USO");
 		}

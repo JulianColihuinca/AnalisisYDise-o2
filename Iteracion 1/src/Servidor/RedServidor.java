@@ -43,12 +43,7 @@ public class RedServidor extends Observable{
 		return existe;
 		
 	}
-	
-	public void enviarConfirmacionRegistro() { // Envia confirmacion de registro al servidor
-		
-	}
-	public void enviarMensaje() {}
-	public void enviarLlamada() {}
+
 	
 	// Para escuchar algo, lo va a ejecutar un hilo
 	public void escuchar() {

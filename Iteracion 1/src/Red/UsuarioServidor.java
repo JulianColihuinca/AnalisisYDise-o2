@@ -100,7 +100,7 @@ public class UsuarioServidor extends Observable implements Runnable{
                 
                 	//COMO EL USUARIO NO PUEDE RECIBIR LA LLAMADA, MANDA UNA RESPUESTA NEGATIVA AL EMISOR
                 	Llamada llamada=(Llamada)o;
-                	UsuarioCliente cliente=new UsuarioCliente(llamada.getPuertoOrigen(),new RespuestaLlamada(llamada,false,this.puerto,Conexion.getIP()));
+                	UsuarioCliente cliente=new UsuarioCliente(llamada.getPuertoOrigen(),new RespuestaLlamada(llamada,false));
                 	Thread t = new Thread(cliente);
             		t.start();
                 }

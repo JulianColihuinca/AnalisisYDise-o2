@@ -1,5 +1,7 @@
 package Servidor;
 
+import java.io.IOException;
+
 public class ControladorServidor {
 	
 	private IVentanaServidor vistaServidor;
@@ -8,8 +10,13 @@ public class ControladorServidor {
 	
 	public ControladorServidor() {
 		super();
-		this.vistaServidor = new VentanaServidor();
-		this.redServidor = new RedServidor();
+		
+		try {
+			this.redServidor = new RedServidor();
+			this.vistaServidor = new VentanaServidor();
+		} catch (IOException e) {
+			System.out.println("ERROR AL CREAR EL CONTROLADOR SERVIDOR, PUERTO DEL SERVIDOR EN USO");
+		}
 	}
 	
 	

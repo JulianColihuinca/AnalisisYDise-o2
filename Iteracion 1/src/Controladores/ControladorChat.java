@@ -82,7 +82,8 @@ public class ControladorChat implements ActionListener, Observer {
 		String mensajeCompleto="TU: "+mensaje+"\n";
 		this.vistaChat.addMensaje(mensajeCompleto);
 		this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
-		Conexion.EnviarMensaje(this.puertoDestino,new Mensaje(mensaje,this.puertoOrigen) );
+		
+		Conexion.EnviarMensaje(this.puertoDestino/*este tiene que cambiar a ser el servidor*/,new Mensaje(mensaje,this.puertoDestino) );
 	}
 	
 	private void finalizarChat(){
@@ -100,7 +101,7 @@ public class ControladorChat implements ActionListener, Observer {
 	}
 	
 	private void recibirMensaje(Mensaje mensaje) {
-		String mensajeCompleto = "PUERTO "+ mensaje.getPuerto()+": "+mensaje.getMensaje()+"\n";
+		String mensajeCompleto = "IP "+this.ipDestino+", PUERTO "+ this.puertoDestino+": "+mensaje.getMensaje()+"\n";
 		this.vistaChat.addMensaje(mensajeCompleto);
 	}
 	

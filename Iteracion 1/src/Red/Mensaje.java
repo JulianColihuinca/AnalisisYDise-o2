@@ -6,7 +6,7 @@ public class Mensaje implements Serializable {
 	private String mensaje;
 	private int puertoDestino;
 	
-	public Mensaje(String mensaje, int puerpuertoDestinotoOrigen) {
+	public Mensaje(String mensaje, int puertoDestino) {
 		this.mensaje=mensaje;
 		this.puertoDestino=puertoDestino;
 	}

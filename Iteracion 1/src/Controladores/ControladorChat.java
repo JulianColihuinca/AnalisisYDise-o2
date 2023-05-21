@@ -82,7 +82,7 @@ public class ControladorChat implements ActionListener, Observer {
 		String mensajeCompleto="TU: "+mensaje+"\n";
 		this.vistaChat.addMensaje(mensajeCompleto);
 		this.vistaChat.mensajeEnviado();// borra el mensaje ya enviado del area de texto
-		
+		System.out.println("\n\n\n"+this.puertoDestino+"\n\n\n");
 		Conexion.EnviarMensaje(Conexion.getPuertoServidor(),new Mensaje(mensaje,this.puertoDestino) );
 	}
 	

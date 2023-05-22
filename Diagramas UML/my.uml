@@ -191,6 +191,11 @@
     <ownedOperation xmi:id="_GJb_gOfWEe2tir5ZwFdHFQ" name="recibirLlamada" visibility="private">
       <ownedParameter xmi:id="_IOzJgOfWEe2tir5ZwFdHFQ" name="llamada" type="_eWWw0Oa1Ee2km58nRP0i6Q"/>
     </ownedOperation>
+    <ownedOperation xmi:id="_KcNQwPgzEe2HOf4_g3Tq6g" name="EnviarConfirmacion">
+      <ownedParameter xmi:id="_NogNoPgzEe2HOf4_g3Tq6g" name="puerto">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_ppdo8OZWEe2rsuTxebE4yA" name="UIInicioSesion" visibility="public">
     <ownedOperation xmi:id="_G2NIkOZaEe2rsuTxebE4yA" name="getPuerto" visibility="public">
@@ -656,6 +661,10 @@
     <ownedOperation xmi:id="_uhg-0PcyEe2TQKpulOekuw" name="Escuchar">
       <ownedParameter xmi:id="_wr3WgPcyEe2TQKpulOekuw" name="usuario" type="_kYRXUOayEe2km58nRP0i6Q"/>
     </ownedOperation>
+    <ownedOperation xmi:id="_9340kPgyEe2HOf4_g3Tq6g" name="EnviarRegistro">
+      <ownedParameter xmi:id="_FFPzIPgzEe2HOf4_g3Tq6g" name="usuarioReg" type="_5uSCQPgvEe2HOf4_g3Tq6g"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_-h-6cPgyEe2HOf4_g3Tq6g"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_DD61IOeLEe2l7Mh0fQ-Pdg" client="_c9fQoOeKEe2l7Mh0fQ-Pdg" supplier="_xAEKcOZTEe2rsuTxebE4yA"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_69gvEOfUEe2tir5ZwFdHFQ" name="Object" isAbstract="true"/>
@@ -987,4 +996,109 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_tTi1UPguEe2HOf4_g3Tq6g" client="_C9AGgPguEe2HOf4_g3Tq6g" supplier="_cO5okPguEe2HOf4_g3Tq6g"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_96JbMPguEe2HOf4_g3Tq6g" name="IVentanaServidor" visibility="public">
+    <ownedOperation xmi:id="_DjdNEPgvEe2HOf4_g3Tq6g" name="actulizarLista">
+      <ownedParameter xmi:id="_GqDKkPgvEe2HOf4_g3Tq6g" name="item">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_SLWDgPgvEe2HOf4_g3Tq6g" name="VentanaServidor" visibility="public">
+    <ownedOperation xmi:id="_T9hy0PgvEe2HOf4_g3Tq6g" name="actulizarLista">
+      <ownedParameter xmi:id="_T9hy0fgvEe2HOf4_g3Tq6g" name="item">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_XjRKcPgvEe2HOf4_g3Tq6g" client="_SLWDgPgvEe2HOf4_g3Tq6g" supplier="_96JbMPguEe2HOf4_g3Tq6g"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_d6-TYPgvEe2HOf4_g3Tq6g" name="_ControladorServidor" visibility="public">
+    <ownedAttribute xmi:id="_mLnT4PgvEe2HOf4_g3Tq6g" name="vistaServidor" visibility="private" type="_96JbMPguEe2HOf4_g3Tq6g"/>
+    <ownedAttribute xmi:id="_mZ948PgvEe2HOf4_g3Tq6g" name="RedServidor" visibility="private" type="_wQ7XAPgvEe2HOf4_g3Tq6g"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wQ7XAPgvEe2HOf4_g3Tq6g" name="RedServidor" visibility="public">
+    <ownedAttribute xmi:id="_oB5qoPgwEe2HOf4_g3Tq6g" name="servidor" visibility="private" type="_C3nOoOazEe2km58nRP0i6Q"/>
+    <ownedAttribute xmi:id="_oQaAsPgwEe2HOf4_g3Tq6g" name="usuariosRegistrados" visibility="private" type="_v6n6YPgwEe2HOf4_g3Tq6g"/>
+    <ownedOperation xmi:id="_cpN7IPgwEe2HOf4_g3Tq6g" name="registrarUsuario">
+      <ownedParameter xmi:id="_gqh0cPgwEe2HOf4_g3Tq6g" name="u" type="_5uSCQPgvEe2HOf4_g3Tq6g"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eE-HcPgwEe2HOf4_g3Tq6g" name="escuchar"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5uSCQPgvEe2HOf4_g3Tq6g" name="UsuarioRegistro" visibility="public">
+    <ownedAttribute xmi:id="_7ZBFwPgvEe2HOf4_g3Tq6g" name="ip" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_7lXfsPgvEe2HOf4_g3Tq6g" name="puerto" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_CGwwIPgwEe2HOf4_g3Tq6g" name="getIP">
+      <ownedParameter xmi:id="_GCNSAPgwEe2HOf4_g3Tq6g" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Ca-soPgwEe2HOf4_g3Tq6g" name="getPuerto">
+      <ownedParameter xmi:id="_KCJSUPgwEe2HOf4_g3Tq6g" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_v6n6YPgwEe2HOf4_g3Tq6g" name="ArrayList>UsuariosRegistro>"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__CIsEPgwEe2HOf4_g3Tq6g" client="_d6-TYPgvEe2HOf4_g3Tq6g" supplier="_96JbMPguEe2HOf4_g3Tq6g"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_AZLXgPgxEe2HOf4_g3Tq6g" client="_d6-TYPgvEe2HOf4_g3Tq6g" supplier="_wQ7XAPgvEe2HOf4_g3Tq6g"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_C2UIUPgxEe2HOf4_g3Tq6g" client="_wQ7XAPgvEe2HOf4_g3Tq6g" supplier="_5uSCQPgvEe2HOf4_g3Tq6g"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_hGJkAPgxEe2HOf4_g3Tq6g" name="Cifrado" visibility="public">
+    <ownedOperation xmi:id="_lD06gPgxEe2HOf4_g3Tq6g" name="getHash" isStatic="true">
+      <ownedParameter xmi:id="_q9gDoPgxEe2HOf4_g3Tq6g" name="puerto1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_rODoIPgxEe2HOf4_g3Tq6g" name="puerto2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_YGcooPgyEe2HOf4_g3Tq6g" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3fsY4PgxEe2HOf4_g3Tq6g" name="encriptar" isStatic="true">
+      <ownedParameter xmi:id="_6Eq3EPgxEe2HOf4_g3Tq6g" name="pass">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_6UrB8PgxEe2HOf4_g3Tq6g" name="mensaje" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_6_0QsPgxEe2HOf4_g3Tq6g" name="algoritmo">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_DIzxEPgyEe2HOf4_g3Tq6g" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_JoiNkPgyEe2HOf4_g3Tq6g" name="desencriptar" isStatic="true">
+      <ownedParameter xmi:id="_JoiNkfgyEe2HOf4_g3Tq6g" name="pass">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_JoiNkvgyEe2HOf4_g3Tq6g" name="mensaje" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_JoiNk_gyEe2HOf4_g3Tq6g" name="algoritmo">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_JoiNlPgyEe2HOf4_g3Tq6g" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mIaukPgyEe2HOf4_g3Tq6g" name="CustomHashUtility" visibility="public">
+    <ownedOperation xmi:id="_p6huQPgyEe2HOf4_g3Tq6g" name="getHash" isStatic="true">
+      <ownedParameter xmi:id="_p6huQfgyEe2HOf4_g3Tq6g" name="num1">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_p6huQvgyEe2HOf4_g3Tq6g" name="num2">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_p6huQ_gyEe2HOf4_g3Tq6g" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_2LmeUPgyEe2HOf4_g3Tq6g" client="_hGJkAPgxEe2HOf4_g3Tq6g" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_3cFOwPgyEe2HOf4_g3Tq6g" client="_mIaukPgyEe2HOf4_g3Tq6g" supplier="_ZNlsYOZWEe2rsuTxebE4yA"/>
 </uml:Model>

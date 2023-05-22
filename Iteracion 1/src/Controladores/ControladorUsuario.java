@@ -53,9 +53,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 			this.comenzarChat();
 			
 		} // -------------------------------------------------------------------------------------------------------------------------
-		else if(command.equalsIgnoreCase("Conectar Servidor")) {
-			this.registrarAlServer();
-		}
+		
 	}
 
 	

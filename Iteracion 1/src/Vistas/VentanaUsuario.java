@@ -31,7 +31,6 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	private JPanel panel_6;
 	private JLabel lblNewLabel;
 	private JLabel estadoServidor;
-	private JButton conectar_Boton;
 
 	/**
 	 * Launch the application.
@@ -136,10 +135,6 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
 		this.atenderBoton.setActionCommand("Atender Llamada");
 		this.comenzarChatBoton.setActionCommand("Comenzar Chat");
-		
-		conectar_Boton = new JButton("ConectarServidor");
-		panel_2.add(conectar_Boton);
-		this.conectar_Boton.setActionCommand("Conectar Servidor");
 		this.rechazarBoton.setActionCommand("Rechazar Llamada");
 
 		this.atenderBoton.setEnabled(false);
@@ -153,7 +148,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		this.atenderBoton.addActionListener(a);
 		this.comenzarChatBoton.addActionListener(a);
 		this.rechazarBoton.addActionListener(a);
-		this.conectar_Boton.addActionListener(a);
+		
 
 	}
 

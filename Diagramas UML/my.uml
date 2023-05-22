@@ -116,7 +116,9 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Device" xmi:id="_seRQYNQiEe2PHL4giklbZA" name="PC Escritorio">
     <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_y_UikNQiEe2PHL4giklbZA" name="SO Windows 10">
-      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_7t4OINQiEe2PHL4giklbZA" name="JRE 18"/>
+      <nestedClassifier xmi:type="uml:ExecutionEnvironment" xmi:id="_7t4OINQiEe2PHL4giklbZA" name="JRE 18">
+        <deployment xmi:id="_nZFJ8PiaEe2ASs62ps0juQ" client="_7t4OINQiEe2PHL4giklbZA" supplier="_GDIKsNQjEe2PHL4giklbZA" deployedArtifact="_GDIKsNQjEe2PHL4giklbZA"/>
+      </nestedClassifier>
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_y_UikdQiEe2PHL4giklbZA" name="JRE 18"/>
     </nestedClassifier>
     <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_seRQYdQiEe2PHL4giklbZA" name="SO Windows 10">
@@ -970,8 +972,44 @@
   <packagedElement xmi:type="uml:Device" xmi:id="_tzHisPgtEe2HOf4_g3Tq6g" name="PC Escritorio">
     <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_yQu9gPgtEe2HOf4_g3Tq6g" name="SO Windows 10">
       <nestedNode xmi:type="uml:ExecutionEnvironment" xmi:id="_7wBicPgtEe2HOf4_g3Tq6g" name="JRE 18">
-        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_C9AGgPguEe2HOf4_g3Tq6g" name="Servidor-jar"/>
+        <nestedClassifier xmi:type="uml:Artifact" xmi:id="_C9AGgPguEe2HOf4_g3Tq6g" name="Servidor-jar">
+          <manifestation xmi:id="_71NP4PiaEe2ASs62ps0juQ" client="_C9AGgPguEe2HOf4_g3Tq6g" supplier="_05s2UPiaEe2ASs62ps0juQ" utilizedElement="_05s2UPiaEe2ASs62ps0juQ"/>
+        </nestedClassifier>
         <nestedClassifier xmi:type="uml:Artifact" xmi:id="_cO5okPguEe2HOf4_g3Tq6g" name="ConfigServidor.properties"/>
+        <nestedClassifier xmi:type="uml:Component" xmi:id="_05s2UPiaEe2ASs62ps0juQ" name="Servidor">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_05s2UfiaEe2ASs62ps0juQ" name="" aggregation="composite" isConjugated="true"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_05s2UviaEe2ASs62ps0juQ" name="UI UsuarioA"/>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_05s2U_iaEe2ASs62ps0juQ" name="ControladorUsuarioA">
+            <interfaceRealization xmi:id="_05s2VPiaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2YviaEe2ASs62ps0juQ" contract="_05s2YviaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2VfiaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2Y_iaEe2ASs62ps0juQ" contract="_05s2Y_iaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2VviaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2ZPiaEe2ASs62ps0juQ" contract="_05s2ZPiaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2V_iaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2ZfiaEe2ASs62ps0juQ" contract="_05s2ZfiaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2WPiaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2Z_iaEe2ASs62ps0juQ" contract="_05s2Z_iaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2WfiaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2aPiaEe2ASs62ps0juQ" contract="_05s2aPiaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2WviaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2aviaEe2ASs62ps0juQ" contract="_05s2aviaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2W_iaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2afiaEe2ASs62ps0juQ" contract="_05s2afiaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2XPiaEe2ASs62ps0juQ" client="_05s2U_iaEe2ASs62ps0juQ _05s2U_iaEe2ASs62ps0juQ" supplier="_05s2ZviaEe2ASs62ps0juQ" contract="_05s2ZviaEe2ASs62ps0juQ"/>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Component" xmi:id="_05s2XfiaEe2ASs62ps0juQ" name="RedUsuarioA">
+            <interfaceRealization xmi:id="_05s2XviaEe2ASs62ps0juQ" client="_05s2XfiaEe2ASs62ps0juQ _05s2XfiaEe2ASs62ps0juQ" supplier="_05s2a_iaEe2ASs62ps0juQ" contract="_05s2a_iaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2X_iaEe2ASs62ps0juQ" client="_05s2XfiaEe2ASs62ps0juQ _05s2XfiaEe2ASs62ps0juQ" supplier="_05s2bfiaEe2ASs62ps0juQ" contract="_05s2bfiaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2YPiaEe2ASs62ps0juQ" client="_05s2XfiaEe2ASs62ps0juQ _05s2XfiaEe2ASs62ps0juQ" supplier="_05s2bPiaEe2ASs62ps0juQ" contract="_05s2bPiaEe2ASs62ps0juQ"/>
+            <interfaceRealization xmi:id="_05s2YfiaEe2ASs62ps0juQ" client="_05s2XfiaEe2ASs62ps0juQ _05s2XfiaEe2ASs62ps0juQ" supplier="_05s2bviaEe2ASs62ps0juQ" contract="_05s2bviaEe2ASs62ps0juQ"/>
+          </nestedClassifier>
+          <nestedClassifier xmi:type="uml:Interface" xmi:id="_05s2YviaEe2ASs62ps0juQ" name="IniciarSesion"/>
+          <nestedClassifier xmi:type="uml:Interface" xmi:id="_05s2Y_iaEe2ASs62ps0juQ" name="ComenzarChat"/>
+          <nestedClassifier xmi:type="uml:Interface" xmi:id="_05s2ZPiaEe2ASs62ps0juQ" name="EnviarMensaje"/>
+          <nestedClassifier xmi:type="uml:Interface" xmi:id="_05s2ZfiaEe2ASs62ps0juQ" name="FinalizarChat"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2ZviaEe2ASs62ps0juQ" name="FinalizarChat"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2Z_iaEe2ASs62ps0juQ" name="IniciarSesion"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2aPiaEe2ASs62ps0juQ" name="ComenzarChat"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2afiaEe2ASs62ps0juQ" name="EnviarMensaje"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2aviaEe2ASs62ps0juQ" name="RecibirMensaje"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2a_iaEe2ASs62ps0juQ" name="AtenderLlamada"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2bPiaEe2ASs62ps0juQ" name="EnviarMensaje"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2bfiaEe2ASs62ps0juQ" name="Escuchar"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_05s2bviaEe2ASs62ps0juQ" name="RechazarLlamada"/>
+        </nestedClassifier>
       </nestedNode>
     </nestedNode>
   </packagedElement>

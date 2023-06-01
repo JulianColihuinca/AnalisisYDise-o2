@@ -24,6 +24,7 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 	private JTextField puertoText;
 	private JButton iniciarSesionBoton;
 	private JLabel ipLabel ;
+	private JTextField nicknameText;
 
 	/**
 	 * Launch the application.
@@ -62,16 +63,34 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(ipLabel);
 		
+		
 		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(new GridLayout(2,0));
 		contentPane.add(panel_1);
+		
+		JPanel panelPuerto=new JPanel();
+		panel_1.add(panelPuerto);
+		
 		
 		JLabel lblNewLabel_1 = new JLabel("Ingrese Puerto: ");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		panel_1.add(lblNewLabel_1);
+		panelPuerto.add(lblNewLabel_1);
 		
 		puertoText = new JTextField();
-		panel_1.add(puertoText);
+		panelPuerto.add(puertoText);
 		puertoText.setColumns(15);
+		
+		JPanel panelNickname=new JPanel();
+		panel_1.add(panelNickname);
+		
+		JLabel lblNickname=new JLabel("Ingrese Nickname: ");
+		lblNickname.setFont(new Font("Tahoma",Font.PLAIN,13));
+		panel.add(lblNickname);
+		
+		nicknameText=new JTextField();
+		panel.add(nicknameText);
+		nicknameText.setColumns(15);
+		
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
@@ -120,6 +139,13 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 	@Override
 	public void keyReleased(KeyEvent e) {
 		
+	}
+
+	
+	@Override
+	public String getNickname() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -44,14 +44,15 @@ public class ControladorInicioSesion implements ActionListener {
 			//SE VERIFICA QUE EL PUERTO INGRESADO ESTE DISPONIBLE
 			if(Conexion.puertoDisponible(puerto)) {
 				
-				//System.out.println("InicioSesion en localhost y puerto: " + this.vista.getPuerto());
+				if(true) { //agregar verificacion nickname disponible
 				
 				//SE CREA UN USUARIO SERVIDOR CON ESTE PUERTO Y SE CREA UN CONTROLADOR DE LA VENTANA USUARIO
-				UsuarioServidor usuario=new UsuarioServidor(puerto);
+				UsuarioServidor usuario=new UsuarioServidor(puerto,""/*this.vista.getNickname()*/);
 				
 				ControladorUsuario controladorUsuario=new ControladorUsuario(usuario);
 				this.vista.setVisible(false);
-				
+				}else
+					JOptionPane.showMessageDialog(null, "NickName ya en uso");
 			}else 
 				JOptionPane.showMessageDialog(null, "Puerto ya en uso");
 				

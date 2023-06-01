@@ -14,6 +14,7 @@ public class UsuarioServidor extends Observable implements Runnable{
 	private Llamada llamada=null;
 	private RespuestaLlamada respuesta=null;
 	private String modo;
+	private String nickname;
 	/*
 	 	TRES MODOS POSIBLES:
 	 	1) ESCUCHA -> MODO POR DEFECTO, PUEDE RECIBIR LLAMDAS E INICIARLAS
@@ -22,10 +23,11 @@ public class UsuarioServidor extends Observable implements Runnable{
 	 */
 	
 	
-	public UsuarioServidor(int puerto) throws IOException{
+	public UsuarioServidor(int puerto,String nickname) throws IOException{
 		this.puerto=puerto;
 		this.modo="ESCUCHA";
 		this.servidor=new ServerSocket(puerto); //SE CREA EL SOCKET DEL SERVIDOR
+		this.nickname=nickname;
 	}
 
 	public int getPuerto() {
@@ -37,6 +39,10 @@ public class UsuarioServidor extends Observable implements Runnable{
 	}
 	
 	
+	public String getNickname() {
+		return nickname;
+	}
+
 	public Llamada getLlamada() {
 		return llamada;
 	}

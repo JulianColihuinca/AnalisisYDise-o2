@@ -8,4 +8,5 @@ public interface UIInicioSesion {
 	public void modificarIP(String ip);
 	public void addActionListener(ActionListener a);
     void setVisible(boolean b);
+    public String getNickname();
 }

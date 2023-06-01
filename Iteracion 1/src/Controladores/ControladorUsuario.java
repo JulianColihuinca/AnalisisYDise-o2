@@ -35,7 +35,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 		this.usuario.addObserver((Observer) this);
 		Conexion.Escuchar(usuario);
 		
-		usuarioRegistro=new UsuarioRegistro(Conexion.getIP(),this.usuario.getPuerto());
+		usuarioRegistro=new UsuarioRegistro(Conexion.getIP(),this.usuario.getPuerto(),this.usuario.getNickname());
 		registrarAlServer();
 	}
 

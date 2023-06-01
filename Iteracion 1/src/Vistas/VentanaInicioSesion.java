@@ -85,10 +85,10 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 		
 		JLabel lblNickname=new JLabel("Ingrese Nickname: ");
 		lblNickname.setFont(new Font("Tahoma",Font.PLAIN,13));
-		panel.add(lblNickname);
+		panelNickname.add(lblNickname);
 		
 		nicknameText=new JTextField();
-		panel.add(nicknameText);
+		panelNickname.add(nicknameText);
 		nicknameText.setColumns(15);
 		
 		

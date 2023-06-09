@@ -23,6 +23,18 @@ public class RedServidor extends Observable{
 		this.usuarioRegistrados= new ArrayList<UsuarioRegistro>();
 		this.servidor=new ServerSocket(Conexion.getPuertoServidor());
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
+		new Thread() {public void run() { 
+			while(true) {
+				try {
+					sleep(3000);
+					enviarMonitor(); 
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+			   
+			}
+	    }}.start();
 	}
 	
 	
@@ -143,6 +155,11 @@ public class RedServidor extends Observable{
 		}
 		
 		return encontrado;
+	}
+	
+	private void enviarMonitor() {
+		Conexion.EnviarConfirmacionServ(Conexion.getPuertoMonitor(), new ConfirmacionServidor(Conexion.getPuertoServidor(),true) );
+	    System.out.println("Enviando a monitor"+Conexion.getPuertoMonitor() +" (Servidor= "+Conexion.getPuertoServidor() +")");
 	}
 	
 	

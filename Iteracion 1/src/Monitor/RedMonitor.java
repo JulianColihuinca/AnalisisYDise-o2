@@ -3,28 +3,72 @@ package Monitor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Observable;
 import java.util.Properties;
 
-public class RedMonitor {
+import javax.swing.JOptionPane;
+
+import Red.Conexion;
+import Red.RespuestaLlamada;
+import Servidor.ConfirmacionServidor;
+
+public class RedMonitor extends Observable {
 
 	private int puertoServidorA,puertoServidorB;
 	private int puertoMonitor;
+	private ServerSocket monitorSS;
 	
 	
 	
 	
-	
-	public RedMonitor() {
+	public RedMonitor() throws IOException {
 		this.setearPuertos();
-		this.mostrarpuertos();
+		this.monitorSS=new ServerSocket(this.puertoMonitor);
+		new Thread() {public void run() {escuchar(); }}.start();
 	}
 
-    private void mostrarpuertos() {
-    	System.out.println("ServidorA: " + this.puertoServidorA);
-    	System.out.println("ServidorB: " + this.puertoServidorB);
-    	System.out.println("Monitor: " + this.puertoMonitor);
-    }
-
+   
+   public void escuchar() {
+	   Socket sc = null;
+       ObjectInputStream in;
+       String serv="ninguno";
+       try {
+    	   while(true) {
+    		   sc = monitorSS.accept();
+    		   System.out.println("El monitor recibio algo");
+    		   in = new ObjectInputStream(sc.getInputStream());
+    		   Object o;
+    		   o =in.readObject();
+    		   if(o instanceof ConfirmacionServidor) { // Si me llega una confirmacion del servidor quiere decir que esta disponible
+					ConfirmacionServidor infoServidor= (ConfirmacionServidor) o;
+					if(infoServidor.getPuerto()==this.puertoServidorA) { // La confirmacion es del sertvidorA
+						serv="ServidorA";
+					}
+					else if(infoServidor.getPuerto()==this.puertoServidorB) { //La confirmacion es del servidorB
+						serv="ServidorB";
+					}
+				}
+    		   this.setChanged();
+           	   this.notifyObservers(serv);
+           	   this.clearChanged();
+    		   sc.close();
+    		   
+    	   }
+ 
+       }catch (IOException ex) {
+           //Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+       	System.out.println("explota todo");
+       
+       	JOptionPane.showMessageDialog(null, "Usuario no disponible");
+       	
+       } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+   }
 
 
 	private  void setearPuertos() {

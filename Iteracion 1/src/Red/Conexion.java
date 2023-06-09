@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 import java.util.Properties;
 
 import Servidor.ConfirmacionRegistro;
+import Servidor.ConfirmacionServidor;
 import Servidor.UsuarioRegistro;
 
 public class Conexion {
@@ -88,6 +89,13 @@ public class Conexion {
 		t.start();
 	}
 	
+	public static void EnviarConfirmacionServ(int puerto, ConfirmacionServidor confServ) {
+		UsuarioCliente c;
+		c = new UsuarioCliente(puerto, confServ);// para un futuro agregar ip
+		Thread t = new Thread(c);
+		t.start();
+	}
+	
 
 	public static void Escuchar(UsuarioServidor usuario) {
 		Thread t = new Thread(usuario);
@@ -113,5 +121,26 @@ public class Conexion {
 		}
 
 		return puertoServidor;
+	}
+	
+	public static int getPuertoMonitor() {
+		String pathConfig="configServidor.properties";
+		Properties prop = new Properties();
+		int puertoMonitor = 0;
+
+		try {
+			FileInputStream in = new FileInputStream(pathConfig);
+			prop.load(in);
+
+			String puertoMonitorString = prop.getProperty("puertoMonitor");
+			puertoMonitor = Integer.parseInt(puertoMonitorString);
+
+		} catch (FileNotFoundException e) {
+			System.out.println("Archivo " + pathConfig + " no encotnrado");
+		} catch (IOException e) {
+			System.out.println("Error al leer el archivo");
+		}
+
+		return puertoMonitor;
 	}
 }

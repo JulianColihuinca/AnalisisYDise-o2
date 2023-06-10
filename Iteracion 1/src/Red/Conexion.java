@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 import java.util.Properties;
 
 import Servidor.ConfirmacionRegistro;
-import Servidor.ConfirmacionServidor;
+import Servidor.ListaUsuarios;
 import Servidor.UsuarioRegistro;
 
 public class Conexion {
@@ -89,9 +89,9 @@ public class Conexion {
 		t.start();
 	}
 	
-	public static void EnviarConfirmacionServ(int puerto, ConfirmacionServidor confServ) {
+	public static void EnviarConfirmacionServ(int puerto, ListaUsuarios l) {
 		UsuarioCliente c;
-		c = new UsuarioCliente(puerto, confServ);// para un futuro agregar ip
+		c = new UsuarioCliente(puerto, l);// para un futuro agregar ip
 		Thread t = new Thread(c);
 		t.start();
 	}

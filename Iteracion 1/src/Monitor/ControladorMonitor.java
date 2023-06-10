@@ -27,6 +27,15 @@ public class ControladorMonitor implements Observer {
 			this.vista.actualiarVista(2, "Disponible");
 			this.vista.actualiarVista(1, "No Disponible");
 		}
+		
+		else if(servidor.equalsIgnoreCase("ninguno")) {
+			this.vista.actualiarVista(2, "No Disponible");
+			this.vista.actualiarVista(1, "No Disponible");
+		}
+		else if(servidor.equalsIgnoreCase("ambos")) {
+			this.vista.actualiarVista(2, "Disponible");
+			this.vista.actualiarVista(1, "Disponible");
+		}
 	}
 	
 	

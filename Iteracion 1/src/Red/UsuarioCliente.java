@@ -7,7 +7,7 @@ import java.net.Socket;
 import javax.swing.JOptionPane;
 
 import Servidor.ConfirmacionRegistro;
-import Servidor.ConfirmacionServidor;
+import Servidor.ListaUsuarios;
 import Servidor.UsuarioRegistro;
 
 public class UsuarioCliente implements Runnable {
@@ -18,7 +18,7 @@ public class UsuarioCliente implements Runnable {
     private RespuestaLlamada respuesta=null;
     private UsuarioRegistro registro=null;
     private ConfirmacionRegistro conf=null;
-    private ConfirmacionServidor confirmacionServ=null;
+    private ListaUsuarios listaUsuarios=null;
 
   
     
@@ -59,9 +59,9 @@ public class UsuarioCliente implements Runnable {
 	}
     
     //CONSTRUCTOR USADO CUANDO UN SERVIDOR LE ENVIA SU ESTADO AL MONITOR
-    public UsuarioCliente(int puerto, ConfirmacionServidor confirmacionServ) {
+    public UsuarioCliente(int puerto, ListaUsuarios lista) {
 		this.puerto = puerto;
-		this.confirmacionServ=confirmacionServ;
+		this.listaUsuarios=lista;
 		
 	}
     
@@ -84,8 +84,8 @@ public class UsuarioCliente implements Runnable {
             out = new ObjectOutputStream(sc.getOutputStream());
             
             //---------------------------------Envio -----------------------------------
-          if(this.confirmacionServ!=null) {
-        	  out.writeObject(this.confirmacionServ);
+          if(this.listaUsuarios!=null) {
+        	  out.writeObject(this.listaUsuarios);
           } 
           else {  
 	           if(this.conf!=null) {

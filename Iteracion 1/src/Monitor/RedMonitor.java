@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 import Red.Conexion;
 import Red.RespuestaLlamada;
-import Servidor.ConfirmacionServidor;
+import Servidor.ListaUsuarios;
 import Servidor.UsuarioRegistro;
 
 public class RedMonitor extends Observable {
@@ -31,6 +31,44 @@ public class RedMonitor extends Observable {
 		this.setearPuertos();
 		this.monitorSS=new ServerSocket(this.puertoMonitor);
 		new Thread() {public void run() {escuchar(); }}.start();
+		new Thread() {public void run() {
+			while(true) {
+			   try {
+				sleep(3000);
+				verificarEstadoServidor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+			}
+		}}.start();
+	}
+	
+	
+	private  void verificarEstadoServidor() {
+		if (Conexion.puertoDisponible(this.puertoServidorA) && Conexion.puertoDisponible(this.puertoServidorB) ) {
+			this.setChanged();
+        	this.notifyObservers("ninguno");
+        	this.clearChanged();
+		}
+		else if (!Conexion.puertoDisponible(this.puertoServidorA) && !Conexion.puertoDisponible(this.puertoServidorB)) {
+			this.setChanged();
+        	this.notifyObservers("ambos");
+        	this.clearChanged();
+		}
+		
+		else if (Conexion.puertoDisponible(this.puertoServidorA) && !Conexion.puertoDisponible(this.puertoServidorB)) {
+			this.setChanged();
+        	this.notifyObservers("ServidorB");
+        	this.clearChanged();
+		}
+		
+		else if (!Conexion.puertoDisponible(this.puertoServidorA) && Conexion.puertoDisponible(this.puertoServidorB)) {
+			this.setChanged();
+        	this.notifyObservers("ServidorA");
+        	this.clearChanged();
+		}
+		
 	}
 
    
@@ -45,19 +83,10 @@ public class RedMonitor extends Observable {
     		   in = new ObjectInputStream(sc.getInputStream());
     		   Object o;
     		   o =in.readObject();
-    		   if(o instanceof ConfirmacionServidor) { // Si me llega una confirmacion del servidor quiere decir que esta disponible
-					ConfirmacionServidor infoServidor= (ConfirmacionServidor) o;
-					if(infoServidor.getPuerto()==this.puertoServidorA) { // La confirmacion es del sertvidorA
-						serv="ServidorA";
-					}
-					else if(infoServidor.getPuerto()==this.puertoServidorB) { //La confirmacion es del servidorB
-						serv="ServidorB";
-					}
-					this.usuarioRegistrados=infoServidor.getUsuarioRegistrados();
+    		   if(o instanceof ListaUsuarios) { // Si me llega una confirmacion del servidor quiere decir que esta disponible
+    			   ListaUsuarios lista= (ListaUsuarios) o;
+					this.usuarioRegistrados=lista.getUsuarios();
 				}
-    		   this.setChanged();
-           	   this.notifyObservers(serv);
-           	   this.clearChanged();
     		   sc.close();
     		   
     	   }

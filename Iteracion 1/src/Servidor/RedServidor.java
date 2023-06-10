@@ -158,7 +158,7 @@ public class RedServidor extends Observable{
 	}
 	
 	private void enviarMonitor() {
-		Conexion.EnviarConfirmacionServ(Conexion.getPuertoMonitor(), new ConfirmacionServidor(Conexion.getPuertoServidor(),true,this.usuarioRegistrados) );
+		Conexion.EnviarConfirmacionServ(Conexion.getPuertoMonitor(), new ListaUsuarios(this.usuarioRegistrados) );
 	    System.out.println("Enviando a monitor"+Conexion.getPuertoMonitor() +" (Servidor= "+Conexion.getPuertoServidor() +")");
 	}
 	

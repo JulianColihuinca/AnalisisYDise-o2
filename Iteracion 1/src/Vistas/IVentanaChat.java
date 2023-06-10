@@ -12,6 +12,6 @@ public interface IVentanaChat {
 	void addActionListener(ActionListener listener);
 	
 	void tituloPuerto(String puerto);
-	void actualizarEtiquetas(String ip1,int puerto1,String ip2,int puerto2);
+	void actualizarEtiquetas(String nickname,String ip1,int puerto1,String ip2,int puerto2);
 	
 }

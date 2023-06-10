@@ -22,6 +22,7 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 	private JButton finalizarChatBoton,enviarBoton;
 	private JTextArea mensajeTA,conversacionTA;
 	private JLabel modoLabel,ip1Label ,puerto1Label,ip2Label ,puerto2Label;
+	private JLabel nicknameLabel;
 	/**
 	 * Launch the application.
 	 */
@@ -61,6 +62,10 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 		modoLabel = new JLabel("Modo: ");
 		modoLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		panel_4.add(modoLabel);
+		
+		nicknameLabel = new JLabel("Nickname:");
+		nicknameLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_4.add(nicknameLabel);
 		
 		JPanel panel_5 = new JPanel();
 		panel.add(panel_5);
@@ -156,7 +161,8 @@ public class VentanaChat extends JFrame implements IVentanaChat{
 	}
 
 	@Override
-	public void actualizarEtiquetas(String ip1, int puerto1, String ip2, int puerto2) {
+	public void actualizarEtiquetas(String nickname,String ip1, int puerto1, String ip2, int puerto2) {
+		this.nicknameLabel.setText(" , Nickname: " +nickname);
 		this.ip1Label.setText("IP1: "+ip1);
 		this.ip2Label.setText("IP2: "+ip2);
 		this.puerto1Label.setText("Puerto1: "+puerto1);

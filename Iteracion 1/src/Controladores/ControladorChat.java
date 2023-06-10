@@ -24,9 +24,9 @@ public class ControladorChat implements ActionListener, Observer {
 	private int puertoDestino;
 	private String ipOrigen;
 	private String ipDestino;
+	private String nickname;
 	
-	
-	public ControladorChat( ControladorUsuario consUsuario, int puertoOrigen, int puertoDestino,
+	public ControladorChat( ControladorUsuario consUsuario,String nickname, int puertoOrigen, int puertoDestino,
 			String ipOrigen, String ipDestino) {
 		
 		this.vistaChat=new VentanaChat();
@@ -38,11 +38,11 @@ public class ControladorChat implements ActionListener, Observer {
 		this.puertoDestino = puertoDestino;
 		this.ipOrigen = ipOrigen;
 		this.ipDestino = ipDestino;
-		
+		this.nickname=nickname;
 		
 		this.vistaChat.tituloPuerto("MODO: CHAT");
 		this.consUsuario.getUsuario().addObserver(this);
-		this.vistaChat.actualizarEtiquetas(ipOrigen, puertoOrigen, ipDestino, puertoDestino);
+		this.vistaChat.actualizarEtiquetas(nickname,ipOrigen, puertoOrigen, ipDestino, puertoDestino);
 	}
 
 
@@ -92,7 +92,7 @@ public class ControladorChat implements ActionListener, Observer {
 			String hash= CustomHashUtility.generateCustomHash(n1,n2);
 			String mensajeEncriptado=Cifrado.encriptar(hash,mensaje, "TripleDES");
 			
-			Conexion.EnviarMensaje(Conexion.getPuertoServidor(),new Mensaje(mensajeEncriptado,this.puertoDestino) );
+			Conexion.EnviarMensaje(Conexion.getPuertoServidor(),new Mensaje(mensajeEncriptado,this.puertoDestino, this.nickname) );
 			
 			
 		} catch (Exception e) {
@@ -126,7 +126,7 @@ public class ControladorChat implements ActionListener, Observer {
 		    
 			String hash= CustomHashUtility.generateCustomHash(n2, n1);
 			String mensajeDescifrado= Cifrado.desencriptar(hash,mensaje.getMensaje(), "TripleDES");
-			String mensajeCompleto = "IP "+this.ipDestino+", PUERTO "+ this.puertoDestino+": "+mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
+			String mensajeCompleto = "IP "+this.ipDestino+", PUERTO "+ this.puertoDestino+"( NickName: " +mensaje.getNickname() +") : "+ mensajeDescifrado/*mensaje.getMensaje()*/+"\n";
 			this.vistaChat.addMensaje(mensajeCompleto);
 			
 		} catch (Exception e) {

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Properties;
 
@@ -14,12 +15,14 @@ import javax.swing.JOptionPane;
 import Red.Conexion;
 import Red.RespuestaLlamada;
 import Servidor.ConfirmacionServidor;
+import Servidor.UsuarioRegistro;
 
 public class RedMonitor extends Observable {
 
 	private int puertoServidorA,puertoServidorB;
 	private int puertoMonitor;
 	private ServerSocket monitorSS;
+	private ArrayList<UsuarioRegistro> usuarioRegistrados;
 	
 	
 	
@@ -50,6 +53,7 @@ public class RedMonitor extends Observable {
 					else if(infoServidor.getPuerto()==this.puertoServidorB) { //La confirmacion es del servidorB
 						serv="ServidorB";
 					}
+					this.usuarioRegistrados=infoServidor.getUsuarioRegistrados();
 				}
     		   this.setChanged();
            	   this.notifyObservers(serv);

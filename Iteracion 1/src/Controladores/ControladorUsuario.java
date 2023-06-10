@@ -27,7 +27,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 		this.vista.addActionListener(this);
 		this.usuario = usuario;
 
-		this.vista.actualizarDatos(Conexion.getIP(), this.usuario.getPuerto());
+		this.vista.actualizarDatos(Conexion.getIP(), this.usuario.getPuerto(), this.usuario.getNickname());
 
 		
 		// AL CREARSE ESTE CONTROLADOR CREA LA VENTANA USUARIO Y EJECUTA EL HILO DEL 	USUARIO PARA
@@ -114,7 +114,7 @@ public class ControladorUsuario implements ActionListener, Observer {
 				puerto = Integer.parseInt(this.vista.getPuerto());
 				ip = this.vista.getIP();
 				// CREO UNA LLAMADA CON EL PUERTO DEL USUARIO ORIGEN, FALTA INCLUIR IP ESPECIFICA
-				Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP(),puerto,Conexion.getIP());
+				Llamada llamada = new Llamada(this.usuario.getPuerto(), Conexion.getIP(),this.usuario.getNickname(),puerto,Conexion.getIP());
 				//ESTE USUARIO COMIENZA UN INTENTO DE LLAMADA Y PASA A MODO LLAMANDO
 				//MIENTRAS ESPERA QUE LE CONTESTEN
 				this.usuario.setModoLlamando();
@@ -150,8 +150,8 @@ public class ControladorUsuario implements ActionListener, Observer {
 	private void recibirLlamada(Llamada llamada) {
 		String ip = llamada.getIPOrigen();
 		int puerto = llamada.getPuertoOrigen();
-
-		this.vista.recibirLlamada(ip, puerto);
+        String nickname=llamada.getNickname();
+		this.vista.recibirLlamada(ip, puerto,nickname);
 		
 		this.usuario.setLlamada(llamada);
 	}

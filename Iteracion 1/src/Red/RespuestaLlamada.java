@@ -7,7 +7,7 @@ private boolean respuesta;
 	
 	
 	public RespuestaLlamada(Llamada llamada, boolean respuesta) {
-		super(llamada.getPuertoOrigen(),llamada.getIPOrigen(),llamada.getPuertoDestino(),llamada.getIpDestino());
+		super(llamada.getPuertoOrigen(),llamada.getIPOrigen(),llamada.getNickname(),llamada.getPuertoDestino(),llamada.getIpDestino());
 		this.respuesta = respuesta;
 		
 	}

@@ -144,8 +144,7 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 	
 	@Override
 	public String getNickname() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.nicknameText.getText();
 	}
 
 }

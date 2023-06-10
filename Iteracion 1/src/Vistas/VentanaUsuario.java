@@ -31,6 +31,10 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	private JPanel panel_6;
 	private JLabel lblNewLabel;
 	private JLabel estadoServidor;
+	private JPanel panel_7;
+	private JPanel panel_8;
+	private JLabel lblNewLabel_1;
+	private JLabel nicknameLabel;
 
 	/**
 	 * Launch the application.
@@ -55,7 +59,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		setResizable(false);
 		setTitle("Comenzar Sesion Chat");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 352);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -63,7 +67,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
-		panel.setLayout(new GridLayout(2, 2, 0, 0));
+		panel.setLayout(new GridLayout(3, 2, 0, 0));
 
 		ipLabel = new JLabel("IP: ");
 		ipLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -88,6 +92,20 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		estadoServidor = new JLabel("Desconectado");
 		estadoServidor.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel_6.add(estadoServidor);
+		
+		panel_7 = new JPanel();
+		panel.add(panel_7);
+		
+		lblNewLabel_1 = new JLabel("Nickname:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_7.add(lblNewLabel_1);
+		
+		panel_8 = new JPanel();
+		panel.add(panel_8);
+		
+		nicknameLabel = new JLabel("New label");
+		nicknameLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panel_8.add(nicknameLabel);
 
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -165,9 +183,10 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	}
 
 	@Override
-	public void actualizarDatos(String ip, int puerto) {
+	public void actualizarDatos(String ip, int puerto,String nickname) {
 		this.ipLabel.setText("IP: " + ip);
 		this.puertoLabel.setText("PUERTO: " + puerto);
+		this.nicknameLabel.setText(nickname);
 	}
 
 	
@@ -187,11 +206,11 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	}
 
 	@Override
-	public void recibirLlamada(String ip, int puerto) {
+	public void recibirLlamada(String ip, int puerto, String nickname) {
 		// ACTUALIZO PARTE DE LA VENTANA PARA CONTESTAR O RECHAZAR LLAMADA
 		// AL RECIBIR LA LLAMADA SE BLOQUEA EL BOTON INICIAR CHAT HASTA QUE SE CONTESTE
 		// LA LLAMADA
-		String etiqueta = "Tienes una llamada de IP: " + ip + ", Puerto: " + puerto;
+		String etiqueta = "Tienes una llamada de IP: " + ip + ", Puerto: " + puerto + ", Nickname: "+nickname;
 		this.notificacionLlamada.setText(etiqueta);
 
 		this.atenderBoton.setEnabled(true);

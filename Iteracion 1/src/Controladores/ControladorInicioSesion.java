@@ -37,17 +37,18 @@ public class ControladorInicioSesion implements ActionListener {
 	
 	private void iniciarSesion() {
 		int puerto;
+		String nickname;
 		try {
 			//SE VERIFICA QUE EL VALOR INGRESADO EN EL PUERTO SEA VALIDO
 			puerto=Integer.parseInt(this.vista.getPuerto());
-			
+			nickname= this.vista.getNickname();
 			//SE VERIFICA QUE EL PUERTO INGRESADO ESTE DISPONIBLE
 			if(Conexion.puertoDisponible(puerto)) {
 				
 				if(true) { //agregar verificacion nickname disponible
 				
 				//SE CREA UN USUARIO SERVIDOR CON ESTE PUERTO Y SE CREA UN CONTROLADOR DE LA VENTANA USUARIO
-				UsuarioServidor usuario=new UsuarioServidor(puerto,""/*this.vista.getNickname()*/);
+				UsuarioServidor usuario=new UsuarioServidor(puerto,nickname);
 				
 				ControladorUsuario controladorUsuario=new ControladorUsuario(usuario);
 				this.vista.setVisible(false);

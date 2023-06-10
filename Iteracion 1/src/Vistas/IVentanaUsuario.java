@@ -9,12 +9,12 @@ public interface IVentanaUsuario {
 	void addActionListener(ActionListener a);
 	String getIP();
 	String getPuerto();
-	void actualizarDatos(String ip,int puerto);
+	void actualizarDatos(String ip,int puerto,String nickname);
 	
 	JFrame addObserver();
 	
 	void llamadaRechazada();
-	void recibirLlamada(String ip,int puerto);
+	void recibirLlamada(String ip,int puerto,String nickname);
 	void llamadaAceptada();
 
 	void setVisible(boolean res);

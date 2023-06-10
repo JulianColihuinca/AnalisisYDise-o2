@@ -20,13 +20,13 @@ public class ControladorServidor implements Observer{
 		
 		try {
 			this.redServidor = new RedServidor(Conexion.getPuertoServidor());
-			this.vistaServidor = new VentanaServidor2();
+			this.vistaServidor = new VentanaServidor();
 			this.vistaServidor.setVisible(true);
 			this.redServidor.addObserver(this);
 		} catch (IOException e) {
 			try {
 				this.redServidor = new RedServidor(Conexion.getPuertoServidor2());
-				this.vistaServidor = new VentanaServidor2();
+				this.vistaServidor = new VentanaServidor();
 				this.vistaServidor.setVisible(true);
 				this.redServidor.addObserver(this);
 			}catch (IOException e2) {

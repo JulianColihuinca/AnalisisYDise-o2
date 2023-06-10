@@ -13,7 +13,7 @@ import Servidor.ListaUsuarios;
 import Servidor.UsuarioRegistro;
 
 public class Conexion {
-
+ 
 	public static String getIP() {
 		String ip = "";
 		InetAddress adress;
@@ -27,8 +27,8 @@ public class Conexion {
 		return ip;
 	}
 
-	public static boolean puertoDisponible(int puerto) {
-		if (puerto != Conexion.getPuertoServidor()) {
+	public static synchronized boolean puertoDisponible(int puerto) {
+		if (puerto != Conexion.getPuertoServidor() && puerto != Conexion.getPuertoServidor2() &&puerto != Conexion.getPuertoMonitor() ) {
 			try {
 				ServerSocket s = new ServerSocket(puerto);
 				s.close();
@@ -89,7 +89,7 @@ public class Conexion {
 		t.start();
 	}
 	
-	public static void EnviarConfirmacionServ(int puerto, ListaUsuarios l) {
+	public static void EnviarListaUsuarios(int puerto, ListaUsuarios l) {
 		UsuarioCliente c;
 		c = new UsuarioCliente(puerto, l);// para un futuro agregar ip
 		Thread t = new Thread(c);
@@ -102,7 +102,7 @@ public class Conexion {
 		t.start();
 	}
 
-	public static int getPuertoServidor() {
+	public static  synchronized int getPuertoServidor() {
 		String pathConfig="configServidor.properties";
 		Properties prop = new Properties();
 		int puertoServidor = 0;

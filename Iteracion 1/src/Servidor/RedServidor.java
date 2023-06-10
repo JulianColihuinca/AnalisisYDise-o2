@@ -117,6 +117,10 @@ public class RedServidor extends Observable{
 					boolean registrado= !this.registrarUsuario(usuarioReg);
 					Conexion.EnviarConfirmacion(usuarioReg.getPuerto(), new ConfirmacionRegistro(registrado) );
 					System.out.println(usuarioReg.toString());
+					
+				}else if(o instanceof ListaUsuarios) {
+					ListaUsuarios usuarios=(ListaUsuarios)o;
+					this.usuarioRegistrados=usuarios.getUsuarios();
 				}
 				
 				this.setChanged();
@@ -158,7 +162,7 @@ public class RedServidor extends Observable{
 	}
 	
 	private void enviarMonitor() {
-		Conexion.EnviarConfirmacionServ(Conexion.getPuertoMonitor(), new ListaUsuarios(this.usuarioRegistrados) );
+		Conexion.EnviarListaUsuarios(Conexion.getPuertoMonitor(), new ListaUsuarios(this.usuarioRegistrados) );
 	    System.out.println("Enviando a monitor"+Conexion.getPuertoMonitor() +" (Servidor= "+Conexion.getPuertoServidor() +")");
 	}
 	

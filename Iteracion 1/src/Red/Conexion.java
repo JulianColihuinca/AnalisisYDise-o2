@@ -123,6 +123,27 @@ public class Conexion {
 		return puertoServidor;
 	}
 	
+	public static int getPuertoServidor2() {
+		String pathConfig="configServidor.properties";
+		Properties prop = new Properties();
+		int puertoServidor = 0;
+
+		try {
+			FileInputStream in = new FileInputStream(pathConfig);
+			prop.load(in);
+
+			String puertoServidorString = prop.getProperty("puertoServidor2");
+			puertoServidor = Integer.parseInt(puertoServidorString);
+
+		} catch (FileNotFoundException e) {
+			System.out.println("Archivo " + pathConfig + " no encotnrado");
+		} catch (IOException e) {
+			System.out.println("Error al leer el archivo");
+		}
+
+		return puertoServidor;
+	}
+	
 	public static int getPuertoMonitor() {
 		String pathConfig="configServidor.properties";
 		Properties prop = new Properties();

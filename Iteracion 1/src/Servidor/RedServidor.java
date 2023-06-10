@@ -19,9 +19,9 @@ public class RedServidor extends Observable{
 	private ServerSocket servidor;
 	private ArrayList<UsuarioRegistro> usuarioRegistrados;
 	
-	public RedServidor() throws IOException{
+	public RedServidor(int puerto) throws IOException{
 		this.usuarioRegistrados= new ArrayList<UsuarioRegistro>();
-		this.servidor=new ServerSocket(Conexion.getPuertoServidor());
+		this.servidor=new ServerSocket(puerto);
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
 		new Thread() {public void run() { 
 			while(true) {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
+import Red.Conexion;
 import Red.Llamada;
 import Red.Mensaje;
 import Red.RespuestaLlamada;
@@ -18,12 +19,20 @@ public class ControladorServidor implements Observer{
 		super();
 		
 		try {
-			this.redServidor = new RedServidor();
+			this.redServidor = new RedServidor(Conexion.getPuertoServidor());
 			this.vistaServidor = new VentanaServidor2();
 			this.vistaServidor.setVisible(true);
 			this.redServidor.addObserver(this);
 		} catch (IOException e) {
-			System.out.println("ERROR AL CREAR EL CONTROLADOR SERVIDOR, PUERTO DEL SERVIDOR EN USO");
+			try {
+				this.redServidor = new RedServidor(Conexion.getPuertoServidor2());
+				this.vistaServidor = new VentanaServidor2();
+				this.vistaServidor.setVisible(true);
+				this.redServidor.addObserver(this);
+			}catch (IOException e2) {
+				System.out.println("ERROR AL CREAR EL CONTROLADOR SERVIDOR, PUERTO DEL SERVIDOR EN USO");
+			}
+			
 		}
 	}
 

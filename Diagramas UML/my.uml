@@ -1159,21 +1159,21 @@
           <ownedAttribute xmi:type="uml:Port" xmi:id="_M4i9IQiWEe6qxaj0Pt_DWg" name="" aggregation="composite" isConjugated="true"/>
           <nestedClassifier xmi:type="uml:Component" xmi:id="_M4i9IgiWEe6qxaj0Pt_DWg" name="UI UsuarioA"/>
           <nestedClassifier xmi:type="uml:Component" xmi:id="_M4i9IwiWEe6qxaj0Pt_DWg" name="ControladorUsuarioA">
-            <interfaceRealization xmi:id="_M4i9JAiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9MgiWEe6qxaj0Pt_DWg" contract="_M4i9MgiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9JQiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9MwiWEe6qxaj0Pt_DWg" contract="_M4i9MwiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9JgiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NAiWEe6qxaj0Pt_DWg" contract="_M4i9NAiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9JwiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NQiWEe6qxaj0Pt_DWg" contract="_M4i9NQiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9KAiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NwiWEe6qxaj0Pt_DWg" contract="_M4i9NwiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9KQiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9OAiWEe6qxaj0Pt_DWg" contract="_M4i9OAiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9KgiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9OgiWEe6qxaj0Pt_DWg" contract="_M4i9OgiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9KwiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9OQiWEe6qxaj0Pt_DWg" contract="_M4i9OQiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9LAiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg _M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NgiWEe6qxaj0Pt_DWg" contract="_M4i9NgiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9JAiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9MgiWEe6qxaj0Pt_DWg" contract="_M4i9MgiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9JQiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9MwiWEe6qxaj0Pt_DWg" contract="_M4i9MwiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9JgiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NAiWEe6qxaj0Pt_DWg" contract="_M4i9NAiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9JwiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NQiWEe6qxaj0Pt_DWg" contract="_M4i9NQiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9KAiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NwiWEe6qxaj0Pt_DWg" contract="_M4i9NwiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9KQiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9OAiWEe6qxaj0Pt_DWg" contract="_M4i9OAiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9KgiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9OgiWEe6qxaj0Pt_DWg" contract="_M4i9OgiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9KwiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9OQiWEe6qxaj0Pt_DWg" contract="_M4i9OQiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9LAiWEe6qxaj0Pt_DWg" client="_M4i9IwiWEe6qxaj0Pt_DWg" supplier="_M4i9NgiWEe6qxaj0Pt_DWg" contract="_M4i9NgiWEe6qxaj0Pt_DWg"/>
           </nestedClassifier>
           <nestedClassifier xmi:type="uml:Component" xmi:id="_M4i9LQiWEe6qxaj0Pt_DWg" name="RedUsuarioA">
-            <interfaceRealization xmi:id="_M4i9LgiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg _M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9OwiWEe6qxaj0Pt_DWg" contract="_M4i9OwiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9LwiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg _M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9PQiWEe6qxaj0Pt_DWg" contract="_M4i9PQiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9MAiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg _M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9PAiWEe6qxaj0Pt_DWg" contract="_M4i9PAiWEe6qxaj0Pt_DWg"/>
-            <interfaceRealization xmi:id="_M4i9MQiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg _M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9PgiWEe6qxaj0Pt_DWg" contract="_M4i9PgiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9LgiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9OwiWEe6qxaj0Pt_DWg" contract="_M4i9OwiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9LwiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9PQiWEe6qxaj0Pt_DWg" contract="_M4i9PQiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9MAiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9PAiWEe6qxaj0Pt_DWg" contract="_M4i9PAiWEe6qxaj0Pt_DWg"/>
+            <interfaceRealization xmi:id="_M4i9MQiWEe6qxaj0Pt_DWg" client="_M4i9LQiWEe6qxaj0Pt_DWg" supplier="_M4i9PgiWEe6qxaj0Pt_DWg" contract="_M4i9PgiWEe6qxaj0Pt_DWg"/>
           </nestedClassifier>
           <nestedClassifier xmi:type="uml:Interface" xmi:id="_M4i9MgiWEe6qxaj0Pt_DWg" name="IniciarSesion"/>
           <nestedClassifier xmi:type="uml:Interface" xmi:id="_M4i9MwiWEe6qxaj0Pt_DWg" name="ComenzarChat"/>
@@ -1204,4 +1204,14 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_v7F54AiWEe6qxaj0Pt_DWg" client="_BTPG4AiWEe6qxaj0Pt_DWg" supplier="_qiuHAAiWEe6qxaj0Pt_DWg"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_LieHwAimEe6qxaj0Pt_DWg" name="TCP" memberEnd="_LieHwQimEe6qxaj0Pt_DWg _LieHxAimEe6qxaj0Pt_DWg" navigableOwnedEnd="_LieHwQimEe6qxaj0Pt_DWg _LieHxAimEe6qxaj0Pt_DWg">
+    <ownedEnd xmi:id="_LieHwQimEe6qxaj0Pt_DWg" name="servidor.jars" type="_C9AGgPguEe2HOf4_g3Tq6g" association="_LieHwAimEe6qxaj0Pt_DWg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LieHwgimEe6qxaj0Pt_DWg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LieHwwimEe6qxaj0Pt_DWg" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_LieHxAimEe6qxaj0Pt_DWg" name="monitor.jars" type="_BTPG4AiWEe6qxaj0Pt_DWg" association="_LieHwAimEe6qxaj0Pt_DWg">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lieu0AimEe6qxaj0Pt_DWg"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lieu0QimEe6qxaj0Pt_DWg" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>

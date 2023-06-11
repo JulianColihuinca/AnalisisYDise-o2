@@ -19,7 +19,6 @@ public class ControladorMonitor implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		String servidor= (String) arg;
-		System.out.println(servidor);
 		if(servidor.equalsIgnoreCase("ServidorA")) {
 			this.vista.actualiarVista(1, "Disponible");
 			this.vista.actualiarVista(2, "No Disponible");

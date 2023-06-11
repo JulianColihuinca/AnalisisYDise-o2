@@ -22,5 +22,5 @@ public interface IVentanaUsuario {
 
 	void setVisible(boolean res);
 	void actualizarEstadoServidor(boolean estado);
-	void actualizarTablaUsuarios(Object[][] usuarios );
+	void actualizarTablaUsuarios(ArrayList<String> nicknames,ArrayList<String> ips,ArrayList<Integer> puertos );
 }

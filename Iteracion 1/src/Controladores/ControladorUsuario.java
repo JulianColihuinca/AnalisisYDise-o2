@@ -174,13 +174,16 @@ public class ControladorUsuario implements ActionListener, Observer {
 	}
 	private void actualizarUsuariosRegistrados( ListaUsuarios lista ) {
 		ArrayList<UsuarioRegistro> list=lista.getUsuarios();
-		Object [][] l= {};
-		for (int i=0;i<list.size();i++) {
-			UsuarioRegistro usuario= list.get(i);
-			l[i][0]=usuario.getNickname();
-			l[i][1]=usuario.getIp();
-			l[i][2]=usuario.getPuerto();
+		ArrayList<String> nicknames= new ArrayList<String>();
+		ArrayList<String> ips= new ArrayList<String>();
+		ArrayList<Integer> puertos= new ArrayList<Integer>();
+		for (int i=0; i<list.size();i++) {
+			UsuarioRegistro us=list.get(i);
+			nicknames.add(us.getNickname());
+			ips.add(us.getIp());
+			puertos.add(us.getPuerto());
 		}
-		this.vista.actualizarTablaUsuarios(l);
+		this.vista.actualizarTablaUsuarios(nicknames, ips, puertos);
+		
 	}
 }

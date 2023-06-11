@@ -84,7 +84,6 @@ public class RedMonitor extends Observable {
 		try {
 			while (true) {
 				sc = monitorSS.accept();
-				System.out.println("El monitor recibio algo");
 				in = new ObjectInputStream(sc.getInputStream());
 				Object o;
 				o = in.readObject();

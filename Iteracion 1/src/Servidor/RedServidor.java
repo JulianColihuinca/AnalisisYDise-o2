@@ -35,18 +35,6 @@ public class RedServidor extends Observable{
 			   
 			}
 	    }}.start();
-	    new Thread() {public void run() { 
-			while(true) {
-				try {
-					sleep(7000);
-					enviarListaRegistrados();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} 
-			   
-			}
-	    }}.start();
 	}
 	
 	
@@ -128,6 +116,7 @@ public class RedServidor extends Observable{
 					UsuarioRegistro usuarioReg=(UsuarioRegistro)o;
 					boolean registrado= !this.registrarUsuario(usuarioReg);
 					Conexion.EnviarConfirmacion(usuarioReg.getPuerto(), new ConfirmacionRegistro(registrado) );
+					this.enviarListaUsuarios();
 					System.out.println(usuarioReg.toString());
 					
 				}else if(o instanceof ListaUsuarios) {
@@ -177,13 +166,17 @@ public class RedServidor extends Observable{
 		Conexion.EnviarListaUsuarios(Conexion.getPuertoMonitor(), new ListaUsuarios(this.usuarioRegistrados) );
 	    System.out.println("Enviando a monitor"+Conexion.getPuertoMonitor() +" (Servidor= "+Conexion.getPuertoServidor() +")");
 	}
-	private void enviarListaRegistrados() {
-		ArrayList<UsuarioRegistro> r = this.usuarioRegistrados;
-		for(int i=0; i<r.size();i++) {
-			int puerto=r.get(i).getPuerto();
-			Conexion.EnviarListaUsuarios(puerto, new ListaUsuarios(this.usuarioRegistrados) );
+	
+	private  void enviarListaUsuarios() {
+		ArrayList<UsuarioRegistro> us= this.usuarioRegistrados;
+		System.out.println(us);
+		for (int i=0; i<us.size();i++) {
+		int puerto=us.get(i).getPuerto();
+		Conexion.EnviarListaUsuarios(puerto, new ListaUsuarios(this.usuarioRegistrados) );
+		System.out.println("Envio a puerto "+puerto+" lista de usuarios");
 		}
 	}
+	
 	
 	
 

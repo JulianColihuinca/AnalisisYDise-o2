@@ -70,7 +70,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		setResizable(false);
 		setTitle("Comenzar Sesion Chat");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 385);
+		setBounds(100, 100, 600, 418);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -265,15 +265,26 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	}
 
 	@Override
-	public void actualizarTablaUsuarios(Object[][] usuarios) {
-		int n= usuarios.length;
-		for (int i=0;i<n;i++) {
-			this.dtm.setValueAt(usuarios[n][0], n, 0);
-			this.dtm.setValueAt(usuarios[n][1], n, 1);
-			this.dtm.setValueAt(usuarios[n][2], n, 2);
+	public void actualizarTablaUsuarios(ArrayList<String> nicknames, ArrayList<String> ips,
+			ArrayList<Integer> puertos) {
+		
+		if (this.dtm.getRowCount()< nicknames.size()) {
+			int agregar=nicknames.size()-this.dtm.getRowCount();
+			for (int j=0;j<agregar;j++) {
+				Object[][] data= {};
+				this.dtm.addRow(data);
+			}
 		}
-		this.setVisible(true);
+		
+		for(int i=0;i<nicknames.size();i++) {
+			this.dtm.setValueAt(nicknames.get(i),i , 0);
+			this.dtm.setValueAt(ips.get(i),i , 1);
+			this.dtm.setValueAt(puertos.get(i),i , 2);
+		}
+		
 		
 	}
+
+	
 
 }

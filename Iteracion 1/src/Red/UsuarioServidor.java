@@ -97,7 +97,7 @@ public class UsuarioServidor extends Observable implements Runnable{
                 	Mensaje mensaje =(Mensaje) o;
                 //	System.out.println("SERVIDOR USUARIO RECIBIO MENSAJE-> "+mensaje.getMensaje());
                 }
-                else if(o instanceof ListaUsuarios){//ES MENSAJE
+                else if(o instanceof ListaUsuarios){//ES LISTA DE USUARIOS
                 	this.setChanged();
                 	this.notifyObservers(o);
                 	this.clearChanged();

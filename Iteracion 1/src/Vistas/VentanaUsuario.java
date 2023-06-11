@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -14,9 +15,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import Red.Llamada;
 import Red.RespuestaLlamada;
+import Servidor.UsuarioRegistro;
+
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
@@ -35,6 +41,11 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 	private JPanel panel_8;
 	private JLabel lblNewLabel_1;
 	private JLabel nicknameLabel;
+	private JPanel panel_9;
+	private JLabel lblNewLabel_4;
+	private JTable usuariosTabla;
+	private DefaultTableModel dtm;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -59,7 +70,7 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		setResizable(false);
 		setTitle("Comenzar Sesion Chat");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 352);
+		setBounds(100, 100, 600, 385);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -157,6 +168,24 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 
 		this.atenderBoton.setEnabled(false);
 		this.rechazarBoton.setEnabled(false);
+		
+		panel_9 = new JPanel();
+		contentPane.add(panel_9);
+		panel_9.setLayout(new GridLayout(2, 1, 0, 0));
+		
+		lblNewLabel_4 = new JLabel("Usuarios registrados en el sistema: ");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		panel_9.add(lblNewLabel_4);
+		
+		scrollPane = new JScrollPane();
+		panel_9.add(scrollPane);
+		
+		Object[][] data= {};
+		
+		String [] columnas= {"Nickname" , "IP","Puerto"};
+		this.dtm= new DefaultTableModel(data,columnas);
+		usuariosTabla = new JTable(this.dtm);
+		scrollPane.setViewportView(usuariosTabla);
 
 		this.setVisible(true);
 	}
@@ -232,6 +261,18 @@ public class VentanaUsuario extends JFrame implements IVentanaUsuario {
 		else {
 			this.estadoServidor.setText("Desconectado");
 		}
+		
+	}
+
+	@Override
+	public void actualizarTablaUsuarios(Object[][] usuarios) {
+		int n= usuarios.length;
+		for (int i=0;i<n;i++) {
+			this.dtm.setValueAt(usuarios[n][0], n, 0);
+			this.dtm.setValueAt(usuarios[n][1], n, 1);
+			this.dtm.setValueAt(usuarios[n][2], n, 2);
+		}
+		this.setVisible(true);
 		
 	}
 

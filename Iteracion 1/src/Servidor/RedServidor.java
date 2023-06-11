@@ -35,6 +35,18 @@ public class RedServidor extends Observable{
 			   
 			}
 	    }}.start();
+	    new Thread() {public void run() { 
+			while(true) {
+				try {
+					sleep(7000);
+					enviarListaRegistrados();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+			   
+			}
+	    }}.start();
 	}
 	
 	
@@ -164,6 +176,13 @@ public class RedServidor extends Observable{
 	private void enviarMonitor() {
 		Conexion.EnviarListaUsuarios(Conexion.getPuertoMonitor(), new ListaUsuarios(this.usuarioRegistrados) );
 	    System.out.println("Enviando a monitor"+Conexion.getPuertoMonitor() +" (Servidor= "+Conexion.getPuertoServidor() +")");
+	}
+	private void enviarListaRegistrados() {
+		ArrayList<UsuarioRegistro> r = this.usuarioRegistrados;
+		for(int i=0; i<r.size();i++) {
+			int puerto=r.get(i).getPuerto();
+			Conexion.EnviarListaUsuarios(puerto, new ListaUsuarios(this.usuarioRegistrados) );
+		}
 	}
 	
 	

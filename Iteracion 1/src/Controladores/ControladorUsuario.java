@@ -2,6 +2,7 @@ package Controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -12,6 +13,7 @@ import Red.Llamada;
 import Red.RespuestaLlamada;
 import Red.UsuarioServidor;
 import Servidor.ConfirmacionRegistro;
+import Servidor.ListaUsuarios;
 import Servidor.UsuarioRegistro;
 import Vistas.IVentanaUsuario;
 import Vistas.VentanaUsuario;
@@ -79,7 +81,9 @@ public class ControladorUsuario implements ActionListener, Observer {
 			ConfirmacionRegistro conf= (ConfirmacionRegistro) arg;
 			this.vista.actualizarEstadoServidor(conf.isRegistrado());
 		}
-		// SI RECIBO OTRA COSA QUE NO SEA UNA LLAMADA O UNA RESPUESTA NO HAGO NADA
+		else if (arg instanceof ListaUsuarios) {
+			actualizarUsuariosRegistrados( (ListaUsuarios) arg );
+		}
 	}
 	
 	private  void atenderLlamada() {
@@ -160,11 +164,23 @@ public class ControladorUsuario implements ActionListener, Observer {
 		RespuestaLlamada respuesta= new RespuestaLlamada(this.usuario.getLlamada(),res);
 		Conexion.EnviarLlamada(Conexion.getPuertoServidor(), respuesta);
 	}
+	
 
 	public UsuarioServidor getUsuario() {
 		return this.usuario;
 	}
 	public IVentanaUsuario getVista() {
 		return this.vista;
+	}
+	private void actualizarUsuariosRegistrados( ListaUsuarios lista ) {
+		ArrayList<UsuarioRegistro> list=lista.getUsuarios();
+		Object [][] l= {};
+		for (int i=0;i<list.size();i++) {
+			UsuarioRegistro usuario= list.get(i);
+			l[i][0]=usuario.getNickname();
+			l[i][1]=usuario.getIp();
+			l[i][2]=usuario.getPuerto();
+		}
+		this.vista.actualizarTablaUsuarios(l);
 	}
 }

@@ -1,8 +1,11 @@
 package Vistas;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
+
+import Servidor.UsuarioRegistro;
 
 public interface IVentanaUsuario {
 	
@@ -19,4 +22,5 @@ public interface IVentanaUsuario {
 
 	void setVisible(boolean res);
 	void actualizarEstadoServidor(boolean estado);
+	void actualizarTablaUsuarios(Object[][] usuarios );
 }

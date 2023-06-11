@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.util.Observable;
 
 import Servidor.ConfirmacionRegistro;
+import Servidor.ListaUsuarios;
 
 public class UsuarioServidor extends Observable implements Runnable{
 	private int puerto;
@@ -95,6 +96,11 @@ public class UsuarioServidor extends Observable implements Runnable{
                 }else if(o instanceof Mensaje){//ES MENSAJE
                 	Mensaje mensaje =(Mensaje) o;
                 //	System.out.println("SERVIDOR USUARIO RECIBIO MENSAJE-> "+mensaje.getMensaje());
+                }
+                else if(o instanceof ListaUsuarios){//ES MENSAJE
+                	this.setChanged();
+                	this.notifyObservers(o);
+                	this.clearChanged();
                 }
                 else if(o instanceof ConfirmacionRegistro) {
                 	this.setChanged();

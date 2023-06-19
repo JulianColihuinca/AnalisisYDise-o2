@@ -23,18 +23,19 @@ public class RedServidor extends Observable{
 		this.usuarioRegistrados= new ArrayList<UsuarioRegistro>();
 		this.servidor=new ServerSocket(puerto);
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
-		/*new Thread() {public void run() { 
+		new Thread() {public void run() { // resincronizacion de la lista
 			while(true) {
 				try {
 					sleep(3000);
-					enviarMonitor(); 
+					if(servidor.getLocalPort()==Conexion.getPuertoServidor())//estoy en el servidor principal
+						Conexion.EnviarListaUsuarios(Conexion.getPuertoServidor2(), new ListaUsuarios(usuarioRegistrados));
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
 			   
 			}
-	    }}.start();*/
+	    }}.start();
 	}
 	
 	
@@ -161,11 +162,11 @@ public class RedServidor extends Observable{
 		
 		return encontrado;
 	}
-	
+	/*
 	protected void enviarMonitor() {
 		Conexion.EnviarListaUsuarios(Conexion.getPuertoMonitor(), new ListaUsuarios(this.usuarioRegistrados) );
 	    System.out.println("Enviando a monitor"+Conexion.getPuertoMonitor() +" (Servidor= "+Conexion.getPuertoServidor() +")");
-	}
+	}*/
 	
 	private  void enviarListaUsuarios() {
 		ArrayList<UsuarioRegistro> us= this.usuarioRegistrados;

@@ -11,7 +11,7 @@ import Red.Llamada;
 import Red.Mensaje;
 import Red.RespuestaLlamada;
 
-public class ControladorServidor implements Observer, WindowListener{
+public class ControladorServidor implements Observer{
 	
 	private IVentanaServidor vistaServidor;
 	private RedServidor redServidor;
@@ -23,7 +23,6 @@ public class ControladorServidor implements Observer, WindowListener{
 		try {
 			this.redServidor = new RedServidor(Conexion.getPuertoServidor());
 			this.vistaServidor = new VentanaServidor();
-			this.vistaServidor.addWindowListener(this);
 			this.vistaServidor.setVisible(true);
 			this.redServidor.addObserver(this);
 		} catch (IOException e) {
@@ -68,55 +67,5 @@ public class ControladorServidor implements Observer, WindowListener{
 	}
 
 
-	@Override
-	public void windowOpened(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void windowClosing(WindowEvent e) {
-		// TODO Auto-generated method stub
-		this.redServidor.enviarMonitor();
-		System.out.println("ANTES DE CERRAR EL SERVIDOR SE ENVIA LISTA A MONITOR");
-	}
-
-
-	@Override
-	public void windowClosed(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void windowIconified(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void windowDeiconified(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void windowActivated(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void windowDeactivated(WindowEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 
 }

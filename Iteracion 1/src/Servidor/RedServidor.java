@@ -23,6 +23,7 @@ public class RedServidor extends Observable{
 		this.usuarioRegistrados= new ArrayList<UsuarioRegistro>();
 		this.servidor=new ServerSocket(puerto);
 		new Thread() {public void run() {escuchar(); }}.start(); // Ejecuta el hilo para escuchar
+		/*
 		new Thread() {public void run() { // resincronizacion de la lista
 			while(true) {
 				try {
@@ -35,7 +36,7 @@ public class RedServidor extends Observable{
 				} 
 			   
 			}
-	    }}.start();
+	    }}.start();*/
 	}
 	
 	
@@ -52,6 +53,7 @@ public class RedServidor extends Observable{
 		if(!existe) {
 			this.usuarioRegistrados.add(u);
 			System.out.println("IP="+u.getIp() +", Puerto= "+ u.getPuerto() + "  --> Registrado en el servidor");
+			Conexion.EnviarListaUsuarios(Conexion.getPuertoServidor2(), new ListaUsuarios(usuarioRegistrados));
 		}
 		return existe;
 		

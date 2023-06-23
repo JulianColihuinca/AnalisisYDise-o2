@@ -16,6 +16,7 @@ import Red.Conexion;
 import Red.RespuestaLlamada;
 import Servidor.ListaUsuarios;
 import Servidor.MainServidor;
+import Servidor.RedundanciaPasiva;
 import Servidor.UsuarioRegistro;
 
 public class RedMonitor extends Observable {

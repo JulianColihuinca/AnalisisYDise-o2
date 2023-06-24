@@ -42,7 +42,6 @@ public class RedMonitor extends Observable {
 						sleep(4000);
 						verificarEstadoServidor();
 						if(hayServidor && puertoDisponible(Conexion.getPuertoServidor())) { //se rompio el server
-							enviarUsuarios(); //actualizo lista de usuarios registrados en el otro server
 							RedundanciaPasiva.cambioServidor();
 							sleep(5000);
 							MainServidor.main(null);

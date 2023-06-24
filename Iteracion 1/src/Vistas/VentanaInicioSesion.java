@@ -100,6 +100,7 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 		this.iniciarSesionBoton.setActionCommand("Iniciar Sesion");
 		this.iniciarSesionBoton.setEnabled(false);
 		this.puertoText.addKeyListener(this);
+		this.nicknameText.addKeyListener(this);
 		
 		this.setVisible(true); //AL CREARSE LA VENTANA SE HACE VISIBLE
 	}
@@ -122,7 +123,7 @@ public class VentanaInicioSesion extends JFrame implements UIInicioSesion,KeyLis
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-	    if (this.puertoText.getText().length()>0) {
+	    if (this.puertoText.getText().length()>0 && this.getNickname().length()>0) {
 	    	this.iniciarSesionBoton.setEnabled(true);
 	    }
 	    else {

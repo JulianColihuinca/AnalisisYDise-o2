@@ -112,6 +112,7 @@ public class RedServidor extends Observable{
 				}else if(o instanceof ListaUsuarios) {
 					ListaUsuarios usuarios=(ListaUsuarios)o;
 					this.usuarioRegistrados=usuarios.getUsuarios();
+					
 				}
 				
 				this.setChanged();

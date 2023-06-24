@@ -36,7 +36,7 @@ public class RedMonitor extends Observable {
 			}
 		}.start();
 		new Thread() {
-			public void run() {
+			public void run() { //Tenemos que sacarlo de aca, no es tarea del monitor, ponerlo en el servidor
 				while (true) {
 					try {
 						sleep(4000);

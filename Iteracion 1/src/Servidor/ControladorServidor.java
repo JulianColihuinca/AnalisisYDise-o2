@@ -61,7 +61,11 @@ public class ControladorServidor implements Observer{
 		}
 		else if(arg instanceof UsuarioRegistro) { //Registra un nuevo usuario en el servidor
 			UsuarioRegistro usuarioReg=(UsuarioRegistro)arg;
-			this.vistaServidor.actualizarLista("Recibo "+usuarioReg.toString());
+			this.vistaServidor.actualizarLista("Recibo "+usuarioReg.toString() + " y envio la lista de usuarios al otro servidor");
+		}
+		else if(arg instanceof ListaUsuarios) { //Recibo una lista de usuarios
+
+			this.vistaServidor.actualizarLista("Recibi una nueva lista de usuarios");
 		}
 		
 	}

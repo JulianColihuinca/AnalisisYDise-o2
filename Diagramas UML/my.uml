@@ -845,6 +845,10 @@
       <interfaceRealization xmi:id="_SZWMkPZpEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ"/>
       <interfaceRealization xmi:id="_hZACwPZpEe2UZ6Awnc1uhQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ"/>
     </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Component" xmi:id="_WtS9EBJMEe69E7hqWypViA" name="RedundanciaPasiva">
+      <interfaceRealization xmi:id="_CxSPsBJOEe69E7hqWypViA" client="_WtS9EBJMEe69E7hqWypViA" supplier="_918-IBJNEe69E7hqWypViA" contract="_918-IBJNEe69E7hqWypViA"/>
+      <interfaceRealization xmi:id="_19nHcBLSEe6LtflIbzACVQ" client="_WtS9EBJMEe69E7hqWypViA" supplier="_s4lcoBLSEe6LtflIbzACVQ" contract="_s4lcoBLSEe6LtflIbzACVQ"/>
+    </nestedClassifier>
     <packagedElement xmi:type="uml:Interface" xmi:id="_mozaYPZnEe2UZ6Awnc1uhQ" name="FinalizarChat"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_mozaYfZnEe2UZ6Awnc1uhQ" name="IniciarSesion"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_mozaYvZnEe2UZ6Awnc1uhQ" name="ComenzarChat"/>
@@ -862,6 +866,7 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_Q_-z8AiTEe6qxaj0Pt_DWg" name="RedundanciaPasiva">
       <interfaceRealization xmi:id="_dKawgAiTEe6qxaj0Pt_DWg" client="_Q_-z8AiTEe6qxaj0Pt_DWg"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_s4lcoBLSEe6LtflIbzACVQ" name="cambiarServidor"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_d6YcQPZoEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ"/>
   <packagedElement xmi:type="uml:Usage" xmi:id="_sCniQPZoEe2UZ6Awnc1uhQ" client="_x7RNIPZnEe2UZ6Awnc1uhQ"/>
@@ -1002,9 +1007,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_hdDP0PgrEe2HOf4_g3Tq6g" name="Escuchar"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_OaSwkPgrEe2HOf4_g3Tq6g" client="_Kiz-IPgqEe2HOf4_g3Tq6g" supplier="_r97qEPgqEe2HOf4_g3Tq6g"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_WtS9EBJMEe69E7hqWypViA" name="RedundanciaPasiva">
-      <interfaceRealization xmi:id="_CxSPsBJOEe69E7hqWypViA" client="_WtS9EBJMEe69E7hqWypViA" supplier="_918-IBJNEe69E7hqWypViA" contract="_918-IBJNEe69E7hqWypViA"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_918-IBJNEe69E7hqWypViA" name="CambiarServidor"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_nkUlgPgqEe2HOf4_g3Tq6g" name="Enviar"/>
@@ -1340,4 +1342,9 @@
     <ownedOperation xmi:id="_zNIogBJREe69E7hqWypViA" name="cambiarServidor"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_xbiIABJREe69E7hqWypViA" client="_N2mCUAitEe6qxaj0Pt_DWg" supplier="_uY-V8BJREe69E7hqWypViA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_yy-XcBLSEe6LtflIbzACVQ" client="_2yjFIPZnEe2UZ6Awnc1uhQ" supplier="_s4lcoBLSEe6LtflIbzACVQ"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NoqAcBLTEe6LtflIbzACVQ" name="RedundanciaPasiva" visibility="public">
+    <ownedOperation xmi:id="_QJ8RcBLTEe6LtflIbzACVQ" name="cambiarServidor"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_TBJvIBLTEe6LtflIbzACVQ" client="_EzeY0AipEe6qxaj0Pt_DWg" supplier="_NoqAcBLTEe6LtflIbzACVQ"/>
 </uml:Model>

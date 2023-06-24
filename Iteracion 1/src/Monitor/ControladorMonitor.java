@@ -19,22 +19,23 @@ public class ControladorMonitor implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		String servidor= (String) arg;
+		
 		if(servidor.equalsIgnoreCase("ServidorA")) {
-			this.vista.actualiarVista(1, "Disponible");
-			this.vista.actualiarVista(2, "No Disponible");
+			this.vista.actualiarVista(new EstadoServidor(1,"Disponible"));
+			this.vista.actualiarVista(new EstadoServidor(2,"No Disponible"));
 		}
 		else if(servidor.equalsIgnoreCase("ServidorB")) {
-			this.vista.actualiarVista(2, "Disponible");
-			this.vista.actualiarVista(1, "No Disponible");
+			this.vista.actualiarVista(new EstadoServidor(2,"Disponible"));
+			this.vista.actualiarVista(new EstadoServidor(1,"No Disponible"));
 		}
 		
 		else if(servidor.equalsIgnoreCase("ninguno")) {
-			this.vista.actualiarVista(2, "No Disponible");
-			this.vista.actualiarVista(1, "No Disponible");
+			this.vista.actualiarVista(new EstadoServidor(2,"No Disponible"));
+			this.vista.actualiarVista(new EstadoServidor(1,"No Disponible"));
 		}
 		else if(servidor.equalsIgnoreCase("ambos")) {
-			this.vista.actualiarVista(2, "Disponible");
-			this.vista.actualiarVista(1, "Disponible");
+			this.vista.actualiarVista(new EstadoServidor(1,"Disponible"));
+			this.vista.actualiarVista(new EstadoServidor(2,"Disponible"));
 		}
 	}
 	

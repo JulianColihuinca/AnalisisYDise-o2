@@ -59,8 +59,8 @@ public class VistaMonitor extends JFrame implements IVistaMonitor {
 	}
 
 	@Override
-	public void actualiarVista(int nroServidor, String estado) {
-		this.dtm.setValueAt(estado, nroServidor-1, 1);
+	public void actualiarVista(EstadoServidor es) {
+		this.dtm.setValueAt(es.getEstado(), es.getNroServidor()-1, 1);
 		this.setVisible(true);
 		
 	}

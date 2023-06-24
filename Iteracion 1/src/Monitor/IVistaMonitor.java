@@ -4,6 +4,6 @@ import java.awt.event.ActionListener;
 
 public interface IVistaMonitor {
 	
-	public void actualiarVista(int nroServidor, String estado);
+	public void actualiarVista(EstadoServidor es);
 
 }
